@@ -73,9 +73,9 @@
     {
       "path" : "config.codekit3",
       "mimeType" : "application/octet-stream",
-      "lastUpdated" : 1670535112,
-      "checksum" : "3ee69406d819c69cd6e9f89567d58ab0",
-      "fileSize" : 52551
+      "lastUpdated" : 1670535238,
+      "checksum" : "4600402c400b5cafe03d0e982956c84e",
+      "fileSize" : 52693
     },
     {
       "path" : ".git/hooks/update.sample",
@@ -171,7 +171,7 @@
     {
       "path" : "style-codekit.less",
       "mimeType" : "application/octet-stream",
-      "lastUpdated" : 1670535112,
+      "lastUpdated" : 1670535237,
       "checksum" : "a1e3adc3b4c195e0c50c60ccc17750c5",
       "fileSize" : 38259
     },
@@ -185,7 +185,7 @@
     {
       "path" : "style-codekit.css",
       "mimeType" : "text/css",
-      "lastUpdated" : 1670535112,
+      "lastUpdated" : 1670535237,
       "checksum" : "737739313458002ba80d3c67e969e855",
       "fileSize" : 41947
     },
