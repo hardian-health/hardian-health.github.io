@@ -73,9 +73,9 @@
     {
       "path" : "config.codekit3",
       "mimeType" : "application/octet-stream",
-      "lastUpdated" : 1670535238,
-      "checksum" : "4600402c400b5cafe03d0e982956c84e",
-      "fileSize" : 52693
+      "lastUpdated" : 1670537141,
+      "checksum" : "c69d915118cf59e44f0057ceab424580",
+      "fileSize" : 52701
     },
     {
       "path" : ".git/hooks/update.sample",
