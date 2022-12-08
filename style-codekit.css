@@ -1,0 +1,222 @@
+:root {
+  --black: #1C1D1E;
+  --white: #FFFFFF;
+  --lightGrey: #EEF0F2;
+  --darkGrey: #A6A6A6;
+  --purple: #A37AF5;
+  --lightBlue: #5BCFFF;
+  --mintGreen: #49DAB0;
+  --darkBlue: #3A6DF5;
+  --brightPink: #FF9FF2;
+  --timelineTitleLeft: -60px;
+}
+/*
+
+DOMAIN JOTTA FONTIT: ;
+/config/settings/domains ➡️ https://macbook-pro.local:5757
+
+*/
+/*
+🟪
+🟪
+🟪
+🟩
+🟩
+🟩
+SERVIES PORTFOLIO SUBPAGE SKETCHING
+
+*/
+/*
+
+.sqs-block-content, .line{
+  height:100%;
+}
+.line{
+  position:relative;
+   background:black;
+  width: 1px;
+  left:50%;
+}
+*/
+#gridThumbs {
+  position: relative;
+  /*
+  &:after{
+    display:block;
+    position:absolute;
+    content:"";
+    width:1px;
+    left:50%;
+    height:100% !important;
+    background:black;
+  }
+  */
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /*
+   .grid-item[href*="pre"]{
+    align-self:flex-start;
+     text-align:right !important;
+    position:relative;
+    
+    &:after {
+     content: "";
+    position: absolute;
+    background: black;
+    width: 30px;
+    top: 50%;
+    right: -60px;
+    height: 1px;
+    display: block;
+
+    /// TAG TEST
+    content: "Pre-market";
+    height:auto;
+    background:unset;
+    width:auto;
+    display:inline-block;
+    border:1px solid black;
+    border-radius:50px;
+    padding: 2px 13px;
+    text-transform: uppercase;
+    font-size:9px;
+    letter-spacing: 0.03em;
+    top: -10px;
+    right: -2px;
+    opacity:0;
+    transition: 0.3s all ease;
+      
+    }
+    &:hover:after{
+      opacity: 1;
+    }
+     
+
+  } */
+}
+#gridThumbs p.description-hack:after {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  content: "Read more →";
+  color: var(--purple) !important;
+  font-weight: 600;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  letter-spacing: 0.05em;
+  transition: 0.3s all ease;
+  position: relative;
+  left: 0;
+}
+#gridThumbs .grid-image {
+  display: none;
+}
+#gridThumbs h2 {
+  margin-left: var(--timelineTitleLeft);
+}
+#gridThumbs .grid-item {
+  box-sizing: border-box;
+  margin: 0;
+  border-left: 1px solid;
+  border-color: var(--purple) !important;
+  padding: 50px 20px 50px 40px;
+  position: relative;
+  /*
+   &[href*="post"]{
+    align-self:flex-end;
+    position:relative;
+    &:after{
+     content: "";
+    position: absolute;
+    background: black;
+    width: 30px;
+    top: 50%;
+    left: -60px;
+    height: 1px;
+    display: block;
+    text-align:left !important
+      
+    }
+
+  }
+  */
+}
+#gridThumbs .grid-item:before {
+  box-sizing: border-box;
+  content: "";
+  position: absolute;
+  --sizeAndLeft: 4px;
+  left: calc(-1 * var(--sizeAndLeft) - 0.5px);
+  top: 50%;
+  width: calc(2 * var(--sizeAndLeft));
+  aspect-ratio: 1;
+  border-radius: 100%;
+  background: var(--purple);
+}
+#gridThumbs .grid-item .portfolio-title {
+  font-size: 16px !important;
+  margin: 0 0 4px 0 !important;
+  font-weight: 700;
+}
+#gridThumbs .grid-item .description-hack {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 !important;
+}
+#gridThumbs .grid-item .number {
+  position: absolute;
+  left: var(--timelineTitleLeft);
+  top: calc(50% - 32px);
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--purple) !important;
+}
+/*
+    .grid-item[href*="post"] {
+      //background:red;
+      &:before{
+        content:"Post-Market";
+        font-size: 38px;
+        font-weight:bold;
+        margin-bottom:70px;
+      }
+    }
+
+
+    .grid-item[href*="post"] ~ .grid-item[href*="post"] {
+      // background:blue;
+      &:before{
+        display:none;
+      }
+        // Reverse the above rule 
+    }
+
+
+    .grid-item[href*="pre"]{
+    //  background:green;
+      &:before{
+        font-size: 38px;
+        font-weight:bold;
+        margin-bottom:70px;
+      }
+    }
+
+    .grid-item[href*="pre"] ~ .grid-item[href*="pre"] {
+    //    background:blue;
+      &:before{
+        display:none;
+      }
+        // Reverse the above rule 
+    }
+*/
+/*END 
+🟪
+🟪
+🟪
+🟩
+🟩
+🟩
+SERVIES PORTFOLIO SUBPAGE SKETCHING
+*/
