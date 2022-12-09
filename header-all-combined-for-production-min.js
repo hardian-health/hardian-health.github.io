@@ -1,10 +1,5 @@
 console.log("Header production JS Started");
-
-console.log("AWS S3 bucket: hardian-temporary-dev");
-
   
-
-
 /*
 *  PORFTOLIO GRID JS STUFF
 */
@@ -43,9 +38,6 @@ $( document ).ready(function() {
 }); 
 */
 
-
-
-  
 
     //write a function that loops each .grid-item, adds a div called "number" and adds the number of the item to it.
     function addNumber(){
@@ -389,6 +381,12 @@ try {
 catch (e) {
    //code to handle the exception
 }
+
+console.log("Header production ran to the end");
+
+
+
+
 
 console.log("Header production ran to the end");
 
