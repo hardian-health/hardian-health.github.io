@@ -1,4 +1,4 @@
-console.log("Header production JS Started");
+console.log("Header production JS Started 2");
   
 /*
 *  PORFTOLIO GRID JS STUFF
