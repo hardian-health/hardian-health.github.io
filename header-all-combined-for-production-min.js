@@ -1,10 +1,5 @@
 console.log("Header production JS Started");
-
-console.log("AWS S3 bucket: hardian-temporary-dev");
-
   
-
-
 /*
 *  PORFTOLIO GRID JS STUFF
 */
@@ -389,6 +384,12 @@ try {
 catch (e) {
    //code to handle the exception
 }
+
+console.log("Header production ran to the end");
+
+
+
+
 
 console.log("Header production ran to the end");
 
