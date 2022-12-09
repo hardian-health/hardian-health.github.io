@@ -1,4 +1,4 @@
-console.log("aws");
+console.log("finally a real setup");
 
   
 $( document ).ready(function() {    
