@@ -103,7 +103,7 @@ BLOG STUFF
 
 */
 
-//SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
+// SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
 $( document ).ready(function() {    
   if( (window.location.pathname.includes("/blog/")) && $('article').length   ){
       console.log("blog page and article found. LEt's fix meta categories and tags");
@@ -140,7 +140,7 @@ var categoryLabelLink = $(this).attr("href");
 
   if(categoryLabelLink == currentCategory){
       console.log("ACTIVATE THIS ONE");
-      $(this).addClass("blog-post-category-current-filter");
+      $(this).addClass("blog-post-category-current-filter ");
   }
   
 })
