@@ -11,7 +11,7 @@
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
-  --timelinetitleleft: -14px;
+  --timelinetitleleft: -26px;
 }
 /* *****
  SERVICES DROPDOWN COLOR BOXES
@@ -1311,7 +1311,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   margin: 0;
   border-left: 1px solid;
   border-color: #cecece !important;
-  padding: 50px 20px 50px 40px;
+  padding: 28px 20px 28px 40px;
   position: relative;
   --sizeandleft: 4px;
   /*
@@ -1362,6 +1362,8 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   top: calc(50% - 32px);
   font-size: 40px;
   font-weight: bold;
+  text-align: center;
+  min-width: 50px;
   color: var(--clinical-purple) !important;
 }
 /*
