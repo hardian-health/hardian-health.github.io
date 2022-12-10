@@ -1245,46 +1245,6 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /*
-   .grid-item[href*="pre"]{
-    align-self:flex-start;
-     text-align:right !important;
-    position:relative;
-    
-    &:after {
-     content: "";
-    position: absolute;
-    background: black;
-    width: 30px;
-    top: 50%;
-    right: -60px;
-    height: 1px;
-    display: block;
-
-    /// TAG TEST
-    content: "Pre-market";
-    height:auto;
-    background:unset;
-    width:auto;
-    display:inline-block;
-    border:1px solid black;
-    border-radius:50px;
-    padding: 2px 13px;
-    text-transform: uppercase;
-    font-size:9px;
-    letter-spacing: 0.03em;
-    top: -10px;
-    right: -2px;
-    opacity:0;
-    transition: 0.3s all ease;
-      
-    }
-    &:hover:after{
-      opacity: 1;
-    }
-     
-
-  } */
 }
 #gridThumbs .grid-image {
   display: none;
@@ -1300,25 +1260,19 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   padding: 44px 20px 44px 40px;
   position: relative;
   --sizeandleft: 4px;
-  /*
-   &[href*="post"]{
-    align-self:flex-end;
-    position:relative;
-    &:after{
-     content: "";
-    position: absolute;
-    background: black;
-    width: 30px;
-    top: 50%;
-    left: -60px;
-    height: 1px;
-    display: block;
-    text-align:left !important
-      
-    }
-
-  }
-  */
+}
+#gridThumbs .grid-item:hover .number {
+  transform: scale(1.04);
+  transform-origin: center center;
+}
+#gridThumbs .grid-item:hover .portfolio-text {
+  transform: translateX(6px);
+}
+#gridThumbs .grid-item:hover .arrow {
+  transform: translateX(8px);
+}
+#gridThumbs .grid-item * {
+  transition: 0.3s all ease;
 }
 #gridThumbs .grid-item:before {
   box-sizing: border-box;
@@ -1354,6 +1308,9 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   transition: 0.3s all ease;
   position: relative;
   left: 0;
+}
+#gridThumbs .grid-item .seo-description .pofo-readmore .arrow {
+  display: inline-block;
 }
 #gridThumbs .grid-item .number {
   position: absolute;
