@@ -1627,25 +1627,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
  display:flex; 
   flex-direction: column;
   align-items: flex-start;
-  p.description-hack{
-    &:after{
-    display:block;
-    margin-top:16px;
-    font-size:14px;
-    content:"Read more →";
-    //color:var(--clinical-purple) !important; 
-    //use css variables instead of less variables
-    color:var(--clinical-purple) !important;
-    font-weight:600;
-  text-transform:uppercase !important;
-  font-size:11px !important;
-  letter-spacing:0.05em;
-  transition:.3s all ease;
-  position:relative;
-  left:0;
-    }
-
-  }
+ 
   
   .grid-image{
     display:none;
@@ -1667,7 +1649,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     //border-color: var(--neutral-lightgrey) !important;
     border-color: #cecece !important;
 
-    padding:28px 20px 28px 40px;
+    padding:44px 20px 44px 40px;
     //border:1px solid red;
     position: relative;
     --sizeandleft: 4px;
@@ -1696,10 +1678,37 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     margin:0 0 4px 0 !important;
     font-weight: 700;
    }
-   .description-hack{
+   .seo-description{
     font-size:16px;
     line-height:1.4;
     margin: 0 !important;
+    .pofo-readmore{
+
+ // TODO make reusable less . class for read more links
+        display:block;
+        margin-top:16px;
+        font-size:14px;
+        content:"Read more →";
+        //color:var(--clinical-purple) !important; 
+        //use css variables instead of less variables
+        color:var(--clinical-purple) !important;
+        font-weight:600;
+      text-transform:uppercase !important;
+      font-size:11px !important;
+      letter-spacing:0.05em;
+      transition:.3s all ease;
+      position:relative;
+      left:0;
+        
+
+
+
+
+
+
+
+
+    }
   }
 
 
