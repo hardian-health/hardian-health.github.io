@@ -11,7 +11,7 @@
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
-  --timelinetitleleft: -60px;
+  --timelinetitleleft: -14px;
 }
 /* *****
  SERVICES DROPDOWN COLOR BOXES
@@ -1310,7 +1310,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   box-sizing: border-box;
   margin: 0;
   border-left: 1px solid;
-  border-color: var(--clinical-purple) !important;
+  border-color: #cecece !important;
   padding: 50px 20px 50px 40px;
   position: relative;
   --sizeandleft: 4px;
@@ -1358,6 +1358,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 #gridThumbs .grid-item .number {
   position: absolute;
   left: var(--timelinetitleleft);
+  background: var(--neutral-white);
   top: calc(50% - 32px);
   font-size: 40px;
   font-weight: bold;

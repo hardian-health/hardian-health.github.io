@@ -15,7 +15,7 @@
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
 
-  --timelinetitleleft: -60px;
+  --timelinetitleleft: -14px;
 }
 
 
@@ -1662,7 +1662,11 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     //width: 260px;
     margin:0;
     border-left: 1px solid; // make purple
-    border-color:var(--clinical-purple) !important;
+    //border-color:var(--clinical-purple) !important;
+   // border-color: var(--neutral-darkgrey) !important;
+    //border-color: var(--neutral-lightgrey) !important;
+    border-color: #cecece !important;
+
     padding:50px 20px 50px 40px;
     //border:1px solid red;
     position: relative;
@@ -1670,6 +1674,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     
     // timeline stop, "circle" on line
     &:before{
+      //display: none;
       box-sizing: border-box;
       content:"";
       position:absolute;
@@ -1704,6 +1709,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     //left:-50px;
     //use variable --timelineTitleLeft instead of -50px
     left:var(--timelinetitleleft);
+    background: var(--neutral-white);
     
 
 
