@@ -4,7 +4,6 @@ console.log("Header production JS Started 2");
 *  PORFTOLIO GRID JS STUFF
 */
 
-
 // IMAGE NAMES TO DESCRIPTIONS
 /*
 $( document ).ready(function() {    
