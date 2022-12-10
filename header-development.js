@@ -122,6 +122,7 @@ addDescriptions();
 
 
 
+
 // 4 🟢🟢🟢🟢🟢🟢 fetch SEO descriptions for each portfolio item, and add them to the tube map links as descriptions in html
 //
 // loop summary items
@@ -133,9 +134,28 @@ function fetchAndAddDescriptions(url){
     //create a new fetcUrl by combining current window.location full url with "?format=json-pretty"
     var fetchUrl = window.location.href + "?format=json-pretty";
 
+
+
+
+    //fetch cache stuff - "headers"
+    var myHeaders = new Headers();
+
+    //fetch headers – shouold they be A) cached for speed or B) non-cached for admin to see chances in real time?
+    if(document.location.host.includes(".squarespace.com")){
+    console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description-add -fetch");
+    myHeaders.append('pragma', 'no-cache');
+    myHeaders.append('cache-control', 'no-cache');
+
+    } else{
+    console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description-add -fetch to make everything quicker");
+    }
+
+
+
+
     fetch(fetchUrl, { 
-        method: 'GET'
-        //headers: myHeaders
+        method: 'GET',
+        headers: myHeaders
       })
       .then(function(response) { return response.json(); })
       .then(function(json) {
@@ -202,24 +222,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 //🟢🟢🟢🟢🟢
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
