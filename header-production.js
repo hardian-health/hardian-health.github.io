@@ -1,9 +1,9 @@
-console.log("Header production JS Started 2");
+
+console.log("Header production JS Started");
   
 /*
 *  PORFTOLIO GRID JS STUFF
 */
-
 
 // IMAGE NAMES TO DESCRIPTIONS
 /*
@@ -394,6 +394,9 @@ console.log("Header production ran to the end");
 
 
 
+// DEVELOPMENT STUFF. ALWAYS KEEP THIS
+
+
 
 
 
@@ -526,7 +529,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function fetchAndAddDescriptions(url){
 
     //create a new fetcUrl by combining current window.location full url with "?format=json-pretty"
-    var fetchUrl = window.location.href + "?format=json-pretty";
+    //var fetchUrl = window.location.href + "?format=json-pretty";
+    //write new fetchUrl where we combine origin and pathname but skip the rest of the url
+    var fetchUrl = window.location.origin + window.location.pathname + "?format=json-pretty";
 
     //fetch cache stuff - "headers"
     var myHeaders = new Headers();
@@ -597,11 +602,6 @@ function fetchAndAddDescriptions(url){
 } // end of fetchAndAddDescriptions() function
 
 
-// check if we are on a portfolio page. if we do, run the function to add SEO descriptions
-if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
-    console.log("we are on a portfolio page");
-    fetchAndAddDescriptions();
-}
 
 
 //run fetchAndAddDescriptions() on document ready
@@ -617,18 +617,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 // 🟢🟢🟢🟢🟢
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
