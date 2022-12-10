@@ -115,3 +115,111 @@ addDescriptions();
 
 
 
+
+
+
+
+
+
+
+// 4 🟢🟢🟢🟢🟢🟢 fetch SEO descriptions for each portfolio item, and add them to the tube map links as descriptions in html
+//
+// loop summary items
+// 4
+// write a function that will fetch JSON from url and return that JSON as variable object.
+// loop summary items
+function fetchAndAddDescriptions(url){
+
+    //create a new fetcUrl by combining current window.location full url with "?format=json-pretty"
+    var fetchUrl = window.location.href + "?format=json-pretty";
+
+    fetch(fetchUrl, { 
+        method: 'GET'
+        //headers: myHeaders
+      })
+      .then(function(response) { return response.json(); })
+      .then(function(json) {
+        // use the json
+          portfolioItems = json.items;
+    
+
+          function addSeoDescriptionToPortfolioItems() {
+    portfolioItems.forEach((item) => {
+    if (item.seoData && item.seoData.seoDescription) {
+      const gridItems = document.querySelectorAll(`a.grid-item`);
+      gridItems.forEach((gridItem) => {
+        const href = gridItem.getAttribute('href');
+        if (href === item.fullUrl) {
+          const description = document.createElement('p');
+          description.classList.add('description');
+          description.innerText = item.seoData.seoDescription;
+          const portfolioText = gridItem.querySelector('.portfolio-text');
+          portfolioText.appendChild(description);
+        }
+      });
+    }
+  });
+}
+    
+    
+addSeoDescriptionToPortfolioItems();
+    
+    
+          
+
+    
+     //close the function
+        });
+    // end of function
+    
+
+
+}
+
+
+
+
+//end of document ready
+
+
+if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
+    console.log("we are on a portfolio page");
+    fetchAndAddDescriptions();
+}
+
+
+
+//run fetchAndAddDescriptions() on document ready
+document.addEventListener("DOMContentLoaded", function(event) {
+    //fetchAndAddDescriptions();
+    // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
+    if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
+        console.log("we are on a portfolio page");
+        fetchAndAddDescriptions();
+    }
+});
+//end of document ready
+
+
+//🟢🟢🟢🟢🟢
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
