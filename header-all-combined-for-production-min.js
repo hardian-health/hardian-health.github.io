@@ -39,20 +39,6 @@ $( document ).ready(function() {
 */
 
 
-    //write a function that loops each .grid-item, adds a div called "number" and adds the number of the item to it.
-    function addNumber(){
-      $(".grid-item").each(function(i){
-        var number = i++;
-        $(this).prepend("<div class='number'>" + i + "</div>");
-      });
-    }
-
-    //call the function
-    $( document ).ready(function() {
-      addNumber();
-    });
-
-
 
   //we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
   function addPreMarketAndPostMarketTitles() {
