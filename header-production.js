@@ -569,7 +569,9 @@ function fetchAndAddDescriptions(url){
                             // Add a class to the paragraph element
                             description.classList.add('seo-description');
                             // Set the inner text of the paragraph element
-                            description.innerText = item.seoData.seoDescription;
+                            //description.innerText = item.seoData.seoDescription;
+                            // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
+                            description.innerHTML = item.seoData.seoDescription + '<span class="pofo-readmore">Read More →</span>';
                             // Get the portfolio text element
                             const portfolioText = gridItem.querySelector('.portfolio-text');
                             // Append the description to the portfolio text (so it appears below the h3 title)

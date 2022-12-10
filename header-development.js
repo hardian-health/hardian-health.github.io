@@ -13,7 +13,7 @@ function addReadMoreToPortfolioItems() {
 
 //on dom ready call the function
 document.addEventListener('DOMContentLoaded', function() {
-    addReadMoreToPortfolioItems();
+   // addReadMoreToPortfolioItems(); //we dont need this duplicate
 });
 
    
