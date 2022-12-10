@@ -571,13 +571,38 @@ function fetchAndAddDescriptions(url){
                             // Set the inner text of the paragraph element
                             //description.innerText = item.seoData.seoDescription;
                             // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
-                            description.innerHTML = item.seoData.seoDescription + '<span class="pofo-readmore">Read More →</span>';
+                            description.innerHTML = item.seoData.seoDescription + '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
                             // Get the portfolio text element
                             const portfolioText = gridItem.querySelector('.portfolio-text');
                             // Append the description to the portfolio text (so it appears below the h3 title)
                             portfolioText.appendChild(description);
                         }
                     });
+                } else {
+                  // Get all grid items (portfolio links in the tube map)
+                  const gridItems = document.querySelectorAll(`a.grid-item`);
+                  // Loop through all grid items
+                  gridItems.forEach((gridItem) => {
+                      // Get the href attribute of the grid item
+                      const href = gridItem.getAttribute('href');
+                      // Check if the link destiontion is the same as the JSON full URL of the portfolio item
+                      if (href === item.fullUrl) {
+                          // Create a paragraph element
+                          const description = document.createElement('p');
+                          // Add a class to the paragraph element
+                          description.classList.add('seo-description');
+                          // Set the inner text of the paragraph element
+                          //description.innerText = item.seoData.seoDescription;
+                          // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
+                          description.innerHTML = '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
+                          // Get the portfolio text element
+                          const portfolioText = gridItem.querySelector('.portfolio-text');
+                          // Append the description to the portfolio text (so it appears below the h3 title)
+                          portfolioText.appendChild(description);
+                      }
+                  });
+                  
+                
                 }
             });
         }
