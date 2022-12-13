@@ -39,8 +39,8 @@ $( document ).ready(function() {
 */
 
 
-
-  //we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
+/*
+  //⛔ REPLACED we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
   function addPreMarketAndPostMarketTitles() {
     $(".grid-item").first().before("<h2>Pre-Market</h2>");
 
@@ -49,32 +49,13 @@ $( document ).ready(function() {
   }
 
   $( document ).ready(function() {
-    addPreMarketAndPostMarketTitles();
+  //  addPreMarketAndPostMarketTitles();
   });
-
-
-
-
-
-
-
-
-
-//Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
-  function addNumber(){
-    $(".grid-item").each(function(i){
-      var number = i++;
-      $(this).prepend("<div class='number'>" + i + "</div>");
-    });
-  }
-
-//call the function
-$( document ).ready(function() {
-  addNumber();
-});
-
+*/
 
   
+
+
 
 
 
@@ -415,7 +396,7 @@ console.log(links);
 const descriptions = [
     {
         "tubeStop": "services/clinical/inteded-use-pre-market",
-        "description": "Description for Indeded Use lorem ipsum stuff yeah cool nice great text more text."
+        "description": "Description for Indeded Use lorem ipsum stuff yeah cool nice gr eat text more text."
     },
     {
         "tubeStop": "services/clinical/risk-classification-pre-market",
@@ -629,33 +610,159 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //end of document ready
 
 
-// 🟢🟢🟢🟢🟢
+
+// PRE-MARKET AND POST MARKET TITLES in the timeline
+function addPreMarketAndPostMarketTitles() {
+  $(".grid-item").each(function(i) {
+    var $this = $(this);
+    var title = $this.find("h3.portfolio-title").text();
+    if (title.toLowerCase().includes("pre-market")) {
+     // $this.before(title);  //instead of this title make it be h2 
+      $this.before("<h2 class='timeline-title pre-or-post pre'>" + title + "</h2>"); //this is the old title (hardcoded
+    
+      $this.remove();
+    }
+    if (title.toLowerCase().includes("post-market")) {
+      $this.before("<h2 class='timeline-title pre-or-post post'>" + title + "</h2>"); //this is the old title (hardcoded
+      $this.remove();
+    }
+  });
+}
+
+
+
+
+//Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
+  function addNumber(){
+    $(".grid-item").each(function(i){
+      var number = i++;
+      $(this).prepend("<div class='number'>" + i + "</div>");
+      //$(this).prepend("<div class='tube-item-vertical-line'></div>");
+    });
+  }
+
+//call the function
+$( document ).ready(function() {
+  addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
+  addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
+  //prepend <div class='tube-item-vertical-line'></div> to the first .grid-item
+$( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// TUBEMAPS VERTICAL LINE ANIMATION
+function updateTimelineVerticalLine() {
+  // get the distance between the first .tube-item-vertical-line and the top of the window and log it
+  var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
+  console.log(distance);
+  //if the distance is less than 50px. for each scrolled pixel add 1px more to the CSS height of the .tube-item-vertical-line
+  // console log the distance of window top VS top of page
+
+  var pageWindowOffset = window.pageYOffset
+  console.log('window top: ' + pageWindowOffset);
+
+
+  // calculate the height of viewport and divide by 2. create a variable for it
+  let viewportHeight = window.innerHeight;
+  let viewportHeightDividedByTwo = viewportHeight / 2;
+
+
+  // EDIT THIS to change the distance at which the animation starts
+  //let verticalLineAnimationOffset = 400;
+  let verticalLineAnimationOffset = viewportHeightDividedByTwo; // animation the middle of the page - even if resized
+
+  if (distance < verticalLineAnimationOffset) {
+      console.log("ANIMATE");
+      // edit height of .tube-item-vertical-line so when distance is 50, the height is 0. when distance is 40, the height is 10. when distance is 30, the height is 20. when distance is 20, the height is 30. when distance is 10, the height is 40. when distance is 0, the height is 50. but it'll keep growing as you scroll down
+      document.querySelector('.tube-item-vertical-line').style.height = (verticalLineAnimationOffset - distance) + 'px';
+  }
+
+
+      /*
+          // ⛔ let's use a more simple function below a function that checks if the .tube-item-vertical-line overlaps with a .number. if it does, add a class to the .number called "number-overlap"
+            function checkOverlap() {
+              var verticalLine = document.querySelector('.tube-item-vertical-line');
+              var numbers = document.querySelectorAll('.number');
+              numbers.forEach(function(number) {
+                var numberRect = number.getBoundingClientRect();
+                var verticalLineRect = verticalLine.getBoundingClientRect();
+                if (numberRect.top < verticalLineRect.bottom && numberRect.bottom > verticalLineRect.top) {
+                  number.classList.add('number-overlap');
+                } else {
+                  number.classList.remove('number-overlap');
+                }
+              });
+            }
+
+            //checkOverlap();
+    */
+
+
+  // a function that checks if a .number -element is less than verticalLineAnimationOffset from the top of the window. if it is, the vertical line has "touched" it. add a class to the .number called "number-overlap". if it's not, remove the class
+  function checkNumberOverlap() {
+    var numbers = document.querySelectorAll('.number');
+    numbers.forEach(function(number) {
+      var numberRect = number.getBoundingClientRect();
+      if (numberRect.top < verticalLineAnimationOffset) {
+        number.classList.add('number-overlap');
+      } else {
+        number.classList.remove('number-overlap');
+      }
+    });
+  }
+
+  checkNumberOverlap();
+}
+
+
+
+// tubemaps - update vertical line if window is scrolled
+window.onscroll = function () {
+  updateTimelineVerticalLine();
+}
+
+// tubemaps - run updateTimelineVerticalLine(); if window is resized
+window.onresize = function () {
+  updateTimelineVerticalLine();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // DEVELOPMENT STUFF. ALWAYS KEEP THIS
 
 
-//rewrite the function to add the read more thing as last item in .portfolio-text. we dont need the div, just the a tag but make sure to add the class read-more to the a tag
-function addReadMoreToPortfolioItems() {
-    const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(item => {
-    const href = item.getAttribute('href');
-    const portfolioText = item.querySelector('.portfolio-text');
-    portfolioText.insertAdjacentHTML('beforeend', `<a class="js-portfolio-item-read-more" href="${href}">Read More →</a>`);
-    });
-}
-
-//on dom ready call the function
-document.addEventListener('DOMContentLoaded', function() {
-   // addReadMoreToPortfolioItems(); //we dont need this duplicate
-});
-
-   
-
 
 // @codekit-prepend "header-production.js";
 // @codekit-prepend "header-development.js";
-
-
-
 

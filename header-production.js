@@ -652,12 +652,19 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 
 
 
-//domready
-$( document ).ready(function() {
 
 
-/// TIMELINE VERTICAL LINE THAT ANIMATES LIKE STORETASKER
-window.onscroll = function () {
+
+
+
+
+
+
+
+
+
+// TUBEMAPS VERTICAL LINE ANIMATION
+function updateTimelineVerticalLine() {
   // get the distance between the first .tube-item-vertical-line and the top of the window and log it
   var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
   console.log(distance);
@@ -718,10 +725,35 @@ window.onscroll = function () {
   }
 
   checkNumberOverlap();
-  
-}; // end of window.onscroll function
+}
 
-});
+
+
+// tubemaps - update vertical line if window is scrolled
+window.onscroll = function () {
+  updateTimelineVerticalLine();
+}
+
+// tubemaps - run updateTimelineVerticalLine(); if window is resized
+window.onresize = function () {
+  updateTimelineVerticalLine();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
