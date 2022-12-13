@@ -40,7 +40,7 @@ $( document ).ready(function() {
 
 
 
-  //we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
+  //⛔ REPLACED we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
   function addPreMarketAndPostMarketTitles() {
     $(".grid-item").first().before("<h2>Pre-Market</h2>");
 
@@ -49,13 +49,28 @@ $( document ).ready(function() {
   }
 
   $( document ).ready(function() {
-    addPreMarketAndPostMarketTitles();
+  //  addPreMarketAndPostMarketTitles();
   });
 
 
+  
+  //👍  CREATE PRE-MARKET and POST-MARKET TITLES in the portfolio tube map
+function addPreMarketAndPostMarketTitles() {
+  $(".grid-item").each(function(i) {
+    var $this = $(this);
+    var title = $this.find("h3.portfolio-title").text();
+    if (title.toLowerCase().includes("pre-market")) {
+      $this.before("<h2>Pre-Market</h2>");
+      $this.remove();
+    }
+    if (title.toLowerCase().includes("post-market")) {
+      $this.before("<h2>Post-Market</h2>");
+      $this.remove();
+    }
+  });
+}
 
-
-
+addPreMarketAndPostMarketTitles()
 
 
 
