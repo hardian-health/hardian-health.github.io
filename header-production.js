@@ -39,7 +39,7 @@ $( document ).ready(function() {
 */
 
 
-
+/*
   //⛔ REPLACED we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
   function addPreMarketAndPostMarketTitles() {
     $(".grid-item").first().before("<h2>Pre-Market</h2>");
@@ -51,26 +51,27 @@ $( document ).ready(function() {
   $( document ).ready(function() {
   //  addPreMarketAndPostMarketTitles();
   });
-
+*/
 
   
-  //👍  CREATE PRE-MARKET and POST-MARKET TITLES in the portfolio tube map
+
+// PRE-MARKET AND POST MARKET TITLES in the timeline
 function addPreMarketAndPostMarketTitles() {
   $(".grid-item").each(function(i) {
     var $this = $(this);
     var title = $this.find("h3.portfolio-title").text();
     if (title.toLowerCase().includes("pre-market")) {
-      $this.before("<h2>Pre-Market</h2>");
+     // $this.before(title);  //instead of this title make it be h2 
+      $this.before("<h2 class='timeline-title pre-or-post pre'>" + title + "</h2>"); //this is the old title (hardcoded
+    
       $this.remove();
     }
     if (title.toLowerCase().includes("post-market")) {
-      $this.before("<h2>Post-Market</h2>");
+      $this.before("<h2 class='timeline-title pre-or-post post'>" + title + "</h2>"); //this is the old title (hardcoded
       $this.remove();
     }
   });
 }
-
-addPreMarketAndPostMarketTitles()
 
 
 
@@ -85,7 +86,8 @@ addPreMarketAndPostMarketTitles()
 
 //call the function
 $( document ).ready(function() {
-  addNumber();
+  addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
+  addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
 });
 
 
