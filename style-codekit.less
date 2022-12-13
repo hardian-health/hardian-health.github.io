@@ -1684,8 +1684,11 @@ Literature Review
 
   .grid-item{
     
-  //  width: 80%;
 
+  //  width: 80%;
+.portfolio-text{
+  margin-left: 20px;
+}
     &:hover{
       .number{
         transform:scale(1.06);
@@ -1695,6 +1698,7 @@ Literature Review
       .portfolio-text{
         transform:translateX(6px);
         transform: none !important;
+      //  margin-left: 20px;
       }
       .arrow{
         transform:translateX(8px);
@@ -1741,7 +1745,8 @@ Literature Review
 
 
    .portfolio-title{
-    font-size:16px !important;
+    //font-size:16px !important; //body copy default
+    //font-size:20px !important;
     margin:0 0 4px 0 !important;
     font-weight: 700;
    }
@@ -1779,24 +1784,28 @@ Literature Review
 
 
    .number{
+
+    // https://stackoverflow.com/questions/4861224/how-to-use-css-to-surround-a-number-with-a-circle
+    --timeline-number-size:58px;
+    width: var(--timeline-number-size);
+    line-height: var(--timeline-number-size);
+    left: calc( (var(--timeline-number-size) * -0.5) - 3px); // position depending on size and border
+
+
     z-index: 10;
-    transition:.4s all ease;
+    transition:.2s all ease;
     position:absolute;
-    left:var(--timelinetitleleft);
+    //left:var(--timelinetitleleft);
     background: var(--neutral-white);
     top: ~"calc(50% - 32px)"; // 50% of the height of the element and adjust for size of the number
     //font-size: 30px;
-    font-size: 44px !important;
     font-weight:bold;
     text-align: center;
-    min-width: 50px;
     color:var(--clinical-purple) !important;
     //border:2px solid var(--clinical-purple) !important; //circle-stuff
     border:2px solid transparent !important; //circle-stuff
     border-radius: 100%;
-    font-size: 20px !important;
-    aspect-ratio: 1;
-    line-height: 2.4;
+    font-size: 22px !important;
     &.number-overlap{
       border:2px solid var(--clinical-purple) !important; //circle-stuff
     }
