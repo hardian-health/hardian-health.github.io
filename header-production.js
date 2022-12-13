@@ -55,43 +55,7 @@ $( document ).ready(function() {
 
   
 
-// PRE-MARKET AND POST MARKET TITLES in the timeline
-function addPreMarketAndPostMarketTitles() {
-  $(".grid-item").each(function(i) {
-    var $this = $(this);
-    var title = $this.find("h3.portfolio-title").text();
-    if (title.toLowerCase().includes("pre-market")) {
-     // $this.before(title);  //instead of this title make it be h2 
-      $this.before("<h2 class='timeline-title pre-or-post pre'>" + title + "</h2>"); //this is the old title (hardcoded
-    
-      $this.remove();
-    }
-    if (title.toLowerCase().includes("post-market")) {
-      $this.before("<h2 class='timeline-title pre-or-post post'>" + title + "</h2>"); //this is the old title (hardcoded
-      $this.remove();
-    }
-  });
-}
 
-
-
-
-//Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
-  function addNumber(){
-    $(".grid-item").each(function(i){
-      var number = i++;
-      $(this).prepend("<div class='number'>" + i + "</div>");
-    });
-  }
-
-//call the function
-$( document ).ready(function() {
-  addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
-  addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
-});
-
-
-  
 
 
 
@@ -646,4 +610,71 @@ document.addEventListener("DOMContentLoaded", function(event) {
 //end of document ready
 
 
-// 🟢🟢🟢🟢🟢
+
+// PRE-MARKET AND POST MARKET TITLES in the timeline
+function addPreMarketAndPostMarketTitles() {
+  $(".grid-item").each(function(i) {
+    var $this = $(this);
+    var title = $this.find("h3.portfolio-title").text();
+    if (title.toLowerCase().includes("pre-market")) {
+     // $this.before(title);  //instead of this title make it be h2 
+      $this.before("<h2 class='timeline-title pre-or-post pre'>" + title + "</h2>"); //this is the old title (hardcoded
+    
+      $this.remove();
+    }
+    if (title.toLowerCase().includes("post-market")) {
+      $this.before("<h2 class='timeline-title pre-or-post post'>" + title + "</h2>"); //this is the old title (hardcoded
+      $this.remove();
+    }
+  });
+}
+
+
+
+
+//Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
+  function addNumber(){
+    $(".grid-item").each(function(i){
+      var number = i++;
+      $(this).prepend("<div class='number'>" + i + "</div>");
+      //$(this).prepend("<div class='tube-item-vertical-line'></div>");
+    });
+  }
+
+//call the function
+$( document ).ready(function() {
+  addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
+  addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
+  //prepend <div class='tube-item-vertical-line'></div> to the first .grid-item
+$( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>");
+});
+
+
+
+  
+
+
+/// TIMELINE VERTICAL LINE THAT ANIMATES LIKE STORETASKER
+
+window.onscroll = function () {
+  // get the distance between the first .tube-item-vertical-line and the top of the window and log it
+  var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
+  console.log(distance);
+  //if the distance is less than 50px. for each scrolled pixel add 1px more to the CSS height of the .tube-item-vertical-line
+  // console log the distance of window top VS top of page
+
+  var pageWindowOffset = window.pageYOffset
+  console.log('window top: ' + pageWindowOffset);
+
+  let verticalLineAnimationOffset = 400;
+
+  if (distance < verticalLineAnimationOffset) {
+      console.log("ANIMATE");
+      // edit height of .tube-item-vertical-line so when distance is 50, the height is 0. when distance is 40, the height is 10. when distance is 30, the height is 20. when distance is 20, the height is 30. when distance is 10, the height is 40. when distance is 0, the height is 50. but it'll keep growing as you scroll down
+      document.querySelector('.tube-item-vertical-line').style.height = (verticalLineAnimationOffset - distance) + 'px';
+  }
+
+
+};
+
+

@@ -1229,6 +1229,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 }
 */
 #gridThumbs {
+  overflow: hidden;
   position: relative;
   padding-left: 40px;
   /*
@@ -1283,6 +1284,8 @@ Literature Review
 #gridThumbs h2 {
   width: 100%;
   margin-left: -20px !important;
+  z-index: 10;
+  background-color: var(--neutral-white);
 }
 #gridThumbs .grid-item {
   box-sizing: border-box;
@@ -1294,13 +1297,17 @@ Literature Review
   --sizeandleft: 4px;
 }
 #gridThumbs .grid-item:hover .number {
-  transform: scale(1.04);
+  transform: scale(1.06);
   transform-origin: center center;
 }
 #gridThumbs .grid-item:hover .portfolio-text {
   transform: translateX(6px);
+  transform: none !important;
 }
 #gridThumbs .grid-item:hover .arrow {
+  transform: translateX(8px);
+}
+#gridThumbs .grid-item:hover .pofo-readmore {
   transform: translateX(8px);
 }
 #gridThumbs .grid-item * {
@@ -1345,6 +1352,7 @@ Literature Review
   display: inline-block;
 }
 #gridThumbs .grid-item .number {
+  z-index: 10;
   position: absolute;
   left: var(--timelinetitleleft);
   background: var(--neutral-white);
@@ -1393,6 +1401,18 @@ Literature Review
         // Reverse the above rule 
     }
 */
+.tube-item-vertical-line {
+  transition: none !important;
+  background: var(--neutral-darkgrey) !important;
+  height: 0;
+  position: absolute;
+  width: 1px;
+  left: -1px;
+  top: 0;
+  z-index: 5;
+  width: 2px;
+  left: -1.5px;
+}
 /*END 
 🟪
 🟪

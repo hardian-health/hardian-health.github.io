@@ -1607,6 +1607,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 
 
 #gridThumbs{
+  overflow: hidden; // hack for vertical animated line not to go over the edge
   position:relative;
   //padding: 0 30px;
   padding-left: 40px;
@@ -1677,21 +1678,29 @@ Literature Review
       //margin-left: unset !important;
       width: 100%;
       margin-left:-20px !important;
+      z-index: 10;
+      background-color: var(--neutral-white);
     }
 
   .grid-item{
+    
   //  width: 80%;
 
     &:hover{
       .number{
-        transform:scale(1.04);
+        transform:scale(1.06);
         transform-origin: center center;
 
       }
       .portfolio-text{
         transform:translateX(6px);
+        transform: none !important;
       }
       .arrow{
+        transform:translateX(8px);
+       // transform: none !important;
+      }
+      .pofo-readmore{
         transform:translateX(8px);
       }
 
@@ -1770,6 +1779,7 @@ Literature Review
 
 
    .number{
+    z-index: 10;
     position:absolute;
     left:var(--timelinetitleleft);
     background: var(--neutral-white);
@@ -1830,7 +1840,19 @@ Literature Review
 
 
 
-
+.tube-item-vertical-line {
+  transition: none !important;
+  background: var(--neutral-darkgrey) !important;
+    height: 0;
+    position: absolute;
+    width: 1px;
+    left: -1px;
+    top: 0;
+    z-index: 5;
+    //NEW Hugh
+    width: 2px;
+    left: -1.5px;
+}
 
 
 /*END 
@@ -1842,6 +1864,7 @@ Literature Review
 🟩
 SERVIES PORTFOLIO SUBPAGE SKETCHING
 */
+
 
 
 
