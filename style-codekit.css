@@ -11,7 +11,7 @@
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
-  --timelinetitleleft: -26px;
+  --timelinetitleleft: -28px;
 }
 /* *****
  SERVICES DROPDOWN COLOR BOXES
@@ -1353,6 +1353,7 @@ Literature Review
 }
 #gridThumbs .grid-item .number {
   z-index: 10;
+  transition: 0.4s all ease;
   position: absolute;
   left: var(--timelinetitleleft);
   background: var(--neutral-white);
@@ -1362,6 +1363,14 @@ Literature Review
   text-align: center;
   min-width: 50px;
   color: var(--clinical-purple) !important;
+  border: 2px solid transparent !important;
+  border-radius: 100%;
+  font-size: 20px !important;
+  aspect-ratio: 1;
+  line-height: 2.4;
+}
+#gridThumbs .grid-item .number.number-overlap {
+  border: 2px solid var(--clinical-purple) !important;
 }
 /*
     .grid-item[href*="post"] {
@@ -1403,7 +1412,7 @@ Literature Review
 */
 .tube-item-vertical-line {
   transition: none !important;
-  background: var(--neutral-darkgrey) !important;
+  background: var(--clinical-purple) !important;
   height: 0;
   position: absolute;
   width: 1px;

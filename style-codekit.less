@@ -15,7 +15,7 @@
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
 
-  --timelinetitleleft: -26px;
+  --timelinetitleleft: -28px;
 }
 
 
@@ -1780,6 +1780,7 @@ Literature Review
 
    .number{
     z-index: 10;
+    transition:.4s all ease;
     position:absolute;
     left:var(--timelinetitleleft);
     background: var(--neutral-white);
@@ -1790,6 +1791,15 @@ Literature Review
     text-align: center;
     min-width: 50px;
     color:var(--clinical-purple) !important;
+    //border:2px solid var(--clinical-purple) !important; //circle-stuff
+    border:2px solid transparent !important; //circle-stuff
+    border-radius: 100%;
+    font-size: 20px !important;
+    aspect-ratio: 1;
+    line-height: 2.4;
+    &.number-overlap{
+      border:2px solid var(--clinical-purple) !important; //circle-stuff
+    }
    }
 
 
@@ -1842,7 +1852,8 @@ Literature Review
 
 .tube-item-vertical-line {
   transition: none !important;
-  background: var(--neutral-darkgrey) !important;
+  //background: var(--neutral-darkgrey) !important;
+  background: var(--clinical-purple) !important;
     height: 0;
     position: absolute;
     width: 1px;

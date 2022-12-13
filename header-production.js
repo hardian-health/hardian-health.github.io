@@ -651,11 +651,12 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 
 
 
-  
+
+//domready
+$( document ).ready(function() {
 
 
 /// TIMELINE VERTICAL LINE THAT ANIMATES LIKE STORETASKER
-
 window.onscroll = function () {
   // get the distance between the first .tube-item-vertical-line and the top of the window and log it
   var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
@@ -666,7 +667,15 @@ window.onscroll = function () {
   var pageWindowOffset = window.pageYOffset
   console.log('window top: ' + pageWindowOffset);
 
-  let verticalLineAnimationOffset = 400;
+
+  // calculate the height of viewport and divide by 2. create a variable for it
+  let viewportHeight = window.innerHeight;
+  let viewportHeightDividedByTwo = viewportHeight / 2;
+
+
+  // EDIT THIS to change the distance at which the animation starts
+  //let verticalLineAnimationOffset = 400;
+  let verticalLineAnimationOffset = viewportHeightDividedByTwo; // animation the middle of the page - even if resized
 
   if (distance < verticalLineAnimationOffset) {
       console.log("ANIMATE");
@@ -675,6 +684,44 @@ window.onscroll = function () {
   }
 
 
-};
+      /*
+          // ⛔ let's use a more simple function below a function that checks if the .tube-item-vertical-line overlaps with a .number. if it does, add a class to the .number called "number-overlap"
+            function checkOverlap() {
+              var verticalLine = document.querySelector('.tube-item-vertical-line');
+              var numbers = document.querySelectorAll('.number');
+              numbers.forEach(function(number) {
+                var numberRect = number.getBoundingClientRect();
+                var verticalLineRect = verticalLine.getBoundingClientRect();
+                if (numberRect.top < verticalLineRect.bottom && numberRect.bottom > verticalLineRect.top) {
+                  number.classList.add('number-overlap');
+                } else {
+                  number.classList.remove('number-overlap');
+                }
+              });
+            }
+
+            //checkOverlap();
+    */
+
+
+  // a function that checks if a .number -element is less than verticalLineAnimationOffset from the top of the window. if it is, the vertical line has "touched" it. add a class to the .number called "number-overlap". if it's not, remove the class
+  function checkNumberOverlap() {
+    var numbers = document.querySelectorAll('.number');
+    numbers.forEach(function(number) {
+      var numberRect = number.getBoundingClientRect();
+      if (numberRect.top < verticalLineAnimationOffset) {
+        number.classList.add('number-overlap');
+      } else {
+        number.classList.remove('number-overlap');
+      }
+    });
+  }
+
+  checkNumberOverlap();
+  
+}; // end of window.onscroll function
+
+});
+
 
 
