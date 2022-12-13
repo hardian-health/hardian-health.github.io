@@ -1328,6 +1328,7 @@ Literature Review
   background: var(--clinical-purple);
 }
 #gridThumbs .grid-item .portfolio-title {
+  font-size: 16px !important;
   margin: 0 0 4px 0 !important;
   font-weight: 700;
 }
