@@ -1296,6 +1296,9 @@ Literature Review
   position: relative;
   --sizeandleft: 4px;
 }
+#gridThumbs .grid-item .portfolio-text {
+  margin-left: 20px;
+}
 #gridThumbs .grid-item:hover .number {
   transform: scale(1.06);
   transform-origin: center center;
@@ -1325,7 +1328,6 @@ Literature Review
   background: var(--clinical-purple);
 }
 #gridThumbs .grid-item .portfolio-title {
-  font-size: 16px !important;
   margin: 0 0 4px 0 !important;
   font-weight: 700;
 }
@@ -1352,22 +1354,21 @@ Literature Review
   display: inline-block;
 }
 #gridThumbs .grid-item .number {
+  --timeline-number-size: 58px;
+  width: var(--timeline-number-size);
+  line-height: var(--timeline-number-size);
+  left: calc( (var(--timeline-number-size) * -0.5) - 3px);
   z-index: 10;
-  transition: 0.4s all ease;
+  transition: 0.2s all ease;
   position: absolute;
-  left: var(--timelinetitleleft);
   background: var(--neutral-white);
   top: calc(50% - 32px);
-  font-size: 44px !important;
   font-weight: bold;
   text-align: center;
-  min-width: 50px;
   color: var(--clinical-purple) !important;
   border: 2px solid transparent !important;
   border-radius: 100%;
-  font-size: 20px !important;
-  aspect-ratio: 1;
-  line-height: 2.4;
+  font-size: 22px !important;
 }
 #gridThumbs .grid-item .number.number-overlap {
   border: 2px solid var(--clinical-purple) !important;
