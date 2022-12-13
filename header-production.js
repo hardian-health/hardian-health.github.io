@@ -739,9 +739,10 @@ window.onresize = function () {
   updateTimelineVerticalLine();
 }
 
-
-
-
+//window load event
+window.addEventListener('load', function () {
+  updateTimelineVerticalLine();
+});
 
 
 
