@@ -1282,6 +1282,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 }
 #gridThumbs .grid-item:hover .number {
   transform: scale(1.06);
+  transform: none !important;
   transform-origin: center center;
 }
 #gridThumbs .grid-item:hover .portfolio-text {
@@ -1292,7 +1293,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   transform: translateX(8px);
 }
 #gridThumbs .grid-item:hover .pofo-readmore {
-  transform: translateX(8px);
+  transform: none !important;
 }
 #gridThumbs .grid-item * {
   transition: 0.3s all ease;
@@ -1354,6 +1355,12 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 }
 #gridThumbs .grid-item .number.number-overlap {
   border: 2px solid var(--clinical-purple) !important;
+}
+.no-touch #gridThumbs .grid-item .pofo-readmore {
+  opacity: 0;
+}
+.no-touch #gridThumbs .grid-item:hover .pofo-readmore {
+  opacity: 1;
 }
 /*
     .grid-item[href*="post"] {
