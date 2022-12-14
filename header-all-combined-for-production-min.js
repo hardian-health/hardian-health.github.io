@@ -760,7 +760,99 @@ window.addEventListener('load', function () {
 
 
 
-// DEVELOPMENT STUFF. ALWAYS KEEP THIS
+/**
+ * 5 KEY VERTICAL SPECIFIC EDITS. MAINLY COLORS FOR TOP BAR AND BOTTOM BAR IN IOS SAFARI 
+ * AND CHROME OVERSCROLL
+ * AND  .clinical -type BODY CLASS SO WE CAN STYLE TUBE MAP COLORS 
+ */
+
+
+// function to get CSS variable values from CSS
+function getCSSVariableValue(variableName) {
+  return getComputedStyle(document.documentElement).getPropertyValue(variableName);
+}
+
+
+//Function to set the body background color (bottom bar in iOS and chrome overscroll) and the top-bar theme color for iOS Safari
+function setBodyBackgroundAndThemeColor(color) {
+  $('body').css('background', color);
+  $('head').append('<meta name="theme-color" content="' + color + '">');
+}
+// e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
+
+
+
+//Check if we're on a specific 5 key vertical service page OR service category page. add a class to the body and style iOS Safari top bar and bottom bar etc
+function keyVerticalSpecificEdits() {
+var path = window.location.pathname;
+var body = document.querySelector('body');
+
+switch (path) {
+  case '/blog/category/Health+Economics':
+  case '/health-economics':
+    body.classList.add('health-economics');
+    console.log('health-economics');
+    setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
+    break;
+  case '/blog/category/Intellectual+Property':
+  case '/intellectual-property':
+    body.classList.add('intellectual-property');
+    console.log('intellectual-property');
+    setBodyBackgroundAndThemeColor(getCSSVariableValue('--ip-darkblue'));
+    break;
+  case '/blog/category/Regulatory':
+  case '/regulatory':
+    body.classList.add('regulatory');
+    console.log('regulatory');
+    setBodyBackgroundAndThemeColor(getCSSVariableValue('--regulatory-mintgreen'));
+    break;
+  case '/blog/category/Strategy':
+  case '/strategy':
+    body.classList.add('strategy');
+    setBodyBackgroundAndThemeColor(getCSSVariableValue('--strategy-lightblue'));
+    console.log('strategy');
+    break;
+  case '/blog/category/Clinical':
+  case '/clinical':
+    body.classList.add('clinical');
+      setBodyBackgroundAndThemeColor(getCSSVariableValue('--clinical-purple'));
+    console.log('clinical');
+    break;
+  default:
+    break;
+}
+}
+
+// run keyVerticalSpecificEdits() as a try catch. if it fails, it will not break the rest of the code
+try {
+  //keyVerticalSpecificEdits(); // disabled until client confirms
+  } catch (error) {
+  console.log(error);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
