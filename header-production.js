@@ -107,7 +107,7 @@ var categoryLabelLink = $(this).attr("href");
 
   if(categoryLabelLink == currentCategory){
       console.log("ACTIVATE THIS ONE");
-      $(this).addClass("blog-post-category-current-filter active-filter");
+      $(this).addClass("blog-post-category-current-filter ");
   }
   
 })
@@ -118,36 +118,23 @@ var categoryLabelLink = $(this).attr("href");
 
 
 
+//This function will style blog page tag navigation. It'll compare the link destination url to current url. If they're the same, we'll make that link active
+if (window.location.pathname.includes("/blog")) {
 
+  $(document).ready(function() {
 
-// BLOG CATEGORY NAVIGATION - ADD SELECTED CLASS TO CURRENTLY SELECTED CATEGORY
-function styleBlogTagNavigation() {
+    var currentPagePath = window.location.pathname;
 
-  // ADD BLOG TAG NAVIGATION SECTION ID HERE)
-  var blogCategoryNavigationBlockLink = 'section[data-section-id="63936a7c3d674d7079783a93"] a';
-
-  if (window.location.pathname.includes("/blog")) {
-      $(document).ready(function() {
-
-        var currentPagePath = window.location.pathname;
-  
-        $(blogCategoryNavigationBlockLink).each(function() {
-          if (currentPagePath == $(this).attr("href")) {
-            console.log(" ✅ Blog Tag Navigation — Current URL and the link matches. Lets style it to be active:" + $(this).text());
-            $(this).addClass("active-filter");
-          }
-        })
-      });
-  }
+    $(".fe-block-yui_3_17_2_1_1669985837576_4451 a").each(function() {
+      // console.log(currentPagePath);
+      //console.log($(this).attr("href"));
+      if (currentPagePath == $(this).attr("href")) {
+        console.log(" ✅ Blog Tag Navigation — Current URL and the link matches. Lets style it to be active:" + $(this).text());
+        $(this).addClass("active-filter");
+      }
+    })
+  });
 }
-
-styleBlogTagNavigation();
-
-
-
-
-
-
 
 
 
