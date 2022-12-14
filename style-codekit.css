@@ -1433,3 +1433,11 @@ Literature Review
 🟩
 SERVIES PORTFOLIO SUBPAGE SKETCHING
 */
+/*
+* NEWSLETTER - SUBPAGE and FOOTER NEWSLETTER BLOCK
+*/
+.newsletter-block .newsletter-form-field-element,
+.newsletter-block .newsletter-form-button {
+  padding: 0.84rem 2rem !important;
+  border: none !important;
+}
