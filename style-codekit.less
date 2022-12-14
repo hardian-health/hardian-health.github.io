@@ -1639,37 +1639,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 
 
 
-/*
-I need an excerpt for heading: "Risk Classification"
 
-context: It's regarding clinical, research and medical affairs support throughout the life cycle of an AI or healthtech product - SAMD. This is on of the required pre-market steps. Write 200 character snippet for the heading explaining in very simple terms what this means.
-//Risk Classification: The process of determining the risk level of a medical device or AI product. The risk level is determined by the potential harm that the product may cause to the patient or user. The risk level is used to determine the level of clinical evidence required to support the product.
-
-
-// add exceprt for "PICO" as the next heading.
-//PICO: An acronym for the four elements of a clinical question: Population, Intervention, Comparison, Outcome. The PICO elements are used to formulate a clinical question that can be answered by a clinical trial or other research study. The PICO elements are used to formulate a clinical question that can be answered by a clinical trial or other research study.
-
-// same for "Pathway validation"
-//Pathway validation: The process of validating the clinical pathway for a medical device or AI product. The clinical pathway is the process of how the product will be used in the clinical setting. The clinical pathway is validated by conducting a clinical trial or other research study.
-
-
-// same for these headings:
-Medical Device File Design 
-Evidence review
-Clinical Evaluation Plan
-and
-Literature Review
-
-
-// Medical Device File Design: The process of designing the medical device file for a medical device or AI product. The medical device file is the documentation that is submitted to the regulatory authority to support the product. The medical device file is designed by conducting a clinical trial or other research study.
-
-//evidece review: The process of reviewing the evidence to support a medical device or AI product. The evidence is reviewed to determine the level of clinical evidence required to support the product. The evidence is reviewed by conducting a clinical trial or other research study.
-
-//clinical evaluation plan: The process of designing the clinical evaluation plan for a medical device or AI product. The clinical evaluation plan is the documentation that is submitted to the regulatory authority to support the product. The clinical evaluation plan is designed by conducting a clinical trial or other research study.
-
-//Literature Review: The process of reviewing the literature to support a medical device or AI product. The literature is reviewed to determine the level of clinical evidence required to support the product. The literature is reviewed by conducting a clinical trial or other research study.
-
-*/
 
 
     h2{
@@ -1682,7 +1652,7 @@ Literature Review
       background-color: var(--neutral-white);
     }
 
-  .grid-item{
+  .grid-item {
     
 
   //  width: 80%;
@@ -1692,6 +1662,7 @@ Literature Review
     &:hover{
       .number{
         transform:scale(1.06);
+        transform:none !important;
         transform-origin: center center;
 
       }
@@ -1705,7 +1676,8 @@ Literature Review
        // transform: none !important;
       }
       .pofo-readmore{
-        transform:translateX(8px);
+        //transform:translateX(8px);
+        transform: none !important;
       }
 
     }
@@ -1756,6 +1728,8 @@ Literature Review
     margin: 0 !important;
     .pofo-readmore{
 
+      
+
     // TODO make reusable less . class for read more links
         display:block;
         margin-top:16px;
@@ -1775,8 +1749,6 @@ Literature Review
         display: inline-block;
       }
         
-
-
 
 
     }
@@ -1811,6 +1783,18 @@ Literature Review
     }
    }
 
+   
+   .no-touch & {
+    .pofo-readmore{
+      opacity:0;
+    }
+    &:hover{
+      .pofo-readmore{
+        opacity:1;
+      }
+    }
+   }
+   
 
   }
 
