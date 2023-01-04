@@ -1422,3 +1422,9 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   padding: 0.84rem 2rem !important;
   border: none !important;
 }
+#block-yui_3_17_2_1_1672830175723_37275 input.newsletter-form-field-element {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+#collection-63b55cee346eda406188c653 section[data-section-id="62f5380c4bfb83573bcedd97"] {
+  display: none;
+}
