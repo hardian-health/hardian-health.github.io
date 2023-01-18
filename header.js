@@ -380,7 +380,6 @@ console.log("Header production ran to the end");
 
 
 
-
 /*******
 * ****************
 * TUBE MAP DESCRIPTIONS
@@ -621,7 +620,9 @@ function fetchAndAddDescriptions(url){
 
 
 //run fetchAndAddDescriptions() on document ready
-document.addEventListener("DOMContentLoaded", function(event) {
+//document.addEventListener("DOMContentLoaded", function(event) { //replace with jquery dom ready
+$(document).ready(function() {
+
     //fetchAndAddDescriptions();
     // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
     if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
