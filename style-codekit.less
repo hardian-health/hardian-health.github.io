@@ -1905,9 +1905,18 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 
 //NEWSLETTER PAGE
 
+//hide blank heading from newsletter block - we're not using it and it'll create weird spacing. 
+#block-yui_3_17_2_1_1672830175723_37275, 
+#block-a6d2b76149f477c1df75{ .newsletter-form-header{
+  display:none;
+}}
+
 //Add borders for fields in this page. 
-#block-yui_3_17_2_1_1672830175723_37275 input.newsletter-form-field-element {
-    border: 1px solid rgba(0,0,0,.12) !important;
+#block-yui_3_17_2_1_1672830175723_37275 { input.newsletter-form-field-element {
+  border: 1px solid #0000004a !important;
+    border-radius: 3px;
+    padding: 0.76rem 2rem !important;
+  }
 }
 
 // Hide footer newsletter section on  thenewsletter page - it'd look weird having it twice

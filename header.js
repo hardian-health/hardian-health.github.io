@@ -107,7 +107,7 @@ var categoryLabelLink = $(this).attr("href");
 
   if(categoryLabelLink == currentCategory){
       console.log("ACTIVATE THIS ONE");
-      $(this).addClass("blog-post-category-current-filter ");
+      $(this).addClass("blog-post-category-current-filter active-filter");
   }
   
 })
@@ -118,23 +118,36 @@ var categoryLabelLink = $(this).attr("href");
 
 
 
-//This function will style blog page tag navigation. It'll compare the link destination url to current url. If they're the same, we'll make that link active
-if (window.location.pathname.includes("/blog")) {
 
-  $(document).ready(function() {
 
-    var currentPagePath = window.location.pathname;
+// BLOG CATEGORY NAVIGATION - ADD SELECTED CLASS TO CURRENTLY SELECTED CATEGORY
+function styleBlogTagNavigation() {
 
-    $(".fe-block-yui_3_17_2_1_1669985837576_4451 a").each(function() {
-      // console.log(currentPagePath);
-      //console.log($(this).attr("href"));
-      if (currentPagePath == $(this).attr("href")) {
-        console.log(" ✅ Blog Tag Navigation — Current URL and the link matches. Lets style it to be active:" + $(this).text());
-        $(this).addClass("active-filter");
-      }
-    })
-  });
+  // ADD BLOG TAG NAVIGATION SECTION ID HERE)
+  var blogCategoryNavigationBlockLink = 'section[data-section-id="63936a7c3d674d7079783a93"] a';
+
+  if (window.location.pathname.includes("/blog")) {
+      $(document).ready(function() {
+
+        var currentPagePath = window.location.pathname;
+  
+        $(blogCategoryNavigationBlockLink).each(function() {
+          if (currentPagePath == $(this).attr("href")) {
+            console.log(" ✅ Blog Tag Navigation — Current URL and the link matches. Lets style it to be active:" + $(this).text());
+            $(this).addClass("active-filter");
+          }
+        })
+      });
+  }
 }
+
+styleBlogTagNavigation();
+
+
+
+
+
+
 
 
 
@@ -836,26 +849,126 @@ try {
 
 
 
+// for porftfolio sub-pages, make a function that will compare the title  of the page with the JSON title and  if we are on the first, second, third, etc. page of the portfolio. get that number
+function getPortfolioPageNumber() {
+
+  // get the title of the page from h1
+//var pageTitle = document.querySelector("h1").innerText;
+// use page title instead of h1
+var pageTitle = document.title;
+
+console.log(pageTitle);
+
+var fetchUrl = window.location.origin + window.location.pathname.split("/").slice(0, -1).join("/") + "?format=json-pretty";
+console.log("fetchUrl: " + fetchUrl);
+
+
+
+
+fetch(fetchUrl, { 
+   method: 'GET',
+   headers: myHeaders
+})
+.then(function(response) { return response.json(); })
+.then(function(json) {
+   // use the json
+   //
+   console.log("json: " + json);
+
+   // make an iterator number to keep track of the number of portfolio items we have iterated over
+   var i = 0;
+   // make a variable for "Pre-market" or "Post-market" 
+   var preOrPost = "Pre-market";
+   var numberOfThisPortfolioItem = 0;
+   var totalNumberOfPortfolioItems = 0;
+
+   // loop through the json and find the title that matches the page title
+   json.items.forEach((item) => {
+    //add 1 to the iterator number and log it
+     // if item.title does not containt "pre-market" or "post-market" (any case, lower uppet etc), then add 1 to the iterator number
+     if (!item.title.toLowerCase().includes("pre-market") && !item.title.toLowerCase().includes("post-market")) {
+         i++;
+     }
+     // if we have iterated over "post-market" , then update preOrPost to "Post-market"
+     if (item.title.toLowerCase().includes("post-market")) {
+         preOrPost = "Post-market";
+     }
+     
+   // console log preOrPost and i
+     console.log("preOrPost: " + preOrPost + " i: " + i);
+     totalNumberOfPortfolioItems = i;
+     console.log("totalNumberOfPortfolioItems: " + totalNumberOfPortfolioItems);
+
+
+     // check if the title of the page matches the title of the json item
+     //if (item.title == pageTitle) {
+       // compare lowercase versions of item.title and pageTitle
+     //if (item.title.toLowerCase() == pageTitle.toLowerCase()) {
+     //bacause we switched to page title instead of h1 we need to see if the page title contains the json title. it might  have other text in it
+     if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) {
+         
+         console.log("🎉🎉🎉🎉FOUND IT: " + item.title + " VS " + pageTitle );
+         numberOfThisPortfolioItem = i;
+         // get the page number of the portfolio item
+ 
+     } else{
+         console.log( item.title + " VS " + pageTitle + " — not a match.");
+     }
+   
+
+   
+
+ });
+
+ // with jQuery find a p tag with class "sqsrte-small" which contains "Pre-market"
+ var preMarket = $("p.sqsrte-small:contains('Step')");
+ preMarket.html(preOrPost  + " step " + numberOfThisPortfolioItem + "/" + totalNumberOfPortfolioItems );
+
+ /* we want to create this :
+ <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small">Services &gt; <a href="/clinical">Clinical</a> &gt; <a href="#">Pre-market</a> &gt; <a href="#">Step 1/10 – Intended use</a></p>
+ 
+ */
+
+});
+} // end of getPortfolioPageNumber() function
+
+
+// run getPortfolioPageNumber() 
+getPortfolioPageNumber();
+
+
+
+
+// TODO fetch the title and description of the page 
+
+
+function subServicePageTitleAndDescription() {
+
+
+  var fetchUrl = window.location.href + "?format=json-pretty";
+  fetch(fetchUrl, { 
+    method: 'GET',
+    headers: myHeaders
+ })
+ .then(function(response) { return response.json(); })
+ .then(function(json) {
+    // use the json
+    //
+    console.log("json: " + json);
+    console.log("👍👍👍👍👍👍YESSS")
+ 
+ 
+ });
+}
+
+subServicePageTitleAndDescription();
+
+
+
+console.log("👍👍👍👍👍👍YESSS")
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @codekit-prepend "header-production.js";
-// @codekit-prepend "header-development.js";
 
