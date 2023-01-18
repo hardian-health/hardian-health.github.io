@@ -760,21 +760,23 @@ function updateTimelineVerticalLine() {
 }
 
 
+// on jquery domready, if page contains #gridThumbs
+$( document ).ready(function() {
+  if ($('#gridThumbs').length) {
+    updateTimelineVerticalLine();
+    // tubemaps - update vertical line if window is scrolled
+    window.onscroll = function () {
+      updateTimelineVerticalLine();
+    }
 
-// tubemaps - update vertical line if window is scrolled
-window.onscroll = function () {
-  updateTimelineVerticalLine();
-}
-
-// tubemaps - run updateTimelineVerticalLine(); if window is resized
-window.onresize = function () {
-  updateTimelineVerticalLine();
-}
-
-//window load event
-window.addEventListener('load', function () {
-  updateTimelineVerticalLine();
+    // tubemaps - run updateTimelineVerticalLine(); if window is resized
+    window.onresize = function () {
+      updateTimelineVerticalLine();
+    }
+  }
 });
+
+
 
 
 
