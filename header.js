@@ -494,6 +494,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 
 
+//fetch cache stuff - "headers"
+var myHeaders = new Headers();
+
+//fetch headers – shouold they be A) cached for speed or B) non-cached for admin to see chances in real time?
+   // Caching the portfolio SEO description for visitors
+// The portfolio SEO description is not cached for admin users, so we'll only cache it for visitors
+
+// If the url contains .squarespace.com, we're assuming it's admin logged in and won't cache the portfolio SEO description
+// If the url does not contain .squarespace.com, we're assuming it's a visitor and will cache the portfolio SEO description
+if(document.location.host.includes(".squarespace.com")){
+    console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description");
+    myHeaders.append('pragma', 'no-cache');
+    myHeaders.append('cache-control', 'no-cache');
+
+} else{
+    console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description to make everything quicker");
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -513,23 +538,7 @@ function fetchAndAddDescriptions(url){
     //write new fetchUrl where we combine origin and pathname but skip the rest of the url
     var fetchUrl = window.location.origin + window.location.pathname + "?format=json-pretty";
 
-    //fetch cache stuff - "headers"
-    var myHeaders = new Headers();
-
-    //fetch headers – shouold they be A) cached for speed or B) non-cached for admin to see chances in real time?
-       // Caching the portfolio SEO description for visitors
-    // The portfolio SEO description is not cached for admin users, so we'll only cache it for visitors
-
-    // If the url contains .squarespace.com, we're assuming it's admin logged in and won't cache the portfolio SEO description
-    // If the url does not contain .squarespace.com, we're assuming it's a visitor and will cache the portfolio SEO description
-    if(document.location.host.includes(".squarespace.com")){
-        console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description");
-        myHeaders.append('pragma', 'no-cache');
-        myHeaders.append('cache-control', 'no-cache');
-
-    } else{
-        console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description to make everything quicker");
-    }
+    
 
 
 
