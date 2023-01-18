@@ -271,6 +271,11 @@ $( document ).ready(function() {
 // home hero css animation
 // add try function so if it doesn't  work, it won't break the code
 try {
+
+function animateStrikedThroughHeadingsCodeAndTonicStyle(){
+  
+}
+
    //code that might throw an exception
    var howLongWeShowALineFor = 2500;
    var howCloseShouldTheAnimationsOverlap = 360;
@@ -281,10 +286,10 @@ try {
    
    
    //select a heading that has a strike through (way for user to select a heading to be animated)
-   var animatedH1 = $( "h1, h2, h3" ).has( "span[style*='line-through']" );
-   
-   
-   //remove white-space:pre-wrap;
+   var animatedH1 = $( "h1, h2, h3" ).has( "span[style*='line-through']" ); // let's check if we have a heading with a strike through first
+   if(animatedH1.length){
+        console.log("✅ We have a heading with a strike through. Let's animate it");
+      //remove white-space:pre-wrap;
    animatedH1.css("white-space", "normal");
    
    //add a class so we can add CSS animations not for all headings, but only animated specific ones
@@ -360,6 +365,15 @@ try {
    
    changeWord();
    setInterval(changeWord, howLongWeShowALineFor);
+
+   } else{
+      console.log("no heading with a strike through - no animation for you");
+
+   }
+
+   
+   
+   
      
      }); 
 
