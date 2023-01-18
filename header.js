@@ -1,5 +1,14 @@
 
 console.log("Header production JS Started");
+
+
+/**
+ * 
+ * ALWAYS USE JQUERY DOMREADY INSTEAD OF VANILLA JS DOMContentLoaded
+ * OTHERWISE DYNAMIC JS SCRIPT LOADING WILL NOT WORK
+ * 
+ */
+
   
 /*
 *  PORFTOLIO GRID JS STUFF
