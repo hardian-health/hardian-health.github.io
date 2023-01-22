@@ -9,43 +9,43 @@ console.log("Header production JS Started");
  * 
  */
 
+
+
+
+
+
+
+
+/**
+ * FETCH CACHE HEADERS
+ */
+
+var myHeaders = new Headers();
+// If the url contains .squarespace.com, we're assuming it's admin logged in and won't cache the portfolio SEO description
+// If the url does not contain .squarespace.com, we're assuming it's a visitor and will cache the portfolio SEO description
+if(document.location.host.includes(".squarespace.com")){
+    console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description");
+    myHeaders.append('pragma', 'no-cache');
+    myHeaders.append('cache-control', 'no-cache');
+
+} else{
+    console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description to make everything quicker");
+}
+
+
+
+
+
+
+
+
+
   
 /*
-*  PORFTOLIO GRID JS STUFF
+*  PORFTOLIO GRID -> TUBE MAPS
 */
 
-// IMAGE NAMES TO DESCRIPTIONS
-/*
-$( document ).ready(function() {    
 
-    String.prototype.replaceAll = function(str1, str2, ignore) 
-  {
-    return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g,"\\$&"),(ignore?"gi":"g")),(typeof(str2)=="string")?str2.replace(/\$/g,"$$$$"):str2);
-  } 
-
-
-  $(".grid-item").each(function(i){
-  var datasrcunmodified = $(this).find("img").attr("data-src");
-    
-  var  splittedSecondPart = datasrcunmodified.split("%7C%7C");
-      
-    var descriptionFromImageName = splittedSecondPart[1];
-    
-    var descriptionFromImageName = decodeURI(descriptionFromImageName);
-    
-    var replaced = descriptionFromImageName.replaceAll("+", " ");
-    console.log(replaced);
-    replaced = replaced.replace(".png", "");
-    
-    
-    
-    $( "<p class='description-hack'>" + replaced+ "</p>" ).insertAfter( $(this).find(".portfolio-title") );
-    
-
-  });
-
-}); 
-*/
 
 
 //PRE-MARKET & POST-MARKET TITLES: check the first with href contains "pre-market" etc and add the title before it. 
@@ -56,12 +56,9 @@ var preAndPostMarketTitleBeforeFirstOfThose = function() {
   $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
 }
 
-
-  $( document ).ready(function() {
-    // fire preAndPostMarketTitleBeforeFirstOfThose()
-    preAndPostMarketTitleBeforeFirstOfThose();
-    
-  });
+$( document ).ready(function() {   
+  preAndPostMarketTitleBeforeFirstOfThose();
+});
  
  
 
@@ -73,13 +70,8 @@ var preAndPostMarketTitleBeforeFirstOfThose = function() {
 
 
 
-
-
-
 /*
-
-BLOG STUFF
-
+* BLOG STUFF
 */
 
 // SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
@@ -164,6 +156,9 @@ styleBlogTagNavigation();
 
 
 
+
+
+
 // UTM & REF --> Form. Let's hide any field that talks about UTM codes so when we duplicate pages, we don't need to get field ID's for CSS every time.
 $( document ).ready(function() {    
   $( ".form-item.field.text:contains('UTM'), .form-item.field.text:contains('GTM')" ).addClass( "GTM-hidden-field-hide");    
@@ -173,10 +168,14 @@ $( document ).ready(function() {
 
 
 
+
+
+
+
+
+
 /*
-
 FORMATTING DATES
-
 */
 
 //// BLOG PAGE GRID DATES – OROGINALLY MONTH/DAY/YEAR WITH HTML <time class="blog-date" pubdate="" data-animation-role="date">9/14/22</time>
@@ -214,9 +213,7 @@ $( document ).ready(function() {
 
 
 
-
-
-// !--DATE FORMAT: SINGLE POST-->
+// DATE FORMAT: SINGLE POST
   $( document ).ready(function() {    
     //❗IF BLOG POST SINGLE  DATE FORMAT 
 if(document.querySelector("meta[itemprop=datePublished]")){
@@ -263,7 +260,6 @@ $( document ).ready(function() {
       
   });
 }); 
-
 
 
 
@@ -383,9 +379,10 @@ function animateStrikedThroughHeadingsCodeAndTonicStyle(){
 
 
 
-}
+} //END OF TRY FUNCTION
 catch (e) {
    //code to handle the exception
+   console.log("no animation for striketrough headings here...");
 }
 
 console.log("Header production ran to the end");
@@ -396,11 +393,6 @@ console.log("Header production ran to the end");
 
 console.log("Header production ran to the end");
 
-
-
-
-
-// DEVELOPMENT STUFF. ALWAYS KEEP THIS
 
 
 
@@ -430,120 +422,6 @@ console.log(links);
 
 
 
-//  2 example result
-const descriptions = [
-    {
-        "tubeStop": "services/clinical/inteded-use-pre-market",
-        "description": "Description for Indeded Use lorem ipsum stuff yeah cool nice gr eat text more text."
-    },
-    {
-        "tubeStop": "services/clinical/risk-classification-pre-market",
-        "description": "Description for Risk Classification lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/pico-pre-market",
-        "description": "Description for PICO lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/pathwayvalidation-pre-market",
-        "description": "Description for Pathway validation lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/medical-device-file-design-pre-market",
-        "description": "Description for Medical Device File Design lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/evidence-review-pre-market",
-        "description": "Description for Evidence review lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/clinical-evaluation-plan-pre-market",
-        "description": "Description for Clinical Evaluation Plan lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/literature-review-pre-market",
-        "description": "Description for Literature Review lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/post-market",
-        "description": "Description for POST MARKET lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/prrc-post-market",
-        "description": "Description for PRRC lorem ipsum stuff yeah cool nice great text more text."
-    },
-    {
-        "tubeStop": "services/clinical/ce-mark-post-market",
-        "description": "Description for Getting your CE Mark lorem ipsum stuff yeah cool nice great text more text."
-    }
-]
-
-
-// 3. FUNCTION TO ADD DESCRIPTIONS from the array TO THE TUBE MAP LINKS
-function addDescriptions() {
-    //get all the links
-    var links = document.querySelectorAll(".grid-item");
-    //loop through the links
-    for (var i = 0; i < links.length; i++) {
-        //get the href of the link
-        var href = links[i].getAttribute("href");
-        //loop through the descriptions array
-        for (var j = 0; j < descriptions.length; j++) {
-            //if the href of the link includes the tubeStop of the description
-            if (href.includes(descriptions[j].tubeStop)) {
-                console.log("YES");
-
-                //create a new paragraph element
-                var p = document.createElement("p");
-                //add the description text to the new paragraph element
-                p.innerHTML = descriptions[j].description;
-                //add the class "description" to the new paragraph element
-                p.classList.add("description");
-                //get the h3.portfolio-title element
-                var title = links[i].querySelector(".portfolio-title");
-                //add the new paragraph element after the h3.portfolio-title element
-                title.parentNode.insertBefore(p, title.nextSibling);
-            }
-        }
-    }
-}
-
-//add descriptions to the tube map links on document ready
-document.addEventListener("DOMContentLoaded", function(event) {
-    //addDescriptions(); // we have a better way to do this now
-});
-
-
-
-
-
-
-
-//fetch cache stuff - "headers"
-var myHeaders = new Headers();
-
-//fetch headers – shouold they be A) cached for speed or B) non-cached for admin to see chances in real time?
-   // Caching the portfolio SEO description for visitors
-// The portfolio SEO description is not cached for admin users, so we'll only cache it for visitors
-
-// If the url contains .squarespace.com, we're assuming it's admin logged in and won't cache the portfolio SEO description
-// If the url does not contain .squarespace.com, we're assuming it's a visitor and will cache the portfolio SEO description
-if(document.location.host.includes(".squarespace.com")){
-    console.log("url contains .squarespace.com so we're assuming it's admin logged in and won't cache the portfolio SEO description");
-    myHeaders.append('pragma', 'no-cache');
-    myHeaders.append('cache-control', 'no-cache');
-
-} else{
-    console.log("url  DOES NOT contain .squarespace.com. Assuming its' a visitor and will cache portfolio SEO description to make everything quicker");
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -557,15 +435,7 @@ if(document.location.host.includes(".squarespace.com")){
 // write a function that will fetch JSON from url and return that JSON as variable object.
 // loop summary items
 function fetchAndAddDescriptions(url){
-
-    //create a new fetcUrl by combining current window.location full url with "?format=json-pretty"
-    //var fetchUrl = window.location.href + "?format=json-pretty";
-    //write new fetchUrl where we combine origin and pathname but skip the rest of the url
     var fetchUrl = window.location.origin + window.location.pathname + "?format=json-pretty";
-
-    
-
-
 
     fetch(fetchUrl, { 
         method: 'GET',
@@ -645,6 +515,7 @@ function fetchAndAddDescriptions(url){
 
 
 
+
 //run fetchAndAddDescriptions() on document ready
 //document.addEventListener("DOMContentLoaded", function(event) { //replace with jquery dom ready
 $(document).ready(function() {
@@ -660,23 +531,9 @@ $(document).ready(function() {
 
 
 
-// PRE-MARKET AND POST MARKET TITLES in the timeline ! FOR PREMARKET PORTFOLIO PAGES to headings
-function addPreMarketAndPostMarketTitles() {
-  $(".grid-item").each(function(i) {
-    var $this = $(this);
-    var title = $this.find("h3.portfolio-title").text();
-    if (title.toLowerCase().includes("pre-market")) {
-     // $this.before(title);  //instead of this title make it be h2 
-      $this.before("<h2 class='timeline-title pre-or-post pre'>" + title + "</h2>"); //this is the old title (hardcoded
-    
-      $this.remove();
-    }
-    if (title.toLowerCase().includes("post-market")) {
-      $this.before("<h2 class='timeline-title pre-or-post post'>" + title + "</h2>"); //this is the old title (hardcoded
-      $this.remove();
-    }
-  });
-}
+
+
+
 
 
 
@@ -861,60 +718,6 @@ function setBodyBackgroundAndThemeColor(color) {
 // e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
 
 
-/*
-//Check if we're on a specific 5 key vertical service page OR service category page. add a class to the body and style iOS Safari top bar and bottom bar etc
-function keyVerticalSpecificEdits() {
-var path = window.location.pathname;
-var body = document.querySelector('body');
-
-
-switch (path) {
-  case '/blog/category/Health+Economics':
-  case '/health-economics':
-    body.classList.add('health-economics');
-    console.log('health-economics');
-    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink')); // disabled until client confirms
-    break;
-  case '/blog/category/Intellectual+Property':
-  case '/intellectual-property':
-    body.classList.add('intellectual-property');
-    console.log('intellectual-property');
-    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--ip-darkblue')); // disabled until client confirms
-    break;
-  case '/blog/category/Regulatory':
-  case '/regulatory':
-    body.classList.add('regulatory');
-    console.log('regulatory');
-    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--regulatory-mintgreen')); // disabled until client confirms
-    break;
-  case '/blog/category/Strategy':
-  case '/strategy':
-  case 'strategy-pofo/':
-    body.classList.add('strategy');
-    console.log("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅");
-    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--strategy-lightblue')); // disabled until client confirms
-    console.log('strategy');
-    break;
-  case '/blog/category/Clinical':
-  case '/clinical':
-    body.classList.add('clinical');
-      //setBodyBackgroundAndThemeColor(getCSSVariableValue('--clinical-purple')); // disabled until client confirms
-    console.log('clinical');
-    break;
-  default:
-    break;
-}
-}
-
-// run keyVerticalSpecificEdits() as a try catch. if it fails, it will not break the rest of the code
-try {
-  keyVerticalSpecificEdits(); // disabled until client confirms
-  } catch (error) {
-  console.log(error);
-}
-
-*/
-
 //make a function that will check if window location path contains a substring. if it does, add a class to the body. it takes 3 arguments: the substring to check for, the class to add to the body and a css variable to set as the body background color
 function checkIfPathContainsSubstringAndAddClassToBody(substring, className, cssVariable) {
   var path = window.location.pathname;
@@ -939,20 +742,25 @@ checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinic
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // for porftfolio sub-pages, make a function that will compare the title  of the page with the JSON title and  if we are on the first, second, third, etc. page of the portfolio. get that number
 function getPortfolioPageNumber() {
 
-  // get the title of the page from h1
-//var pageTitle = document.querySelector("h1").innerText;
-// use page title instead of h1
 var pageTitle = document.title;
-
-console.log(pageTitle);
+console.log("pageTitle: " + pageTitle);
 
 var fetchUrl = window.location.origin + window.location.pathname.split("/").slice(0, -1).join("/") + "?format=json-pretty";
 console.log("fetchUrl: " + fetchUrl);
-
-
 
 
 fetch(fetchUrl, { 
@@ -961,8 +769,6 @@ fetch(fetchUrl, {
 })
 .then(function(response) { return response.json(); })
 .then(function(json) {
-   // use the json
-   //
    console.log("json: " + json);
 
    // make an iterator number to keep track of the number of portfolio items we have iterated over
@@ -970,60 +776,36 @@ fetch(fetchUrl, {
    // make a variable for "Pre-market" or "Post-market" 
    var preOrPost = "Pre-market";
    var numberOfThisPortfolioItem = 0;
-   var totalNumberOfPortfolioItems = 0;
 
-   // loop through the json and find the title that matches the page title
+
+   jsonItems = json.items;
+    console.log("jsonItems: " + jsonItems);
+   
+    totalNumberOfPortfolioItems = jsonItems.length;
+    //log it:
+    console.log("totalNumberOfPortfolioItems: " + totalNumberOfPortfolioItems);
+    
+    // loop through the json and find the title that matches the page title
    json.items.forEach((item) => {
-      //add 1 to the iterator number and log it
-     // if item.title does not containt "pre-market" or "post-market" (any case, lower uppet etc), then add 1 to the iterator number
-     if (!item.title.toLowerCase().includes("pre-market") && !item.title.toLowerCase().includes("post-market")) {
-         i++;
-     }
-     // if we have iterated over "post-market" , then update preOrPost to "Post-market"
-     if (item.title.toLowerCase().includes("post-market")) {
-         preOrPost = "Post-market";
-     }
-     
-   // console log preOrPost and i
-     console.log("preOrPost: " + preOrPost + " i: " + i);
-     totalNumberOfPortfolioItems = i;
-     console.log("totalNumberOfPortfolioItems: " + totalNumberOfPortfolioItems);
-
-
-     // check if the title of the page matches the title of the json item
-     //if (item.title == pageTitle) {
-       // compare lowercase versions of item.title and pageTitle
-     //if (item.title.toLowerCase() == pageTitle.toLowerCase()) {
-     //bacause we switched to page title instead of h1 we need to see if the page title contains the json title. it might  have other text in it
+    i++;
+    console.log(": " + i);
      if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) {
-         
+
          console.log("🎉🎉🎉🎉FOUND IT: " + item.title + " VS " + pageTitle );
          numberOfThisPortfolioItem = i;
+        console.log("numberOfThisPortfolioItem: " + numberOfThisPortfolioItem);
          // get the page number of the portfolio item
           // with jQuery find a p tag with class "sqsrte-small" which contains "Pre-market"
         var preMarket = $("p.sqsrte-small:contains('Step')");
         preMarket.html(preOrPost  + " step " + numberOfThisPortfolioItem + "/" + totalNumberOfPortfolioItems );
         //  text for .item-pagination-title inside .item-pagination-link--next should be it's original text, but with the number of the next item prepended to it
 
-// CHECK if .item-pagination-link contains "Pre-Market" (in any case, lowercase, uppercase. it should check for "pre-market" "Pre-market", "PRE-MARKET" etc) 
-if($(".item-pagination-link--prev").text().toLowerCase().includes("pre-market")) {
-  //remove it from dom
-  $(".item-pagination-link--prev").remove();
-}
+  
 
-//if 
-
-
-
-
-
-
-
-     // $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
+      // PAGINATION: ADD NUMBERS TO NEXT/PREV 
+      $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
       //same for item-pagination-link--prev but with the number of the previous item
-     // $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
-
-      // if 
+      $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
       
         
         // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
@@ -1085,35 +867,6 @@ if($(".item-pagination-link--prev").text().toLowerCase().includes("pre-market"))
 getPortfolioPageNumber();
 
 
-
-
-// TODO fetch the title and description of the page 
-
-
-function subServicePageTitleAndDescription() {
-
-
-  var fetchUrl = window.location.href + "?format=json-pretty";
-  fetch(fetchUrl, { 
-    method: 'GET',
-    headers: myHeaders
- })
- .then(function(response) { return response.json(); })
- .then(function(json) {
-    // use the json
-    //
-    console.log("json: " + json);
-    console.log("👍👍👍👍👍👍YESSS")
- 
- 
- });
-}
-
-subServicePageTitleAndDescription();
-
-
-
-console.log("👍👍👍👍👍👍YESSS")
 
 
 
