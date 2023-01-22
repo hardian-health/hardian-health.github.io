@@ -711,6 +711,8 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 
 
 
+
+
 // TUBEMAPS VERTICAL LINE ANIMATION
 function updateTimelineVerticalLine() {
   // get the distance between the first .tube-item-vertical-line and the top of the window and log it
@@ -796,7 +798,7 @@ function updateTimelineVerticalLine() {
 }
 
 
-// on jquery domready, if page contains #gridThumbs
+// on jquery domready, if page contains #gridThumbs, update the timeline vertical line
 $( document ).ready(function() {
   if ($('#gridThumbs').length) {
     updateTimelineVerticalLine();
@@ -805,12 +807,20 @@ $( document ).ready(function() {
       updateTimelineVerticalLine();
     }
 
-    // tubemaps - run updateTimelineVerticalLine(); if window is resized
+    // tubemaps - run updateTimelineVerticalLine(); if window is resized. to calculate the new viewport height and keep the animated part in the middle of the page
     window.onresize = function () {
       updateTimelineVerticalLine();
     }
   }
 });
+
+
+
+
+
+
+
+
 
 
 
