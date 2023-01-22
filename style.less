@@ -14,9 +14,32 @@
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
-
   --timelinetitleleft: -28px;
 }
+
+// we have a variable for each color / service. 
+.strategy{
+  --current-service-color: var(--strategy-lightblue);
+}
+
+.clinical{
+  --current-service-color: var(--clinical-purple);
+}
+
+.regulatory{
+  --current-service-color: var(--regulatory-mintgreen);
+}
+
+.intellectual-property{
+  --current-service-color: var(--ip-darkblue);
+}
+
+.health-economics{
+  --current-service-color: var(--health-economics-brightpink);
+}
+
+
+
 
 
 /* *****
@@ -147,11 +170,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
     //background: @lightGrey;
   }
 }
-
-
-
-
-
 
 
 
@@ -1735,7 +1753,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
         content:"Read more →";
         //color:var(--clinical-purple) !important; 
         //use css variables instead of less variables
-        color:var(--clinical-purple) !important;
+        color:var(--current-service-color) !important;
         font-weight:600;
       text-transform:uppercase !important;
       font-size:11px !important;
@@ -1771,13 +1789,13 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
     //font-size: 30px;
     font-weight:bold;
     text-align: center;
-    color:var(--clinical-purple) !important;
+    color:var(--current-service-color) !important;
     //border:2px solid var(--clinical-purple) !important; //circle-stuff
     border:2px solid transparent !important; //circle-stuff
     border-radius: 100%;
     font-size: 22px !important;
     &.number-overlap{
-      border:2px solid var(--clinical-purple) !important; //circle-stuff
+      border:2px solid var(--current-service-color) !important; //circle-stuff
     }
    }
 
@@ -1845,7 +1863,9 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 .tube-item-vertical-line {
   transition: none !important;
   //background: var(--neutral-darkgrey) !important;
-  background: var(--clinical-purple) !important;
+  //background: var(--clinical-purple) !important;
+  //background is --current-service-color
+  background: var(--current-service-color) !important;
     height: 0;
     position: absolute;
     width: 1px;

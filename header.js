@@ -861,41 +861,44 @@ function setBodyBackgroundAndThemeColor(color) {
 // e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
 
 
-
+/*
 //Check if we're on a specific 5 key vertical service page OR service category page. add a class to the body and style iOS Safari top bar and bottom bar etc
 function keyVerticalSpecificEdits() {
 var path = window.location.pathname;
 var body = document.querySelector('body');
+
 
 switch (path) {
   case '/blog/category/Health+Economics':
   case '/health-economics':
     body.classList.add('health-economics');
     console.log('health-economics');
-    setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
+    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink')); // disabled until client confirms
     break;
   case '/blog/category/Intellectual+Property':
   case '/intellectual-property':
     body.classList.add('intellectual-property');
     console.log('intellectual-property');
-    setBodyBackgroundAndThemeColor(getCSSVariableValue('--ip-darkblue'));
+    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--ip-darkblue')); // disabled until client confirms
     break;
   case '/blog/category/Regulatory':
   case '/regulatory':
     body.classList.add('regulatory');
     console.log('regulatory');
-    setBodyBackgroundAndThemeColor(getCSSVariableValue('--regulatory-mintgreen'));
+    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--regulatory-mintgreen')); // disabled until client confirms
     break;
   case '/blog/category/Strategy':
   case '/strategy':
+  case 'strategy-pofo/':
     body.classList.add('strategy');
-    setBodyBackgroundAndThemeColor(getCSSVariableValue('--strategy-lightblue'));
+    console.log("✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅");
+    //setBodyBackgroundAndThemeColor(getCSSVariableValue('--strategy-lightblue')); // disabled until client confirms
     console.log('strategy');
     break;
   case '/blog/category/Clinical':
   case '/clinical':
     body.classList.add('clinical');
-      setBodyBackgroundAndThemeColor(getCSSVariableValue('--clinical-purple'));
+      //setBodyBackgroundAndThemeColor(getCSSVariableValue('--clinical-purple')); // disabled until client confirms
     console.log('clinical');
     break;
   default:
@@ -905,10 +908,30 @@ switch (path) {
 
 // run keyVerticalSpecificEdits() as a try catch. if it fails, it will not break the rest of the code
 try {
-  //keyVerticalSpecificEdits(); // disabled until client confirms
+  keyVerticalSpecificEdits(); // disabled until client confirms
   } catch (error) {
   console.log(error);
 }
+
+*/
+
+//make a function that will check if window location path contains a substring. if it does, add a class to the body. it takes 3 arguments: the substring to check for, the class to add to the body and a css variable to set as the body background color
+function checkIfPathContainsSubstringAndAddClassToBody(substring, className, cssVariable) {
+  var path = window.location.pathname;
+  var body = document.querySelector('body');
+  if (path.includes(substring)) {
+    body.classList.add(className);
+    setBodyBackgroundAndThemeColor(getCSSVariableValue(cssVariable));
+  }
+}
+
+// TODO check final urls - run it for each vertical
+
+checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
+checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
+checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
+checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
 
 
 

@@ -13,6 +13,21 @@
   --health-economics-brightpink: #FF9FF2;
   --timelinetitleleft: -28px;
 }
+.strategy {
+  --current-service-color: var(--strategy-lightblue);
+}
+.clinical {
+  --current-service-color: var(--clinical-purple);
+}
+.regulatory {
+  --current-service-color: var(--regulatory-mintgreen);
+}
+.intellectual-property {
+  --current-service-color: var(--ip-darkblue);
+}
+.health-economics {
+  --current-service-color: var(--health-economics-brightpink);
+}
 /* *****
  SERVICES DROPDOWN COLOR BOXES
 ****** */
@@ -1323,7 +1338,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   margin-top: 16px;
   font-size: 14px;
   content: "Read more →";
-  color: var(--clinical-purple) !important;
+  color: var(--current-service-color) !important;
   font-weight: 600;
   text-transform: uppercase !important;
   font-size: 11px !important;
@@ -1347,13 +1362,13 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   top: calc(50% - 32px);
   font-weight: bold;
   text-align: center;
-  color: var(--clinical-purple) !important;
+  color: var(--current-service-color) !important;
   border: 2px solid transparent !important;
   border-radius: 100%;
   font-size: 22px !important;
 }
 #gridThumbs .grid-item .number.number-overlap {
-  border: 2px solid var(--clinical-purple) !important;
+  border: 2px solid var(--current-service-color) !important;
 }
 /*
     .grid-item[href*="post"] {
@@ -1395,7 +1410,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 */
 .tube-item-vertical-line {
   transition: none !important;
-  background: var(--clinical-purple) !important;
+  background: var(--current-service-color) !important;
   height: 0;
   position: absolute;
   width: 1px;
