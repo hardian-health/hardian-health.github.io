@@ -48,19 +48,22 @@ $( document ).ready(function() {
 */
 
 
-/*
-  //⛔ REPLACED we want to find the first .grid-item with href containing "post-market". add a h2 element with text "Post-market" before it
-  function addPreMarketAndPostMarketTitles() {
-    $(".grid-item").first().before("<h2>Pre-Market</h2>");
+//PRE-MARKET & POST-MARKET TITLES: check the first with href contains "pre-market" etc and add the title before it. 
+// This method A) doesn't need robots.txt to be added, B) doesn't mess up pagination and C) doesn't mess the numbers of pages (4/12, if there's pre-market, post-market it'd be counted as 4/14)
+var preAndPostMarketTitleBeforeFirstOfThose = function() {
+  $(".grid-item").first().before("<h2>Pre-Market</h2>");
+  var $firstPostMarket = $('.grid-item[href*="post-market"]:first');
+  $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
+}
 
-    var $firstPostMarket = $('.grid-item[href*="post-market"]:first');
-    $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
-  }
 
   $( document ).ready(function() {
-  //  addPreMarketAndPostMarketTitles();
+    // fire preAndPostMarketTitleBeforeFirstOfThose()
+    preAndPostMarketTitleBeforeFirstOfThose();
+    
   });
-*/
+ 
+ 
 
   
 
@@ -657,7 +660,7 @@ $(document).ready(function() {
 
 
 
-// PRE-MARKET AND POST MARKET TITLES in the timeline
+// PRE-MARKET AND POST MARKET TITLES in the timeline ! FOR PREMARKET PORTFOLIO PAGES to headings
 function addPreMarketAndPostMarketTitles() {
   $(".grid-item").each(function(i) {
     var $this = $(this);
@@ -677,7 +680,6 @@ function addPreMarketAndPostMarketTitles() {
 
 
 
-
 //Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
   function addNumber(){
     $(".grid-item").each(function(i){
@@ -689,7 +691,7 @@ function addPreMarketAndPostMarketTitles() {
 
 //call the function
 $( document ).ready(function() {
-  addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
+  //addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
   addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
   //prepend <div class='tube-item-vertical-line'></div> to the first .grid-item
 $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>");
@@ -729,11 +731,31 @@ function updateTimelineVerticalLine() {
   // EDIT THIS to change the distance at which the animation starts
   //let verticalLineAnimationOffset = 400;
   let verticalLineAnimationOffset = viewportHeightDividedByTwo; // animation the middle of the page - even if resized
+  // get the height of the last .grid-item and log it
+  //var lastGridItemHeight = document.querySelector('.grid-item').getBoundingClientRect().height;
+  //console.log('last grid item height: ' + lastGridItemHeight);
 
-  if (distance < verticalLineAnimationOffset) {
+  // get the difference between last grid item bottom and the top of the window and log it
+  //var lastGridItemBottom = document.querySelector('.grid-item').getBoundingClientRect().bottom; // this gets the first grid item. let's get the last one
+  // Q: if there are multiple elements how to use document query selector all and get the last one?
+  // A: use document.querySelectorAll and then get the last one with [array.length - 1]
+  // get the last .grid-item using that method
+  var lastGridItem = document.querySelectorAll('.grid-item')[document.querySelectorAll('.grid-item').length - 1];
+  // calculate the height difference betweet top of ".tube-item-vertical-line" and the bottom of last .grid-item
+  var lastGridItemBottom = lastGridItem.getBoundingClientRect().bottom;
+
+  console.log('last grid item bottom: ' + lastGridItemBottom);
+
+
+
+
+  if ( (distance < verticalLineAnimationOffset ) && (lastGridItemBottom > verticalLineAnimationOffset) ) {
       console.log("ANIMATE");
       // edit height of .tube-item-vertical-line so when distance is 50, the height is 0. when distance is 40, the height is 10. when distance is 30, the height is 20. when distance is 20, the height is 30. when distance is 10, the height is 40. when distance is 0, the height is 50. but it'll keep growing as you scroll down
+
       document.querySelector('.tube-item-vertical-line').style.height = (verticalLineAnimationOffset - distance) + 'px';
+  } else{
+    console.log("Stop animation. We are over or under the animation offsets. Let's not animate if we're too high on page or if we're past the last grid item bottom");
   }
 
 
@@ -919,7 +941,7 @@ fetch(fetchUrl, {
 
    // loop through the json and find the title that matches the page title
    json.items.forEach((item) => {
-    //add 1 to the iterator number and log it
+      //add 1 to the iterator number and log it
      // if item.title does not containt "pre-market" or "post-market" (any case, lower uppet etc), then add 1 to the iterator number
      if (!item.title.toLowerCase().includes("pre-market") && !item.title.toLowerCase().includes("post-market")) {
          i++;
@@ -945,6 +967,66 @@ fetch(fetchUrl, {
          console.log("🎉🎉🎉🎉FOUND IT: " + item.title + " VS " + pageTitle );
          numberOfThisPortfolioItem = i;
          // get the page number of the portfolio item
+          // with jQuery find a p tag with class "sqsrte-small" which contains "Pre-market"
+        var preMarket = $("p.sqsrte-small:contains('Step')");
+        preMarket.html(preOrPost  + " step " + numberOfThisPortfolioItem + "/" + totalNumberOfPortfolioItems );
+        //  text for .item-pagination-title inside .item-pagination-link--next should be it's original text, but with the number of the next item prepended to it
+
+// CHECK if .item-pagination-link contains "Pre-Market" (in any case, lowercase, uppercase. it should check for "pre-market" "Pre-market", "PRE-MARKET" etc) 
+if($(".item-pagination-link--prev").text().toLowerCase().includes("pre-market")) {
+  //remove it from dom
+  $(".item-pagination-link--prev").remove();
+}
+
+//if 
+
+
+
+
+
+
+
+     // $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
+      //same for item-pagination-link--prev but with the number of the previous item
+     // $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
+
+      // if 
+      
+        
+        // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
+        // check if we are on clinical, regulatory, strategy, health economics, or intellectual property by checking the url path.
+        var path = window.location.pathname;
+
+
+        /*var pathArray = path.split('/');
+        var vertical = pathArray[1]; */
+        // we don't know if the path is /clinical or /example/clinical/ or example/clinical/blah/blah/blah. so for switch below, check if the path contains /clinical
+        
+        //var verticalTitle = "";
+        if (path.includes("clinical")) {
+          verticalTitle = "Clinical";
+          vertical = "/services/clinical";
+        } else if (path.includes("regulatory")) {
+          verticalTitle = "Regulatory";
+          vertical = "/services/regulatory";
+        } else if (path.includes("strategy")) {
+          verticalTitle = "Strategy";
+          vertical = "/services/strategy";
+        } else if (path.includes("health-economics")) {
+          verticalTitle = "Health Economics";
+          vertical = "/services/health-economics";
+        } else if (path.includes("intellectual-property")) {
+          verticalTitle = "Intellectual Property";
+          vertical = "/services/intellectual-property";
+        } else {
+          verticalTitle = "Clinical";
+          vertical = "/services/clinical";
+        }
+
+
+        // add the vertical title to the breadcrumbs
+        $(".service-subpage-breadcrumbs").append('<p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small">Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' + item.title + '</a></p>');
+
  
      } else{
          console.log( item.title + " VS " + pageTitle + " — not a match.");
@@ -955,9 +1037,7 @@ fetch(fetchUrl, {
 
  });
 
- // with jQuery find a p tag with class "sqsrte-small" which contains "Pre-market"
- var preMarket = $("p.sqsrte-small:contains('Step')");
- preMarket.html(preOrPost  + " step " + numberOfThisPortfolioItem + "/" + totalNumberOfPortfolioItems );
+
 
  /* we want to create this :
  <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small">Services &gt; <a href="/clinical">Clinical</a> &gt; <a href="#">Pre-market</a> &gt; <a href="#">Step 1/10 – Intended use</a></p>
@@ -1001,7 +1081,6 @@ subServicePageTitleAndDescription();
 
 
 console.log("👍👍👍👍👍👍YESSS")
-
 
 
 
