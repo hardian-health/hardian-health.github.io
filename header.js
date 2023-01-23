@@ -1,7 +1,3 @@
-
-console.log("Header production JS Started");
-
-
 /**
  * 
  * ALWAYS USE JQUERY DOMREADY INSTEAD OF VANILLA JS DOMContentLoaded
@@ -11,13 +7,13 @@ console.log("Header production JS Started");
 
 
 
-
-
-
+/**
+ * 🌸🌸🌸 SECTION - UNIVERSAL / HELPER FUNCTIONS 
+ */
 
 
 /**
- * FETCH CACHE HEADERS
+ * Fetch cache headers - for any fetch request
  */
 
 var myHeaders = new Headers();
@@ -40,38 +36,11 @@ if(document.location.host.includes(".squarespace.com")){
 
 
 
-  
-/*
-*  PORFTOLIO GRID -> TUBE MAPS
-*/
 
 
 
-
-//PRE-MARKET & POST-MARKET TITLES: check the first with href contains "pre-market" etc and add the title before it. 
-// This method A) doesn't need robots.txt to be added, B) doesn't mess up pagination and C) doesn't mess the numbers of pages (4/12, if there's pre-market, post-market it'd be counted as 4/14)
-var preAndPostMarketTitleBeforeFirstOfThose = function() {
-  $(".grid-item").first().before("<h2>Pre-Market</h2>");
-  var $firstPostMarket = $('.grid-item[href*="post-market"]:first');
-  $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
-}
-
-$( document ).ready(function() {   
-  preAndPostMarketTitleBeforeFirstOfThose();
-});
- 
- 
-
-  
-
-
-
-
-
-
-
-/*
-* BLOG STUFF
+/**
+* 🌸🌸🌸 SECTION - BLOG STUFF
 */
 
 // SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
@@ -156,8 +125,9 @@ styleBlogTagNavigation();
 
 
 
-
-
+/**
+* 🌸🌸🌸 SECTION - ANALYTICS
+*/
 
 // UTM & REF --> Form. Let's hide any field that talks about UTM codes so when we duplicate pages, we don't need to get field ID's for CSS every time.
 $( document ).ready(function() {    
@@ -174,8 +144,10 @@ $( document ).ready(function() {
 
 
 
+
+
 /*
-FORMATTING DATES
+* 🌸🌸🌸 SECTION - FORMATTING DATES
 */
 
 //// BLOG PAGE GRID DATES – OROGINALLY MONTH/DAY/YEAR WITH HTML <time class="blog-date" pubdate="" data-animation-role="date">9/14/22</time>
@@ -213,7 +185,13 @@ $( document ).ready(function() {
 
 
 
-// DATE FORMAT: SINGLE POST
+
+  
+
+/**
+ * SINGLE POST DATE FORMAT
+ */
+
   $( document ).ready(function() {    
     //❗IF BLOG POST SINGLE  DATE FORMAT 
 if(document.querySelector("meta[itemprop=datePublished]")){
@@ -249,7 +227,11 @@ else{
 
 
 
-// SUMMARY BLOCK DATE FORMAT
+
+
+/**
+ * SUMMARY BLOCK DATE FORMAT
+ */
 $( document ).ready(function() {    
   $('time.summary-metadata-item--date').each(function(i, obj) {
       var dateArray = $(this).attr("datetime").split("-");
@@ -267,8 +249,14 @@ $( document ).ready(function() {
 
 
 
-// home hero css animation
-// add try function so if it doesn't  work, it won't break the code
+
+
+
+
+/**
+ * ANIMATED HEADINGS - HOMEPAGE 5 SERVICES
+ */
+
 try {
 
 function animateStrikedThroughHeadingsCodeAndTonicStyle(){
@@ -385,98 +373,72 @@ catch (e) {
    console.log("no animation for striketrough headings here...");
 }
 
-console.log("Header production ran to the end");
-
-
-
-
-
-console.log("Header production ran to the end");
 
 
 
 
 
 
-/*******
-* ****************
-* TUBE MAP DESCRIPTIONS
-* ****************
-*******/
 
 
-// 1. FUNCTION TO LOOP tube map links and CREATE an array of descriptions in the console
-const links = []
-// get the links from the html and add them to the array
-const htmlLinks = document.querySelectorAll('.grid-item');
-htmlLinks.forEach(link => {
-  links.push({
-    //href: link.href,
-//instead of full href we just want the path. Do it by getting the current window location domain. remove that from the href and then remove the first slash
-    tubeStop: link.href.replace(window.location.origin, '').replace(/^\//, ''),
-    description: link.querySelector('.portfolio-title').innerText
-  })
+
+
+
+
+
+
+
+
+
+
+
+/**
+* 🌸🌸🌸 SECTION - PORTFOLIO GRID PAGE
+*/
+
+
+
+/**
+ * PRE-MARKET & POST-MARKET TITLES TO TIMELINE
+ */
+var preAndPostMarketTitleBeforeFirstOfThose = function() {
+  $(".grid-item").first().before("<h2>Pre-Market</h2>");
+  var $firstPostMarket = $('.grid-item[href*="post-market"]:first');
+  $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
+}
+
+$( document ).ready(function() {   
+  preAndPostMarketTitleBeforeFirstOfThose();
 });
-//log links
-console.log(links);
+ 
+ 
 
 
 
+/**
+ * FETCH SEO DESCRIPTIONS FOR GRID ITEMS
+ */
 
-
-
-
-
-
-// 4 🟢🟢🟢🟢🟢🟢 fetch SEO descriptions for each portfolio item, and add them to the tube map links as descriptions in html
-//
-// loop summary items
-// 4
-// write a function that will fetch JSON from url and return that JSON as variable object.
-// loop summary items
 function fetchAndAddDescriptions(url){
-    var fetchUrl = window.location.origin + window.location.pathname + "?format=json-pretty";
+  var fetchUrl = window.location.origin + window.location.pathname + "?format=json-pretty";
 
-    fetch(fetchUrl, { 
-        method: 'GET',
-        headers: myHeaders
-    })
-    .then(function(response) { return response.json(); })
-    .then(function(json) {
-        // use the json
-    portfolioItems = json.items;
+  fetch(fetchUrl, { 
+      method: 'GET',
+      headers: myHeaders
+  })
+  .then(function(response) { return response.json(); })
+  .then(function(json) {
+      // use the json
+  portfolioItems = json.items;
 
-        // This function is called after the portfolio items are loaded
-        // We loop through each JSONitem and check if it has a SEO description
-        // If the SQSP JSON item has a SEO description, we add it to the corresponding a.grid-item
-        function addSeoDescriptionToPortfolioItems() {
-            // Loop through all portfolio items in the JSON
-            portfolioItems.forEach((item) => {
-                // Check if the porftolio item has a SEO description
-                if (item.seoData && item.seoData.seoDescription) {
-                    // Get all grid items (portfolio links in the tube map)
-                    const gridItems = document.querySelectorAll(`a.grid-item`);
-                    // Loop through all grid items
-                    gridItems.forEach((gridItem) => {
-                        // Get the href attribute of the grid item
-                        const href = gridItem.getAttribute('href');
-                        // Check if the link destiontion is the same as the JSON full URL of the portfolio item
-                        if (href === item.fullUrl) {
-                            // Create a paragraph element
-                            const description = document.createElement('p');
-                            // Add a class to the paragraph element
-                            description.classList.add('seo-description');
-                            // Set the inner text of the paragraph element
-                            //description.innerText = item.seoData.seoDescription;
-                            // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
-                            description.innerHTML = item.seoData.seoDescription + '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
-                            // Get the portfolio text element
-                            const portfolioText = gridItem.querySelector('.portfolio-text');
-                            // Append the description to the portfolio text (so it appears below the h3 title)
-                            portfolioText.appendChild(description);
-                        }
-                    });
-                } else {
+      // This function is called after the portfolio items are loaded
+      // We loop through each JSONitem and check if it has a SEO description
+      // If the SQSP JSON item has a SEO description, we add it to the corresponding a.grid-item
+      function addSeoDescriptionToPortfolioItems() {
+          // Loop through all portfolio items in the JSON
+          portfolioItems.forEach((item) => {
+              // Check if the porftolio item has a SEO description
+              if (item.seoData && item.seoData.seoDescription) {
                   // Get all grid items (portfolio links in the tube map)
                   const gridItems = document.querySelectorAll(`a.grid-item`);
                   // Loop through all grid items
@@ -492,24 +454,47 @@ function fetchAndAddDescriptions(url){
                           // Set the inner text of the paragraph element
                           //description.innerText = item.seoData.seoDescription;
                           // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
-                          description.innerHTML = '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
+                          description.innerHTML = item.seoData.seoDescription + '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
                           // Get the portfolio text element
                           const portfolioText = gridItem.querySelector('.portfolio-text');
                           // Append the description to the portfolio text (so it appears below the h3 title)
                           portfolioText.appendChild(description);
                       }
                   });
-                  
+              } else {
+                // Get all grid items (portfolio links in the tube map)
+                const gridItems = document.querySelectorAll(`a.grid-item`);
+                // Loop through all grid items
+                gridItems.forEach((gridItem) => {
+                    // Get the href attribute of the grid item
+                    const href = gridItem.getAttribute('href');
+                    // Check if the link destiontion is the same as the JSON full URL of the portfolio item
+                    if (href === item.fullUrl) {
+                        // Create a paragraph element
+                        const description = document.createElement('p');
+                        // Add a class to the paragraph element
+                        description.classList.add('seo-description');
+                        // Set the inner text of the paragraph element
+                        //description.innerText = item.seoData.seoDescription;
+                        // edit the description text to also have this html: <span class="pofo-readmore">Read More →</span>
+                        description.innerHTML = '<span class="pofo-readmore">Read More  <span class="arrow">→</span></span>';
+                        // Get the portfolio text element
+                        const portfolioText = gridItem.querySelector('.portfolio-text');
+                        // Append the description to the portfolio text (so it appears below the h3 title)
+                        portfolioText.appendChild(description);
+                    }
+                });
                 
-                }
-            });
-        }
-        // Call the function to add the SEO descriptions to the portfolio items
-        addSeoDescriptionToPortfolioItems();
+              
+              }
+          });
+      }
+      // Call the function to add the SEO descriptions to the portfolio items
+      addSeoDescriptionToPortfolioItems();
 
-    
-    
-    });
+  
+  
+  });
 } // end of fetchAndAddDescriptions() function
 
 
@@ -520,12 +505,12 @@ function fetchAndAddDescriptions(url){
 //document.addEventListener("DOMContentLoaded", function(event) { //replace with jquery dom ready
 $(document).ready(function() {
 
-    //fetchAndAddDescriptions();
-    // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
-    if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
-        console.log("we are on a portfolio page");
-        fetchAndAddDescriptions();
-    }
+  //fetchAndAddDescriptions();
+  // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
+  if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
+      console.log("we are on a portfolio page");
+      fetchAndAddDescriptions();
+  }
 });
 //end of document ready
 
@@ -538,19 +523,19 @@ $(document).ready(function() {
 
 
 //Loop each .grid-item, adds a div called "number" and adds the number of the item to it.
-  function addNumber(){
-    $(".grid-item").each(function(i){
-      var number = i++;
-      $(this).prepend("<div class='number'>" + i + "</div>");
-      //$(this).prepend("<div class='tube-item-vertical-line'></div>");
-    });
-  }
+function addNumber(){
+  $(".grid-item").each(function(i){
+    var number = i++;
+    $(this).prepend("<div class='number'>" + i + "</div>");
+    //$(this).prepend("<div class='tube-item-vertical-line'></div>");
+  });
+}
 
 //call the function
 $( document ).ready(function() {
-  //addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
-  addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
-  //prepend <div class='tube-item-vertical-line'></div> to the first .grid-item
+//addPreMarketAndPostMarketTitles(); // FIRST work the pre-market and post-market titles in the timeline
+addNumber(); // THEN add the number to each grid item. otherwise the number will be added to the pre-market and post-market title h2s
+//prepend <div class='tube-item-vertical-line'></div> to the first .grid-item
 $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>");
 });
 
@@ -569,8 +554,10 @@ $( ".grid-item" ).first().prepend("<div class='tube-item-vertical-line'></div>")
 
 
 
+/**
+ * PORTFOLIO TUBE LINE ANIMATION
+ */
 
-// TUBEMAPS VERTICAL LINE ANIMATION
 function updateTimelineVerticalLine() {
   // get the distance between the first .tube-item-vertical-line and the top of the window and log it
   var distance = document.querySelector('.tube-item-vertical-line').getBoundingClientRect().top;
@@ -697,64 +684,29 @@ $( document ).ready(function() {
 
 
 
+
+
+
+
+
+
+
+
+
 /**
- * 5 KEY VERTICAL SPECIFIC EDITS. MAINLY COLORS FOR TOP BAR AND BOTTOM BAR IN IOS SAFARI 
- * AND CHROME OVERSCROLL
- * AND  .clinical -type BODY CLASS SO WE CAN STYLE TUBE MAP COLORS 
+* 🌸🌸🌸 SECTION - PORTFOLIO SUB-PAGES
+*/
+
+
+/**
+ * Process fetch stuff: 
+ * get the number of this page
+ * get next and prev pagination numbers
+ * TODO: get title for h1
+ * todo get seo description for lead
  */
 
-
-// function to get CSS variable values from CSS
-function getCSSVariableValue(variableName) {
-  return getComputedStyle(document.documentElement).getPropertyValue(variableName);
-}
-
-
-//Function to set the body background color (bottom bar in iOS and chrome overscroll) and the top-bar theme color for iOS Safari
-function setBodyBackgroundAndThemeColor(color) {
-  $('body').css('background', color);
-  $('head').append('<meta name="theme-color" content="' + color + '">');
-}
-// e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
-
-
-//make a function that will check if window location path contains a substring. if it does, add a class to the body. it takes 3 arguments: the substring to check for, the class to add to the body and a css variable to set as the body background color
-function checkIfPathContainsSubstringAndAddClassToBody(substring, className, cssVariable) {
-  var path = window.location.pathname;
-  var body = document.querySelector('body');
-  if (path.includes(substring)) {
-    body.classList.add(className);
-    setBodyBackgroundAndThemeColor(getCSSVariableValue(cssVariable));
-  }
-}
-
-// TODO check final urls - run it for each vertical
-
-checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
-checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
-checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
-checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
-checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for porftfolio sub-pages, make a function that will compare the title  of the page with the JSON title and  if we are on the first, second, third, etc. page of the portfolio. get that number
-function getPortfolioPageNumber() {
+function portfolioSubPageFetch() {
 
 var pageTitle = document.title;
 console.log("pageTitle: " + pageTitle);
@@ -771,12 +723,10 @@ fetch(fetchUrl, {
 .then(function(json) {
    console.log("json: " + json);
 
-   // make an iterator number to keep track of the number of portfolio items we have iterated over
+   // make an iterator number. To check which nth page we are on
    var i = 0;
-   // make a variable for "Pre-market" or "Post-market" 
-   var preOrPost = "Pre-market";
-   var numberOfThisPortfolioItem = 0;
 
+   var numberOfThisPortfolioItem = 0;
 
    jsonItems = json.items;
     console.log("jsonItems: " + jsonItems);
@@ -788,30 +738,35 @@ fetch(fetchUrl, {
     // loop through the json and find the title that matches the page title
    json.items.forEach((item) => {
     i++;
-    console.log(": " + i);
-     if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) {
+    console.log("i: " + i);
 
-         console.log("🎉🎉🎉🎉FOUND IT: " + item.title + " VS " + pageTitle );
-         numberOfThisPortfolioItem = i;
-        console.log("numberOfThisPortfolioItem: " + numberOfThisPortfolioItem);
-         // get the page number of the portfolio item
-          // with jQuery find a p tag with class "sqsrte-small" which contains "Pre-market"
-        var preMarket = $("p.sqsrte-small:contains('Step')");
-        preMarket.html(preOrPost  + " step " + numberOfThisPortfolioItem + "/" + totalNumberOfPortfolioItems );
-        //  text for .item-pagination-title inside .item-pagination-link--next should be it's original text, but with the number of the next item prepended to it
+     if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) { // we found this page from json portfolio items list
 
-  
+          numberOfThisPortfolioItem = i;
+         // set the meta (Step 1/12) above title
+         $(".automatic-sub-page-meta").html(" Step " + i + "/" + totalNumberOfPortfolioItems );
+        
+         
+         // Get this pages title from json so we can use it in the h1
+         thisPageH1Title = item.title;
+          document.querySelector('.automatic-sub-page-title').innerHTML = thisPageH1Title; // TODO hide until we have the title
+          document.querySelector('.automatic-sub-page-title').classList.add('jsonContentLoadedFadeIn');
+        
+          //do the same thing for the lead (.sqsrte-large) using item.seoData.seoDescription instead of item.title
+          thisPageLead = item.seoData.seoDescription;
+          document.querySelector('.automatic-sub-page-lead').innerHTML = thisPageLead; // TODO hide until we have the title
+          document.querySelector('.automatic-sub-page-lead').classList.add('jsonContentLoadedFadeIn');
 
-      // PAGINATION: ADD NUMBERS TO NEXT/PREV 
-      $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
-      //same for item-pagination-link--prev but with the number of the previous item
-      $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
+
+          // PAGINATION: ADD NUMBERS TO NEXT/PREV 
+          $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
+          //same for item-pagination-link--prev but with the number of the previous item
+          $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
       
         
         // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
         // check if we are on clinical, regulatory, strategy, health economics, or intellectual property by checking the url path.
         var path = window.location.pathname;
-
 
         /*var pathArray = path.split('/');
         var vertical = pathArray[1]; */
@@ -848,23 +803,61 @@ fetch(fetchUrl, {
      }
    
 
-   
+ }); // end of json.items.forEach((item) => {
 
- });
+}); // end of fetch.then
+} // end of portfolioSubPageFetch() function
+
+
+// run portfolioSubPageFetch() 
+portfolioSubPageFetch();
 
 
 
- /* we want to create this :
- <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small">Services &gt; <a href="/clinical">Clinical</a> &gt; <a href="#">Pre-market</a> &gt; <a href="#">Step 1/10 – Intended use</a></p>
- 
+
+
+
+
+
+
+/**
+ * 5 KEY VERTICAL SPECIFIC EDITS -  COLORS FOR TOP BAR AND BOTTOM BAR IN IOS SAFARI 
+ * AND CHROME OVERSCROLL
+ * AND  .clinical -type BODY CLASS SO WE CAN STYLE TUBE MAP COLORS 
  */
 
-});
-} // end of getPortfolioPageNumber() function
+
+// function to get CSS variable values from CSS
+function getCSSVariableValue(variableName) {
+  return getComputedStyle(document.documentElement).getPropertyValue(variableName);
+}
 
 
-// run getPortfolioPageNumber() 
-getPortfolioPageNumber();
+//Function to set the body background color (bottom bar in iOS and chrome overscroll) and the top-bar theme color for iOS Safari
+function setBodyBackgroundAndThemeColor(color) {
+  $('body').css('background', color);
+  $('head').append('<meta name="theme-color" content="' + color + '">');
+}
+// e.g. setBodyBackgroundAndThemeColor(getCSSVariableValue('--health-economics-brightpink'));
+
+
+//make a function that will check if window location path contains a substring. if it does, add a class to the body. it takes 3 arguments: the substring to check for, the class to add to the body and a css variable to set as the body background color
+function checkIfPathContainsSubstringAndAddClassToBody(substring, className, cssVariable) {
+  var path = window.location.pathname;
+  var body = document.querySelector('body');
+  if (path.includes(substring)) {
+    body.classList.add(className);
+    setBodyBackgroundAndThemeColor(getCSSVariableValue(cssVariable));
+  }
+}
+
+// TODO check final urls - run it for each vertical
+
+checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
+checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
+checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
+checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
 
 
 
