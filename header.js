@@ -864,6 +864,12 @@ checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinic
 
 
 
+//on domready check if there's an element id="itemPagination", if there is ,add class of portfolio-subpage to the body
+$(document).ready(function () {
+  if($('#itemPagination').length){
+    $('body').addClass('portfolio-subpage');
+  }
+});
 
 
 
