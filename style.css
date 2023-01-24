@@ -1475,6 +1475,6 @@ p.service-subpage-breadcrumbs a {
   margin-left: auto;
   margin-right: auto;
 }
-.sqsrte-large + p {
+.portfolio-subpage .sqsrte-large + p {
   margin-top: 44px !important;
 }
