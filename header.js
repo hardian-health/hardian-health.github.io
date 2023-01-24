@@ -795,7 +795,7 @@ fetch(fetchUrl, {
 
 
         // add the vertical title to the breadcrumbs
-        $(".service-subpage-breadcrumbs").append('<p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small">Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' + item.title + '</a></p>');
+        $(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' + numberOfThisPortfolioItem + ". " + item.title + '</a>');
 
  
      } else{
@@ -809,8 +809,11 @@ fetch(fetchUrl, {
 } // end of portfolioSubPageFetch() function
 
 
-// run portfolioSubPageFetch() 
-portfolioSubPageFetch();
+// run portfolioSubPageFetch() on jquey document ready
+
+$(document).ready(function () {
+  portfolioSubPageFetch();
+});
 
 
 
