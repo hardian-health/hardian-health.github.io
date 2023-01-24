@@ -821,7 +821,7 @@ var(--health-economics-brightpink): #FF9FF2;
 // ☕☕☕REUSABLE heading + Lead combo. Better responsive styling, no tablet size 1 extra word on a last row, more control, nicer resizing, less work to add them, no need to remember "how many columns was this" or make 2 blocks. Better vertical scaling.
 h2 + p.sqsrte-large,
 h1 + p.sqsrte-large{
-  max-width:500px;
+  max-width:560px;
   margin:auto;
   margin-top:-17px !important;
 //   max-width:690px;
@@ -1990,4 +1990,16 @@ p.service-subpage-breadcrumbs a {
   margin-top:40px;
 }
 
+
+// Let's use CSS for paragraph widths, vertical spacing, etc.
+.portfolio-subpage p {
+  max-width: 501px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+//space between lead and <p> after it
+.sqsrte-large + p {
+  margin-top: 44px !important;
+}
 
