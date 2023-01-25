@@ -1491,3 +1491,14 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .ProductItem-next-prev-codeandtonic .ProductItem-nav-pagination-separator:after {
   content: '\002F';
 }
+.sub-service-meta {
+  display: flex;
+  justify-content: space-between;
+}
+.ProductItem-next-prev-codeandtonic,
+.service-subpage-breadcrumbs {
+  flex: 1;
+}
+.sub-service-meta a {
+  text-decoration: none !important;
+}

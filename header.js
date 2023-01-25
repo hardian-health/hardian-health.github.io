@@ -743,20 +743,20 @@ fetch(fetchUrl, {
      if (pageTitle.toLowerCase().includes(item.title.toLowerCase())) { // we found this page from json portfolio items list
 
           numberOfThisPortfolioItem = i;
-         // set the meta (Step 1/12) above title
-         $(".automatic-sub-page-meta").html(" Step " + i + "/" + totalNumberOfPortfolioItems );
-        
          
-         // Get this pages title from json so we can use it in the h1
-         thisPageH1Title = item.title;
-          document.querySelector('.automatic-sub-page-title').innerHTML = thisPageH1Title; // TODO hide until we have the title
-          document.querySelector('.automatic-sub-page-title').classList.add('jsonContentLoadedFadeIn');
         
-          //do the same thing for the lead (.sqsrte-large) using item.seoData.seoDescription instead of item.title
-          thisPageLead = item.seoData.seoDescription;
-          document.querySelector('.automatic-sub-page-lead').innerHTML = thisPageLead; // TODO hide until we have the title
-          document.querySelector('.automatic-sub-page-lead').classList.add('jsonContentLoadedFadeIn');
-
+         /* 
+         //skip automatic title and lead for now
+            // Get this pages title from json so we can use it in the h1
+            thisPageH1Title = item.title;
+              document.querySelector('.automatic-sub-page-title').innerHTML = thisPageH1Title; // TODO hide until we have the title
+              document.querySelector('.automatic-sub-page-title').classList.add('jsonContentLoadedFadeIn');
+            
+              //do the same thing for the lead (.sqsrte-large) using item.seoData.seoDescription instead of item.title
+              thisPageLead = item.seoData.seoDescription;
+              document.querySelector('.automatic-sub-page-lead').innerHTML = thisPageLead; // TODO hide until we have the title
+              document.querySelector('.automatic-sub-page-lead').classList.add('jsonContentLoadedFadeIn');
+          */
           
 
 
@@ -774,34 +774,12 @@ fetch(fetchUrl, {
 
 
 
+          //before first h1, prepend ".sub-service-meta".
+          $("h1").first().before('<div class="sub-service-meta"></div>');
 
 
-
-        //MINI-PAGINATION: ADD NEXT/PREV LINKS TO THE TOP OF THE PAGE FROM THE BOTTOM
-          var prevOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a></div>';
-          var nextOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"><a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
-          var nextAndPrevPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
-          
+       
         
-          //make if else logic for adding the pagination html depending on if there is a next and prev or just one of them. add it before .automatic-sub-page-meta
-          if(nextHref && prevHref) {
-            //$(".automatic-sub-page-meta").before(nextAndPrevPaginationHtml);
-            //actually isnert the html inside .sub-service-pagination
-            $(".sub-service-pagination").html(nextAndPrevPaginationHtml);
-          } else if (nextHref) {
-            //$(".automatic-sub-page-meta").before(nextOnlyPaginationHtml);
-            $(".sub-service-pagination").html(nextOnlyPaginationHtml);
-          } else if (prevHref) {
-            //$(".automatic-sub-page-meta").before(prevOnlyPaginationHtml);
-            $(".sub-service-pagination").html(prevOnlyPaginationHtml);
-          }
-        
-
-
-
-
-
-
 
         
         // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
@@ -835,7 +813,41 @@ fetch(fetchUrl, {
 
 
         // add the vertical title to the breadcrumbs
-        $(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a>');
+        //$(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a>');
+        //
+        $(".sub-service-meta").prepend('<div class="service-subpage-breadcrumbs">Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a></div>');
+
+         // set the meta (Step 1/12) above title
+         //$(".automatic-sub-page-meta").html(" Step " + i + "/" + totalNumberOfPortfolioItems );
+         // insert the above line html after ProductItem-next-prev-codeandtonic
+         $(".sub-service-meta").append('<div class="automatic-sub-page-meta"> Step ' + i + '/' + totalNumberOfPortfolioItems + '</div>');
+
+         //MINI-PAGINATION: ADD NEXT/PREV LINKS TO THE TOP OF THE PAGE FROM THE BOTTOM
+         var prevOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a></div>';
+         var nextOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"><a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+         var nextAndPrevPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+         
+       
+         //make if else logic for adding the pagination html depending on if there is a next and prev or just one of them. add it before .automatic-sub-page-meta
+         if(nextHref && prevHref) {
+           //$(".automatic-sub-page-meta").before(nextAndPrevPaginationHtml);
+           //actually isnert the html inside .sub-service-pagination
+          // $(".sub-service-pagination").html(nextAndPrevPaginationHtml);
+          //append pagination inside .sub-service-meta
+           $(".sub-service-meta").append(nextAndPrevPaginationHtml);
+         } else if (nextHref) {
+           //$(".automatic-sub-page-meta").before(nextOnlyPaginationHtml);
+          // $(".sub-service-pagination").html(nextOnlyPaginationHtml);
+          //append pagination inside .sub-service-meta
+           $(".sub-service-meta").append(nextOnlyPaginationHtml);
+          
+         } else if (prevHref) {
+           //$(".automatic-sub-page-meta").before(prevOnlyPaginationHtml);
+          // $(".sub-service-pagination").html(prevOnlyPaginationHtml);
+          //append pagination inside .sub-service-meta
+           $(".sub-service-meta").append(prevOnlyPaginationHtml);
+          
+         }
 
  
      } else{
