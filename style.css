@@ -732,6 +732,7 @@ section[data-section-id="63470e27c96c5945e6d186bb"] .section-background {
   font-size: calc((1 - 1) * 1.2vw + 1rem) !important;
 }
 /*.blog-basic-grid .blog-categories, .blog-basic-grid .blog-author,*/
+.ProductItem-next-prev-codeandtonic,
 .service-subpage-breadcrumbs,
 .automatic-sub-page-meta,
 .blog-basic-grid .blog-date,
@@ -1464,7 +1465,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .automatic-sub-page-meta {
   margin-bottom: 6px !important;
 }
-p.service-subpage-breadcrumbs a {
+.service-subpage-breadcrumbs a {
   color: var(--current-service-color) !important;
 }
 .portfolio-subpage section.page-section:first-of-type .content {
@@ -1477,4 +1478,16 @@ p.service-subpage-breadcrumbs a {
 }
 .portfolio-subpage .sqsrte-large + p {
   margin-top: 44px !important;
+}
+.ProductItem-next-prev-codeandtonic {
+  text-align: right;
+}
+.ProductItem-next-prev-codeandtonic .codetonic-prev:before {
+  content: '\2039\0020';
+}
+.ProductItem-next-prev-codeandtonic .codetonic-next:after {
+  content: '\0020\203A';
+}
+.ProductItem-next-prev-codeandtonic .ProductItem-nav-pagination-separator:after {
+  content: '\002F';
 }

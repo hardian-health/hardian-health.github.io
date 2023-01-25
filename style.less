@@ -1155,7 +1155,7 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/6306a10917
 
 // META DATES BLOG GRID + SUMMARY BLOCK, SINGLE BLOG POST (date + categories), service sub-page "step 1/12" etc.
 /*.blog-basic-grid .blog-categories, .blog-basic-grid .blog-author,*/ 
-.service-subpage-breadcrumbs, .automatic-sub-page-meta, .blog-basic-grid .blog-date, .summary-metadata-item--date, .blog-meta-item--date * /*, .blog-item-category*/{
+.ProductItem-next-prev-codeandtonic, .service-subpage-breadcrumbs, .automatic-sub-page-meta, .blog-basic-grid .blog-date, .summary-metadata-item--date, .blog-meta-item--date * /*, .blog-item-category*/{
   font-weight:600 !important;
   color: @black !important;
   font-size: 10.9px !important;
@@ -1980,7 +1980,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 // Service sub-page –  Pagination using color for this service
-p.service-subpage-breadcrumbs a {
+.service-subpage-breadcrumbs a {
   color: var(--current-service-color) !important;
 }
 
@@ -2003,3 +2003,19 @@ p.service-subpage-breadcrumbs a {
   margin-top: 44px !important;
 }
 
+.ProductItem-next-prev-codeandtonic{
+  text-align: right;
+
+}
+
+.ProductItem-next-prev-codeandtonic .codetonic-prev:before {
+  content: '\2039\0020';
+}
+
+.ProductItem-next-prev-codeandtonic .codetonic-next:after {
+  content: '\0020\203A';
+}
+
+.ProductItem-next-prev-codeandtonic .ProductItem-nav-pagination-separator:after{
+  content: '\002F';
+}

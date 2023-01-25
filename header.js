@@ -773,24 +773,33 @@ fetch(fetchUrl, {
           var prevHref = $(".item-pagination-link--prev").attr("href");
 
 
-        var prevOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a></div>';
-        var nextOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"><a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
-        var nextAndPrevPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+
+
+
+
+        //MINI-PAGINATION: ADD NEXT/PREV LINKS TO THE TOP OF THE PAGE FROM THE BOTTOM
+          var prevOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a></div>';
+          var nextOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"><a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+          var nextAndPrevPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+          
         
-       
-        //make if else logic for adding the pagination html depending on if there is a next and prev or just one of them. add it before .automatic-sub-page-meta
-        if(nextHref && prevHref) {
-          //$(".automatic-sub-page-meta").before(nextAndPrevPaginationHtml);
-          //actually isnert the html inside .sub-service-pagination
-          $(".sub-service-pagination").html(nextAndPrevPaginationHtml);
-        } else if (nextHref) {
-          //$(".automatic-sub-page-meta").before(nextOnlyPaginationHtml);
-          $(".sub-service-pagination").html(nextOnlyPaginationHtml);
-        } else if (prevHref) {
-          //$(".automatic-sub-page-meta").before(prevOnlyPaginationHtml);
-          $(".sub-service-pagination").html(prevOnlyPaginationHtml);
-        }
+          //make if else logic for adding the pagination html depending on if there is a next and prev or just one of them. add it before .automatic-sub-page-meta
+          if(nextHref && prevHref) {
+            //$(".automatic-sub-page-meta").before(nextAndPrevPaginationHtml);
+            //actually isnert the html inside .sub-service-pagination
+            $(".sub-service-pagination").html(nextAndPrevPaginationHtml);
+          } else if (nextHref) {
+            //$(".automatic-sub-page-meta").before(nextOnlyPaginationHtml);
+            $(".sub-service-pagination").html(nextOnlyPaginationHtml);
+          } else if (prevHref) {
+            //$(".automatic-sub-page-meta").before(prevOnlyPaginationHtml);
+            $(".sub-service-pagination").html(prevOnlyPaginationHtml);
+          }
         
+
+
+
+
 
 
 
