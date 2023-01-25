@@ -757,12 +757,43 @@ fetch(fetchUrl, {
           document.querySelector('.automatic-sub-page-lead').innerHTML = thisPageLead; // TODO hide until we have the title
           document.querySelector('.automatic-sub-page-lead').classList.add('jsonContentLoadedFadeIn');
 
+          
+
 
           // PAGINATION: ADD NUMBERS TO NEXT/PREV 
           $(".item-pagination-link--next .item-pagination-title").text( (numberOfThisPortfolioItem + 1) + ". " + $(".item-pagination-link--next .item-pagination-title").text());
           //same for item-pagination-link--prev but with the number of the previous item
           $(".item-pagination-link--prev .item-pagination-title").text( (numberOfThisPortfolioItem - 1) + ". " + $(".item-pagination-link--prev .item-pagination-title").text());
-      
+
+          /*
+          prepend follow html before "".automatic-sub-page-title": <div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="/shop/p/acuity-scheduling-redirect-forward-plugin">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="/shop/p/squarespace-text-animations">Next</a></div>
+          */
+         //get the href of . item-pagination-link--next and . item-pagination-link--prev as variables
+          var nextHref = $(".item-pagination-link--next").attr("href");
+          var prevHref = $(".item-pagination-link--prev").attr("href");
+
+
+        var prevOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a></div>';
+        var nextOnlyPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"><a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+        var nextAndPrevPaginationHtml = '<div class="ProductItem-next-prev-codeandtonic"> <a class="codetonic-product-pagination-link-simple codetonic-prev" href="' + prevHref + '">Prev</a> <span class="ProductItem-nav-pagination-separator ProductItem-nav-pagination-separator--hasPrev ProductItem-nav-pagination-separator--hasNext"></span> <a class="codetonic-product-pagination-link-simple codetonic-next" href="' + nextHref + '">Next</a></div>';
+        
+       
+        //make if else logic for adding the pagination html depending on if there is a next and prev or just one of them. add it before .automatic-sub-page-meta
+        if(nextHref && prevHref) {
+          //$(".automatic-sub-page-meta").before(nextAndPrevPaginationHtml);
+          //actually isnert the html inside .sub-service-pagination
+          $(".sub-service-pagination").html(nextAndPrevPaginationHtml);
+        } else if (nextHref) {
+          //$(".automatic-sub-page-meta").before(nextOnlyPaginationHtml);
+          $(".sub-service-pagination").html(nextOnlyPaginationHtml);
+        } else if (prevHref) {
+          //$(".automatic-sub-page-meta").before(prevOnlyPaginationHtml);
+          $(".sub-service-pagination").html(prevOnlyPaginationHtml);
+        }
+        
+
+
+
         
         // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
         // check if we are on clinical, regulatory, strategy, health economics, or intellectual property by checking the url path.
@@ -795,7 +826,7 @@ fetch(fetchUrl, {
 
 
         // add the vertical title to the breadcrumbs
-        $(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' + numberOfThisPortfolioItem + ". " + item.title + '</a>');
+        $(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a>');
 
  
      } else{
