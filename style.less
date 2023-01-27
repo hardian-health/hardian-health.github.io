@@ -1987,7 +1987,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 // Add more whitespace to the first slide of the service subpage
 .portfolio-subpage section.page-section:first-of-type .content{
   //opacity:0.2 !important;
-  margin-top:40px;
+  margin-top:90px;
 }
 
 
@@ -2020,14 +2020,88 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   content: '\002F';
 }
 
+//meta stuff above the title
 .sub-service-meta{
   display:flex;
   justify-content: space-between;
 }
+
+// keep automatic-sub-page-meta centered by flex 1 on first and last items https://stackoverflow.com/questions/32378953/keep-the-middle-item-centered-when-side-items-have-different-widths
 .ProductItem-next-prev-codeandtonic, .service-subpage-breadcrumbs{
   flex:1;
 }
 
+//no underlines here
 .sub-service-meta a{
   text-decoration: none !important;
 }
+
+
+
+// Risk Classification - infograph 1 test from: https://docs.google.com/presentation/d/1W51X1gIbnmAD4x1pYbMK8-FGYDwqr46QQ98jAyaYiZA/edit#slide=id.g200f116371b_1_1
+.fe-63d3d1df55d0b241361a0b22{ 
+  
+  html & { // replace with .sqs-is-page-editing ? 
+    // A CSS :Before -label, for admin editing the page.
+    &:before{
+      content: "Custom CSS applied by Fenix to this element .fe-63d3d1df55d0b241361a0b22. Duplicating will not work. ";
+      opacity: 1.0;
+       transition: .5s all ease;
+      background: #ffc3c3;
+      color: black;
+      padding: 2px 6px;
+      font-size: 9px;
+      top: 17px !important;
+      margin: 0;
+      position: absolute;
+      text-transform: uppercase;
+      font-weight: 400;
+      height: 20px;
+      z-index: 99999999;
+    }
+  
+   }
+
+  .fe-block{
+ 
+
+    // styles only for grid infograph block
+    &.fe-block-yui_3_17_2_1_1674825182091_9353,
+    &.fe-block-7f494c7d7b0c3bec5f1d,
+    &.fe-block-e3d9e808ea70e42b3295,
+    &.fe-block-fde60c7a7bc7e1765192,
+    &.fe-block-9c8006e2cb038e9b667d,
+    &.fe-block-476107b978f5680de416,
+    &.fe-block-82f6c56288e017cc0b7d,
+    &.fe-block-c3c0fd53a1d8adf71442,
+    &.fe-block-3369f8c3bfc229873fed,
+    &.fe-block-e56b2bcc16f0f0abe47e,
+    &.fe-block-f84520f3c66d224c9ad6,
+    &.fe-block-5566db8db162ac064756,
+    &.fe-block-0220c9853d0843df67dc,
+    &.fe-block-05b8d0a57689e67de280,
+    &.fe-block-70e407110940e92b41b9 {
+      outline: 1px solid var(--neutral-lightgrey);
+  padding:4px !important;
+  text-align: center !important; // TODO: use pargraph 3 style everywhere instead of this
+  margin: 0 1px 1px 0; // avoid double borders from https://stackoverflow.com/questions/47882924/preventing-double-borders-in-css-grid
+  // add a hover state for background color
+  
+  /**/
+  p{
+    font-size: 12px !important;
+    //line-height: 1;
+  }
+      &:hover{
+        background: var(--current-service-color);
+        p{color: var(--neutral-white) !important;}
+        
+      }
+    }
+
+
+  
+}
+} // end of .fe-63d3d1df55d0b241361a0b22
+
+
