@@ -354,9 +354,11 @@ p {
 }
 
 
-// blog post pagination to same horizontal level (if one is 1 line, second 2 lines they'd look funky)
+
 .item-pagination-link {
-  align-items: flex-start;
+  //align-items: flex-start; // blog post pagination to same horizontal level (if one is 1 line, second 2 lines they'd look funky)
+  align-items: center;
+  max-width: 380px; // fixed the problem above with this
 }
 //😎😎😎 BLOG POST WIDTHS */
 

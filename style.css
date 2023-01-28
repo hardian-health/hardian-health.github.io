@@ -212,7 +212,8 @@ p {
   order: 4;
 }
 .item-pagination-link {
-  align-items: flex-start;
+  align-items: center;
+  max-width: 380px;
 }
 .blog-list-pagination {
   font-weight: 600 !important;
