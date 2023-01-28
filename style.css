@@ -1503,7 +1503,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   text-decoration: none !important;
 }
 @media screen and (min-width: 960px) {
-  .item-pagination-link {
+  .portfolio-subpage .item-pagination-link {
     margin-top: calc(-78.1px - 4vw) !important;
     z-index: 9999;
   }
