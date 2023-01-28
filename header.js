@@ -915,9 +915,12 @@ checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--re
 checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
 
 
-// Portfolio sub pages - has pagination but not .blog-item-wrapper
+// Portfolio sub pages - has pagination but not .blog-item-wrapper like single blog post OR .blog-list-pagination like blog list page (which also has empoty #itemPagination for some reason)
 $(document).ready(function () {
-    if($('#itemPagination').length && !$('.blog-item-wrapper').length){
+
+    //if($('#itemPagination').length && !$('.blog-item-wrapper').length){
+      // if page has #itemPagination and does not have .blog-item-wrapper and does not have .blog-list-pagination
+      if($('#itemPagination').length && !$('.blog-item-wrapper').length && !$('.blog-list-pagination').length){
       $('body').addClass('portfolio-subpage');
       portfolioSubPageFetch();
   }
