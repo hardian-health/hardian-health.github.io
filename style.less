@@ -2038,6 +2038,19 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 
+
+// Ankeets pagination idea - links on same row as last "Next steps" section
+//@media min-width: 960px {
+  @media screen and (min-width: 960px) { // on mobile it's too wide
+  .item-pagination-link{
+    margin-top: ~"calc(-78.1px - 4vw)" !important; // position vertically approximately where the last "Next steps" section is
+    z-index: 9999; // make it appear on top of the next steps section
+  }
+  
+}
+
+
+
 // Risk Classification - infograph 1 test from: https://docs.google.com/presentation/d/1W51X1gIbnmAD4x1pYbMK8-FGYDwqr46QQ98jAyaYiZA/edit#slide=id.g200f116371b_1_1
 .fe-63d3d1df55d0b241361a0b22{ 
   

@@ -1502,6 +1502,12 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .sub-service-meta a {
   text-decoration: none !important;
 }
+@media screen and (min-width: 960px) {
+  .item-pagination-link {
+    margin-top: calc(-78.1px - 4vw) !important;
+    z-index: 9999;
+  }
+}
 html .fe-63d3d1df55d0b241361a0b22:before {
   content: "Custom CSS applied by Fenix to this element .fe-63d3d1df55d0b241361a0b22. Duplicating will not work. ";
   opacity: 1;

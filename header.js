@@ -864,7 +864,7 @@ fetch(fetchUrl, {
 // run portfolioSubPageFetch() on jquey document ready
 
 $(document).ready(function () {
-  portfolioSubPageFetch();
+  //portfolioSubPageFetch();
 });
 
 
@@ -915,11 +915,11 @@ checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--re
 checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
 
 
-
-//on domready check if there's an element id="itemPagination", if there is ,add class of portfolio-subpage to the body
+// Portfolio sub pages - has pagination but not .blog-item-wrapper
 $(document).ready(function () {
-  if($('#itemPagination').length){
-    $('body').addClass('portfolio-subpage');
+    if($('#itemPagination').length && !$('.blog-item-wrapper').length){
+      $('body').addClass('portfolio-subpage');
+      portfolioSubPageFetch();
   }
 });
 
