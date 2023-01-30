@@ -929,3 +929,21 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+// link to services section on homepage (by scrolling to it) so we can use the link on breadcrumbs
+var servicesDataSectionID = '630906727a98a14798f4b3f4'
+$(document).ready(function () {
+  if (window.location.hash == '#services') {
+    $('html, body').animate({
+     //scrollTop: $('[data-section-id="630906727a98a14798f4b3f4"]').offset().top 
+     // use the variable instead of the hardcoded data-section-id
+      scrollTop: $('[data-section-id="' + servicesDataSectionID + '"]').offset().top
+    }, 1000);
+  }
+});
