@@ -2015,6 +2015,10 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   margin-top: 44px !important;
 }
 
+
+
+// Sub-service pages –  META above title
+
 .ProductItem-next-prev-codeandtonic{
   text-align: right;
 
@@ -2046,6 +2050,50 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 //no underlines here
 .sub-service-meta a{
   text-decoration: none !important;
+}
+
+// SUB-SERVICE PAGES -MOBILE 
+@media (max-width: 767px) {
+  .portfolio-subpage{ // todo move this to be parent for ALL sub page CSS
+  // left edge instead of center
+   p{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  p, h1, h2, h3, h4{
+    &[style*="text-align:center"]{
+      text-align:left !important;
+    }
+   }
+
+
+   // no need for extra white space on start, on mobile
+  .portfolio-subpage section.page-section:first-of-type .content{
+    margin-top:0px;
+  }
+
+  // less space between h1 and meta above it
+  h1{
+    margin-top:10px !important;
+  }
+  
+  // meta stuff on multiple lines
+  .sub-service-meta{
+    flex-wrap: wrap;
+    > * {
+      flex: 1 1 100%;
+    }
+    .ProductItem-next-prev-codeandtonic{
+      margin-top: 30px;
+      text-align: left;
+    }
+  }
+  // no space for "step 1/12" stuff  on mobile
+  .automatic-sub-page-meta{
+    display:none;
+  }
+  }
 }
 
 
