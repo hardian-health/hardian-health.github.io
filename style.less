@@ -1137,6 +1137,16 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/6306a10917
 🏷️ TYPOGRAPHY
 *******/ 
 
+
+
+//any heading with strong inside inherits font-weight from parent. Otherwise we'd have e.g. h3 900, but any strong 700. 
+h1, h2, h3, h4{
+  strong{
+    font-weight: inherit !important;
+  }
+}
+
+
 // ▶️ SUMMARY BLOCKS
 // Summary blocks - normal body copy font size, line height + heading as same
 .sqs-block-summary-v2 .summary-excerpt p, .sqs-block-summary-v2 .summary-excerpt ul, .sqs-block-summary-v2 .summary-excerpt li{

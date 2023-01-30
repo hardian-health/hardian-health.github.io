@@ -718,6 +718,12 @@ section[data-section-id="63470e27c96c5945e6d186bb"] .section-background {
 /******
 🏷️ TYPOGRAPHY
 *******/
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong {
+  font-weight: inherit !important;
+}
 .sqs-block-summary-v2 .summary-excerpt p,
 .sqs-block-summary-v2 .summary-excerpt ul,
 .sqs-block-summary-v2 .summary-excerpt li {
