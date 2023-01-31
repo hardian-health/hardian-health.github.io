@@ -2128,8 +2128,36 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 
+
 // Risk Classification - infograph 1 test from: https://docs.google.com/presentation/d/1W51X1gIbnmAD4x1pYbMK8-FGYDwqr46QQ98jAyaYiZA/edit#slide=id.g200f116371b_1_1
 .fe-63d3d1df55d0b241361a0b22{ 
+
+  
+
+//media query min-width 677px
+@media screen and (min-width: 768px) {
+
+ 
+
+
+  
+  .fe-block-e36894fe060700b67418,
+.fe-block-f81f643749bbd8167670,
+.fe-block-61e83213d745acffce8f,
+.fe-block-88072067f3690415748a,
+.fe-block-fda217c1094ec997087f,
+.fe-block-abf84ca7bcfbc235eecb,
+.fe-block-f07b94caa0f1713b38d2,
+.fe-block-2d8f049834f03a487dde{
+  display: none !important;
+}
+
+
+}
+
+
+
+
   
   html & { // replace with .sqs-is-page-editing ? 
     // A CSS :Before -label, for admin editing the page.
@@ -2171,7 +2199,25 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
     &.fe-block-5566db8db162ac064756,
     &.fe-block-0220c9853d0843df67dc,
     &.fe-block-05b8d0a57689e67de280,
+    &.fe-block-cbb6e8af5d9ad0fa7b81,
+    &.fe-block-f-3b94caa0f1713b38d2,
+    &.fe-block-f81f643749bbd8167670,
+    &.fe-block-e36884fe060700b67418,
+    &.fe-block-12d8f049834f03a487dde,
+    &.fe-block-abf84ca7bcfbc235eecb,
+    &.fe-block-f07b94caa0f1713b38d2,
+    &.fe-block-88072067f3690415748a,
+    &.fe-block-71e83213d745acffce8f,
+    &.fe-block-e36894fe060700b67418,
+    &.fe-block-fda217c1094ec997087f,
+    &.fe-block-2d8f049834f03a487dde,
+    &.fe-block-61e83213d745acffce8f,
     &.fe-block-70e407110940e92b41b9 {
+      .html-block{
+        justify-content: center !important;
+       // text-align: center !important;
+      }
+      
       outline: 1px solid var(--neutral-lightgrey);
   padding:4px !important;
   text-align: center !important; // TODO: use pargraph 3 style everywhere instead of this
@@ -2195,4 +2241,11 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 }
 } // end of .fe-63d3d1df55d0b241361a0b22
 
+
+.fe-block-61e83213d745acffce8f{
+  //background:red !important;
+  //display:block !important;
+}
+
+/*hide these mobile only extra grid cells on destkop, min-width 677px*/
 
