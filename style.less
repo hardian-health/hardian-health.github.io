@@ -1981,6 +1981,20 @@ section[data-section-id="62f5380c4bfb83573bcedd97"]{
 * SERVICES - SUBPAGES 
 */
 
+// Spacing - let's not use the grid for this as non-devs will struggle to keep it the same everywhere.
+.portfolio-subpage section.page-section   {
+  .content-wrapper {
+  padding: 60px 0 !important;
+}
+// last section
+  &:last-child {
+    .content-wrapper {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+
 // Service sub-page –   Spacing between h1 and the "step" meta above it
 h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   margin-top:0 !important;
@@ -1999,7 +2013,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 // Add more whitespace to the first slide of the service subpage
 .portfolio-subpage section.page-section:first-of-type .content{
   //opacity:0.2 !important;
-  margin-top:90px;
+  //margin-top:90px; // not needed after adding the top/bottom padding to all sections
 }
 
 
@@ -2103,8 +2117,11 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 //@media min-width: 960px {
   @media screen and (min-width: 960px) { // on mobile it's too wide
   .portfolio-subpage .item-pagination-link{
-    margin-top: ~"calc(-78.1px - 4vw)" !important; // position vertically approximately where the last "Next steps" section is
     z-index: 9999; // make it appear on top of the next steps section
+    
+    // position vertically approximately where the last "Next steps" section is
+    position: relative;
+    top: calc(-78.1px - 4vw) !important;
   }
   
 }
@@ -2117,6 +2134,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   html & { // replace with .sqs-is-page-editing ? 
     // A CSS :Before -label, for admin editing the page.
     &:before{
+      display: none !important;
       content: "Custom CSS applied by Fenix to this element .fe-63d3d1df55d0b241361a0b22. Duplicating will not work. ";
       opacity: 1.0;
        transition: .5s all ease;
