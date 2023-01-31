@@ -1466,6 +1466,12 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 /*
 * SERVICES - SUBPAGES 
 */
+.portfolio-subpage section.page-section .content-wrapper {
+  padding: 60px 0 !important;
+}
+.portfolio-subpage section.page-section:last-child .content-wrapper {
+  padding-bottom: 0 !important;
+}
 h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   margin-top: 0 !important;
 }
@@ -1474,9 +1480,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 }
 .service-subpage-breadcrumbs a {
   color: var(--current-service-color) !important;
-}
-.portfolio-subpage section.page-section:first-of-type .content {
-  margin-top: 90px;
 }
 .portfolio-subpage p {
   max-width: 501px;
@@ -1543,11 +1546,13 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 }
 @media screen and (min-width: 960px) {
   .portfolio-subpage .item-pagination-link {
-    margin-top: calc(-78.1px - 4vw) !important;
     z-index: 9999;
+    position: relative;
+    top: calc(-78.1px - 4vw) !important;
   }
 }
 html .fe-63d3d1df55d0b241361a0b22:before {
+  display: none !important;
   content: "Custom CSS applied by Fenix to this element .fe-63d3d1df55d0b241361a0b22. Duplicating will not work. ";
   opacity: 1;
   transition: 0.5s all ease;
