@@ -2018,10 +2018,17 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 // Let's use CSS for paragraph widths, vertical spacing, etc.
-.portfolio-subpage p {
+.portfolio-subpage {
+  h4, h3{
+    font-size: inherit !important;
+    margin-bottom:2px !important;
+  }
+  //p, and all headings 1-4
+  p, h1, h2, h3, h4 {
   max-width: 501px;
   margin-left: auto;
   margin-right: auto;
+}
 }
 
 //space between lead and <p> after it

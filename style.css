@@ -1481,7 +1481,16 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .service-subpage-breadcrumbs a {
   color: var(--current-service-color) !important;
 }
-.portfolio-subpage p {
+.portfolio-subpage h4,
+.portfolio-subpage h3 {
+  font-size: inherit !important;
+  margin-bottom: 2px !important;
+}
+.portfolio-subpage p,
+.portfolio-subpage h1,
+.portfolio-subpage h2,
+.portfolio-subpage h3,
+.portfolio-subpage h4 {
   max-width: 501px;
   margin-left: auto;
   margin-right: auto;
