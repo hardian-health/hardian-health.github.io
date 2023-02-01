@@ -532,7 +532,8 @@ h1 + p.sqsrte-large {
   margin-left: auto;
   margin-right: auto;
 }
-h4 + p {
+h4 + p,
+h3 + p {
   margin-top: -26px !important;
 }
 p {
@@ -1481,16 +1482,20 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .service-subpage-breadcrumbs a {
   color: var(--current-service-color) !important;
 }
-.portfolio-subpage h4,
-.portfolio-subpage h3 {
+.portfolio-subpage article.sections h4 + p,
+.portfolio-subpage article.sections h3 + p {
+  margin-top: 0 !important;
+}
+.portfolio-subpage article.sections h4,
+.portfolio-subpage article.sections h3 {
   font-size: inherit !important;
   margin-bottom: 2px !important;
 }
-.portfolio-subpage p,
-.portfolio-subpage h1,
-.portfolio-subpage h2,
-.portfolio-subpage h3,
-.portfolio-subpage h4 {
+.portfolio-subpage article.sections p,
+.portfolio-subpage article.sections h1,
+.portfolio-subpage article.sections h2,
+.portfolio-subpage article.sections h3,
+.portfolio-subpage article.sections h4 {
   max-width: 501px;
   margin-left: auto;
   margin-right: auto;
@@ -1522,15 +1527,23 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
   text-decoration: none !important;
 }
 @media (max-width: 767px) {
-  .portfolio-subpage p {
+  .portfolio-subpage article.sections .design-layout-fluid.image-position-center .sqs-image {
+    justify-content: left;
+  }
+  .portfolio-subpage article.sections p,
+  .portfolio-subpage article.sections h3,
+  .portfolio-subpage article.sections h4,
+  .portfolio-subpage article.sections h1,
+  .portfolio-subpage article.sections h2 {
     margin-left: 0 !important;
     margin-right: 0 !important;
+    justify-content: left;
   }
-  .portfolio-subpage p[style*="text-align:center"],
-  .portfolio-subpage h1[style*="text-align:center"],
-  .portfolio-subpage h2[style*="text-align:center"],
-  .portfolio-subpage h3[style*="text-align:center"],
-  .portfolio-subpage h4[style*="text-align:center"] {
+  .portfolio-subpage article.sections p[style*="text-align:center"],
+  .portfolio-subpage article.sections h1[style*="text-align:center"],
+  .portfolio-subpage article.sections h2[style*="text-align:center"],
+  .portfolio-subpage article.sections h3[style*="text-align:center"],
+  .portfolio-subpage article.sections h4[style*="text-align:center"] {
     text-align: left !important;
   }
   .portfolio-subpage .portfolio-subpage section.page-section:first-of-type .content {

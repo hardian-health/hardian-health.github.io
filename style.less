@@ -834,8 +834,8 @@ h1 + p.sqsrte-large{
   //.custom-styles-applied();
 }
 
-//HOMEPAGE SERVICES BOXES?
-h4 + p{
+//HOMEPAGE SERVICES BOXES and service sub pages. 
+h4 + p, h3 + p{
   margin-top:-26px !important;
 }
 
@@ -2018,7 +2018,11 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 // Let's use CSS for paragraph widths, vertical spacing, etc.
-.portfolio-subpage {
+// only sections (article.sections), not e.g. footer newsletter headings which should be centered
+.portfolio-subpage article.sections {
+  h4 + p, h3 + p{
+    margin-top:0 !important;
+  }
   h4, h3{
     font-size: inherit !important;
     margin-bottom:2px !important;
@@ -2077,16 +2081,28 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 @media (max-width: 767px) {
   .portfolio-subpage{ // todo move this to be parent for ALL sub page CSS
   // left edge instead of center
-   p{
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
 
-  p, h1, h2, h3, h4{
-    &[style*="text-align:center"]{
-      text-align:left !important;
+  // mobile team images left - looks weird if only text is left, image center
+  
+  article.sections{
+    .design-layout-fluid.image-position-center .sqs-image{
+      justify-content: left;
     }
-   }
+
+    p, h3, h4, h1, h2{
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      justify-content: left;
+    }
+  
+    p, h1, h2, h3, h4{
+      &[style*="text-align:center"]{
+        text-align:left !important;
+      }
+     }
+
+  } 
+  
 
 
    // no need for extra white space on start, on mobile
