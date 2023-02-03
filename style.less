@@ -673,13 +673,15 @@ CSS
 
 
 //hide strikethrough from visitors
-h1, h2, h3, h4{
+body:not(.sqs-is-page-editing){ 
+  h1, h2, h3, h4{
 span[style*="text-decoration:line-through"]{
   display:none;
-}
+  }
+  }
   }
 
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode {
+body.sqs-is-page-editing {
   h1, h2, h3, h4{
    span[style*="text-decoration:line-through"]{
      display:block;
@@ -737,12 +739,10 @@ body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode {
     transform-origin: 50% 50% 25px;
   &.out{
       transform: rotateX(90deg);
-    //was 0.32s
     transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
   &.in {
     transform: rotateX(0deg);
-     //was 0.32s
     transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
   &.behind {
@@ -1167,7 +1167,8 @@ h1, h2, h3, h4{
 
 // META DATES BLOG GRID + SUMMARY BLOCK, SINGLE BLOG POST (date + categories), service sub-page "step 1/12" etc.
 /*.blog-basic-grid .blog-categories, .blog-basic-grid .blog-author,*/ 
-.ProductItem-next-prev-codeandtonic, .service-subpage-breadcrumbs, .automatic-sub-page-meta, .blog-basic-grid .blog-date, .summary-metadata-item--date, .blog-meta-item--date * /*, .blog-item-category*/{
+.ProductItem-next-prev-codeandtonic, .service-subpage-breadcrumbs, .automatic-sub-page-meta, .blog-basic-grid .blog-date, .summary-metadata-item--date, .blog-meta-item--date * /*, .blog-item-category*/, pre, pre code{
+  line-height: 18px !important;
   font-weight:600 !important;
   color: @black !important;
   font-size: 10.9px !important;
@@ -2272,3 +2273,48 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 /*hide these mobile only extra grid cells on destkop, min-width 677px*/
 
+
+
+
+/*
+INFOGRAPHICS
+*/
+
+.fe-block-f9e1dff646acf9c4af73,
+.fe-block-a3ee845a15ec1d968b6d,
+.fe-block-70567ea7cb126eebad5d,
+.fe-block-a230150d8b24e9e15530,
+.fe-block-dc21c2250a162a6e2e96,
+.fe-block-727f3d4ec1382dc833ac
+{
+  border: 1px solid var(--current-service-color) !important;
+  padding:4px; //TODO CHECK other boxes
+}
+
+//has line TODO make JS polyfill
+.sqs-block-content.has-charts-100-height, .sqs-block-content:has(.chart-line) {
+  height: 100% !important;
+}
+/*
+.sqs-block-content:has(.horizontal-line) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+*/
+
+.chart-line {
+  background: var(--current-service-color);
+  &.vertical-line{
+    margin: 0 auto;
+    width: 1px;
+    height: 100%;
+
+  }
+
+  &.horizontal-line{
+    height: 1px;
+    width: 100%;
+
+  }
+}

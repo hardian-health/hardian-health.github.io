@@ -418,22 +418,22 @@ CSS
 🐠🐠🐠🐠🐠
 
 */
-h1 span[style*="text-decoration:line-through"],
-h2 span[style*="text-decoration:line-through"],
-h3 span[style*="text-decoration:line-through"],
-h4 span[style*="text-decoration:line-through"] {
+body:not(.sqs-is-page-editing) h1 span[style*="text-decoration:line-through"],
+body:not(.sqs-is-page-editing) h2 span[style*="text-decoration:line-through"],
+body:not(.sqs-is-page-editing) h3 span[style*="text-decoration:line-through"],
+body:not(.sqs-is-page-editing) h4 span[style*="text-decoration:line-through"] {
   display: none;
 }
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h1 span[style*="text-decoration:line-through"],
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h2 span[style*="text-decoration:line-through"],
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h3 span[style*="text-decoration:line-through"],
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h4 span[style*="text-decoration:line-through"] {
+body.sqs-is-page-editing h1 span[style*="text-decoration:line-through"],
+body.sqs-is-page-editing h2 span[style*="text-decoration:line-through"],
+body.sqs-is-page-editing h3 span[style*="text-decoration:line-through"],
+body.sqs-is-page-editing h4 span[style*="text-decoration:line-through"] {
   display: block;
 }
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h1 span[style*="text-decoration:line-through"]:before,
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h2 span[style*="text-decoration:line-through"]:before,
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h3 span[style*="text-decoration:line-through"]:before,
-body.sqs-edit-mode-active.sqs-layout-editing.sqs-edit-mode h4 span[style*="text-decoration:line-through"]:before {
+body.sqs-is-page-editing h1 span[style*="text-decoration:line-through"]:before,
+body.sqs-is-page-editing h2 span[style*="text-decoration:line-through"]:before,
+body.sqs-is-page-editing h3 span[style*="text-decoration:line-through"]:before,
+body.sqs-is-page-editing h4 span[style*="text-decoration:line-through"]:before {
   content: "(This strikethrough text will be animated. )";
   position: absolute;
   top: -9px;
@@ -745,7 +745,10 @@ h4 strong {
 .automatic-sub-page-meta,
 .blog-basic-grid .blog-date,
 .summary-metadata-item--date,
-.blog-meta-item--date * {
+.blog-meta-item--date *,
+pre,
+pre code {
+  line-height: 18px !important;
   font-weight: 600 !important;
   color: #1C1D1E !important;
   font-size: 10.9px !important;
@@ -1757,3 +1760,38 @@ html .fe-63d3d1df55d0b241361a0b22:before {
   color: var(--neutral-white) !important;
 }
 /*hide these mobile only extra grid cells on destkop, min-width 677px*/
+/*
+INFOGRAPHICS
+*/
+.fe-block-f9e1dff646acf9c4af73,
+.fe-block-a3ee845a15ec1d968b6d,
+.fe-block-70567ea7cb126eebad5d,
+.fe-block-a230150d8b24e9e15530,
+.fe-block-dc21c2250a162a6e2e96,
+.fe-block-727f3d4ec1382dc833ac {
+  border: 1px solid var(--current-service-color) !important;
+  padding: 4px;
+}
+.sqs-block-content.has-charts-100-height,
+.sqs-block-content:has(.chart-line) {
+  height: 100% !important;
+}
+/*
+.sqs-block-content:has(.horizontal-line) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+*/
+.chart-line {
+  background: var(--current-service-color);
+}
+.chart-line.vertical-line {
+  margin: 0 auto;
+  width: 1px;
+  height: 100%;
+}
+.chart-line.horizontal-line {
+  height: 1px;
+  width: 100%;
+}

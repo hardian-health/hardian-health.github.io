@@ -259,119 +259,119 @@ $( document ).ready(function() {
 
 try {
 
-function animateStrikedThroughHeadingsCodeAndTonicStyle(){
+  function animateStrikedThroughHeadingsCodeAndTonicStyle(){
+    
+  }
   
-}
-
-   //code that might throw an exception
-   var howLongWeShowALineFor = 2500;
-   var howCloseShouldTheAnimationsOverlap = 360;
-   var letterspeed = 45;
-   $( document ).ready(function() {    
+     //code that might throw an exception
+     var howLongWeShowALineFor = 2500;
+     var howCloseShouldTheAnimationsOverlap = 360;
+     var letterspeed = 45;
+     $( document ).ready(function() {    
+         
+     
+     
+     
+     //select a heading that has a strike through (way for user to select a heading to be animated)
+     var animatedH1 = $( "h1, h2, h3" ).has( "span[style*='line-through']" ); // let's check if we have a heading with a strike through first
+     if(animatedH1.length){
+          console.log("✅ We have a heading with a strike through. Let's animate it");
+        //remove white-space:pre-wrap;
+     animatedH1.css("white-space", "normal");
+     
+     //add a class so we can add CSS animations not for all headings, but only animated specific ones
+     animatedH1.addClass("codetonic-textanimation-one");
+     
+     // get the page breaked lines as array
+     var animationArray = animatedH1.children("span")[0].innerHTML.split("<br>");
+     
+     //add the first line and a container for animated lines
+     animatedH1.html(animationArray[0] + '<br><span class="container"></span>');
+     
+     
+     //loop through lines and add them as span.word -tags
+     for (var i = 1; i < animationArray.length; i++) { 
+         console.log(animationArray[i]); 
+         $("span.container").append("<span class='word'>" + animationArray[i] + "</span>");
+     }
+     
+     
+     ///Animation JS
+     //animoidaan
+     var words = document.getElementsByClassName('word');
+     var wordArray = [];
+     var currentWord = 0;
+     
+     words[currentWord].style.opacity = 1;
+     for (var i = 0; i < words.length; i++) {
+       splitLetters(words[i]);
+     }
+     
+     function changeWord() {
+       var cw = wordArray[currentWord];
+       var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+       for (var i = 0; i < cw.length; i++) {
+         animateLetterOut(cw, i);
+       }
        
-   
-   
-   
-   //select a heading that has a strike through (way for user to select a heading to be animated)
-   var animatedH1 = $( "h1, h2, h3" ).has( "span[style*='line-through']" ); // let's check if we have a heading with a strike through first
-   if(animatedH1.length){
-        console.log("✅ We have a heading with a strike through. Let's animate it");
-      //remove white-space:pre-wrap;
-   animatedH1.css("white-space", "normal");
-   
-   //add a class so we can add CSS animations not for all headings, but only animated specific ones
-   animatedH1.addClass("codetonic-textanimation-one");
-   
-   // get the page breaked lines as array
-   var animationArray = animatedH1.children("span")[0].innerHTML.split("<br>");
-   
-   //add the first line and a container for animated lines
-   animatedH1.html(animationArray[0] + '<br><span class="container"></span>');
-   
-   
-   //loop through lines and add them as span.word -tags
-   for (var i = 1; i < animationArray.length; i++) { 
-       console.log(animationArray[i]); 
-       $("span.container").append("<span class='word'>" + animationArray[i] + "</span>");
-   }
-   
-   
-   ///Animation JS
-   //animoidaan
-   var words = document.getElementsByClassName('word');
-   var wordArray = [];
-   var currentWord = 0;
-   
-   words[currentWord].style.opacity = 1;
-   for (var i = 0; i < words.length; i++) {
-     splitLetters(words[i]);
-   }
-   
-   function changeWord() {
-     var cw = wordArray[currentWord];
-     var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
-     for (var i = 0; i < cw.length; i++) {
-       animateLetterOut(cw, i);
+       for (var i = 0; i < nw.length; i++) {
+         nw[i].className = 'letter behind';
+         nw[0].parentElement.style.opacity = 1;
+         animateLetterIn(nw, i);
+       }
+       
+       currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
      }
      
-     for (var i = 0; i < nw.length; i++) {
-       nw[i].className = 'letter behind';
-       nw[0].parentElement.style.opacity = 1;
-       animateLetterIn(nw, i);
+     function animateLetterOut(cw, i) {
+       setTimeout(function() {
+         cw[i].className = 'letter out';
+       }, i*letterspeed);
      }
      
-     currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
-   }
-   
-   function animateLetterOut(cw, i) {
-     setTimeout(function() {
-       cw[i].className = 'letter out';
-     }, i*letterspeed);
-   }
-   
-   function animateLetterIn(nw, i) {
-     setTimeout(function() {
-       nw[i].className = 'letter in';
-     }, howCloseShouldTheAnimationsOverlap+(i*letterspeed));
-   }
-   
-   function splitLetters(word) {
-     var content = word.innerHTML;
-     word.innerHTML = '';
-     var letters = [];
-     for (var i = 0; i < content.length; i++) {
-       var letter = document.createElement('span');
-       letter.className = 'letter';
-       letter.innerHTML = content.charAt(i);
-       word.appendChild(letter);
-       letters.push(letter);
+     function animateLetterIn(nw, i) {
+       setTimeout(function() {
+         nw[i].className = 'letter in';
+       }, howCloseShouldTheAnimationsOverlap+(i*letterspeed));
      }
      
-     wordArray.push(letters);
-   }
-   
-   changeWord();
-   setInterval(changeWord, howLongWeShowALineFor);
-
-   } else{
-      console.log("no heading with a strike through - no animation for you");
-
-   }
-
-   
-   
-   
+     function splitLetters(word) {
+       var content = word.innerHTML;
+       word.innerHTML = '';
+       var letters = [];
+       for (var i = 0; i < content.length; i++) {
+         var letter = document.createElement('span');
+         letter.className = 'letter';
+         letter.innerHTML = content.charAt(i);
+         word.appendChild(letter);
+         letters.push(letter);
+       }
+       
+       wordArray.push(letters);
+     }
      
-     }); 
-
-
-
-
-} //END OF TRY FUNCTION
-catch (e) {
-   //code to handle the exception
-   console.log("no animation for striketrough headings here...");
-}
+     changeWord();
+     setInterval(changeWord, howLongWeShowALineFor);
+  
+     } else{
+        console.log("no heading with a strike through - no animation for you");
+  
+     }
+  
+     
+     
+     
+       
+       }); 
+  
+  
+  
+  
+  } //END OF TRY FUNCTION
+  catch (e) {
+     //code to handle the exception
+     console.log("no animation for striketrough headings here...");
+  }
 
 
 
@@ -780,7 +780,6 @@ fetch(fetchUrl, {
 
        
         
-
         
         // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
         // check if we are on clinical, regulatory, strategy, health economics, or intellectual property by checking the url path.
@@ -815,7 +814,8 @@ fetch(fetchUrl, {
         // add the vertical title to the breadcrumbs
         //$(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a>');
         //
-        $(".sub-service-meta").prepend('<div class="service-subpage-breadcrumbs">Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a></div>');
+        $(".sub-service-meta").prepend('<div class="service-subpage-breadcrumbs"><a href="/#services">Services</a> &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a></div>');
+
 
          // set the meta (Step 1/12) above title
          //$(".automatic-sub-page-meta").html(" Step " + i + "/" + totalNumberOfPortfolioItems );
@@ -935,15 +935,15 @@ $(document).ready(function () {
 
 
 
-
 // link to services section on homepage (by scrolling to it) so we can use the link on breadcrumbs
 var servicesDataSectionID = '630906727a98a14798f4b3f4'
 $(document).ready(function () {
   if (window.location.hash == '#services') {
     $('html, body').animate({
-     //scrollTop: $('[data-section-id="630906727a98a14798f4b3f4"]').offset().top 
-     // use the variable instead of the hardcoded data-section-id
-      scrollTop: $('[data-section-id="' + servicesDataSectionID + '"]').offset().top
+      //scrollTop: $('[data-section-id="630906727a98a14798f4b3f4"]').offset().top 
+      // use the variable instead of the hardcoded data-section-id
+      scrollTop: $('[data-section-id="' + servicesDataSectionID + '"]').offset().top - 40 // -40 to account for the sticky header
     }, 1000);
   }
 });
+
