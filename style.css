@@ -28,6 +28,12 @@
 .health-economics {
   --current-service-color: var(--health-economics-brightpink);
 }
+/*********
+ TEAM PAGE
+**********/
+p + pre {
+  margin-top: -12px;
+}
 /* *****
  SERVICES DROPDOWN COLOR BOXES
 ****** */
