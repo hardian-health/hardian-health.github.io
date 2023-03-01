@@ -677,10 +677,38 @@ article p a,
     font-size: 26px !important;
   }
 }
+/*
+
+IMAGES
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42ea11aa86570516a0c4/1677673194550/Circle+regulatory-mintgreen+%2349DAB0.png
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff4304c6aade086717daaf/1677673220146/Circle+ip-darkblue+%233A6DF5.png
+https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png
+*/
+.section-background {
+  background-position: top calc(-6vw  - 38px) left calc(-6vw  - 38px), bottom calc(0vw  + 0px) right calc(-8vw  + -39px) !important;
+  background-repeat: no-repeat, no-repeat;
+  background-size: calc(12vw + 80px) auto;
+}
+section[data-section-id="63fe6a99421d3c16149c8d55"] .section-background {
+  background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png);
+}
+section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
+  background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
+}
+section[data-section-id="63ff4493e22cef12e961eace"] .section-background {
+  background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42ea11aa86570516a0c4/1677673194550/Circle+regulatory-mintgreen+%2349DAB0.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42ea11aa86570516a0c4/1677673194550/Circle+regulatory-mintgreen+%2349DAB0.png);
+}
+section[data-section-id="63ff454406ca054fd4fcf921"] .section-background {
+  background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff4304c6aade086717daaf/1677673220146/Circle+ip-darkblue+%233A6DF5.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff4304c6aade086717daaf/1677673220146/Circle+ip-darkblue+%233A6DF5.png);
+}
+section[data-section-id="63ff45fee385f576b580ad2d"] .section-background {
+  background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png);
+}
 section[data-section-id="63470e27c96c5945e6d186bb"] .section-background,
 section[data-section-id="63f8da6bd2901235ddf21fe9"] .section-background,
 section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
-  background-repeat: no-repeat, no-repeat;
   /*    
 //background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63069d8616ecd437bb459966/1661377926454/single+circle+-+pink+blue+gradient.png),
 background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
@@ -720,7 +748,6 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536
    top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
    bottom ~"calc(10vh + 20px)" right  ~"calc(-120px + -2vw)" ;
   */
-  background-size: calc(12vw + 80px) auto;
   /*
   background-position: 
    top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
@@ -735,8 +762,6 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536
    background-position: ~"top calc(6vw + -100px) left calc(-100px + -2vw), bottom calc(0vh + 20px) right calc(-100px + -4vw)";
    
    */
-  background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png), url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
-  background-position: top calc(-6vw  - 38px) left calc(-6vw  - 38px), bottom calc(0vw  + 0px) right calc(-8vw  + -39px) !important;
 }
 .careers-blog-single .blog-item-meta-wrapper,
 .careers-blog-single .item-pagination,
