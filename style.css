@@ -677,11 +677,66 @@ article p a,
     font-size: 26px !important;
   }
 }
-section[data-section-id="63470e27c96c5945e6d186bb"] .section-background {
-  background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63069d8616ecd437bb459966/1661377926454/single+circle+-+pink+blue+gradient.png), url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/6306a10917e44f371c0c34c2/1661378825510/single+circle+-+green++blue+gradient.png);
+section[data-section-id="63470e27c96c5945e6d186bb"] .section-background,
+section[data-section-id="63f8da6bd2901235ddf21fe9"] .section-background,
+section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
   background-repeat: no-repeat, no-repeat;
-  background-size: calc(22vw + 70px) auto;
-  background-position: top calc(10vh + 20px) left calc(-120px + -2vw), bottom calc(10vh + 20px) right calc(-120px + -2vw);
+  /*    
+//background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63069d8616ecd437bb459966/1661377926454/single+circle+-+pink+blue+gradient.png),
+background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
+
+//url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/6306a10917e44f371c0c34c2/1661378825510/single+circle+-+green++blue+gradient.png);
+url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
+url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
+url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
+  
+  
+  // create css variable for the size of the circles
+
+  --circleBaseSize: 18vw;
+  --circleAddSize: 70px;
+
+  --circleBaseVerticalDistance: 1vh; // 0 hakkaa ylä/alareunaan. vh skaalaa responsiivisesti
+  --circlePxVerticalDistance: 20px; // 0 hakkaa ylä/alareunaan
+  
+  --circleHorizonalBase: -6vw; // negative value -> move circles outside viewport
+  --circleHorizontalPx: -90px;// negative value ->  move circles outside viewport
+  
+   
+   // VER 4 with CSS custom properties
+    background-size:calc(var(--circleBaseSize) + var(--circleAddSize)) auto;
+    background-position: 
+    top ~"calc(1vh + 20px)" left ~"calc(-120px + -2vw)", 
+    bottom ~"calc(1vh + 20px)" right  ~"calc(-120px + -2vw)" ;
+    
+    // make background position using CSS custom properties instead of LESS variables but keep it exactly the same
+    background-position: top calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) left calc(var(--circleHorizonalBase) + var(--circleHorizontalPx)), bottom calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) right calc(var(--circleHorizonalBase) + var(--circleHorizontalPx)), bottom calc(var(--circleBaseVerticalDistance) + var(--circlePxVerticalDistance)) left calc(-14vw + -69px), top calc(-7vw + -69px) right calc(-14vw + -69px);
+    
+*/
+  /*
+  // VER 2 SEP 1 16:52
+   background-size:~"calc(22vw + 70px)" auto;
+  background-position: 
+   top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
+   bottom ~"calc(10vh + 20px)" right  ~"calc(-120px + -2vw)" ;
+  */
+  background-size: calc(12vw + 80px) auto;
+  /*
+  background-position: 
+   top ~"calc(10vh + 20px)" left ~"calc(-120px + -2vw)", 
+   bottom ~"calc(10vh + 20px)" right  ~"calc(-120px + -2vw)" ;
+
+   background-position: 
+   top ~"calc(0vw + 20px)" left ~"calc(-120px + -2vw)", 
+   bottom ~"calc(0vw + 20px)" right  ~"calc(-120px + -2vw)" ;
+*/
+  /*
+  background-size:~"calc(18vw + 70px)" auto;
+   background-position: ~"top calc(6vw + -100px) left calc(-100px + -2vw), bottom calc(0vh + 20px) right calc(-100px + -4vw)";
+   
+   */
+  background-image: url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png), url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
+  background-position: top calc(-6vw  - 38px) left calc(-6vw  - 38px), bottom calc(0vw  + 0px) right calc(-8vw  + -39px) !important;
 }
 .careers-blog-single .blog-item-meta-wrapper,
 .careers-blog-single .item-pagination,
@@ -1263,6 +1318,9 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
   left:50%;
 }
 */
+body.main-service-portfolio-milestones-page section:first-of-type .content-wrapper {
+  padding: 90px 0 !important;
+}
 #gridThumbs {
   overflow: hidden;
   position: relative;
@@ -1285,7 +1343,9 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 #gridThumbs .grid-image {
   display: none;
 }
-#gridThumbs h2 {
+#gridThumbs h2,
+#gridThumbs h3,
+#gridThumbs h4 {
   width: 100%;
   margin-left: -20px !important;
   z-index: 10;

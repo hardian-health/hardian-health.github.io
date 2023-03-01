@@ -402,9 +402,11 @@ try {
  * PRE-MARKET & POST-MARKET TITLES TO TIMELINE
  */
 var preAndPostMarketTitleBeforeFirstOfThose = function() {
-  $(".grid-item").first().before("<h2>Pre-Market</h2>");
+  $(".grid-item").first().before("<h4 class='pre-market-title'>Pre-Market</h4>");
+  //before .pre-market-title add a h2 with content: "The Journey"
+  $(".pre-market-title").before("<h2 class='pre-market-title-journey'>The Journey</h2>");
   var $firstPostMarket = $('.grid-item[href*="post-market"]:first');
-  $firstPostMarket.before('<h2 class="post-market-title">Post-market</h2>');
+  $firstPostMarket.before('<h4 class="post-market-title">Post-market</h4>');
 }
 
 $( document ).ready(function() {   
@@ -516,6 +518,16 @@ $(document).ready(function() {
 
 
 
+$(document).ready(function() {
+
+  //fetchAndAddDescriptions();
+  // check if we have this element: #gridThumbs.portfolio-grid-basic on the page. if we do, run the function
+  if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
+      console.log("we are on a portfolio page");
+      //add class to the body: .main-service-portfolio-milestones-page
+      $("body").addClass("main-service-portfolio-milestones-page");
+  }
+});
 
 
 
@@ -946,4 +958,6 @@ $(document).ready(function () {
     }, 1000);
   }
 });
+
+
 
