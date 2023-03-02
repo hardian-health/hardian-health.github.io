@@ -1794,7 +1794,7 @@ SERVIES PORTFOLIO SUBPAGE SKETCHING
 
 
 //Portfolio / Milestones grid page - first hero section vertical white-space.
-body.main-service-portfolio-milestones-page section:first-of-type{
+body.portfolio-parent-page section:first-of-type{
   .content-wrapper{
     padding:90px 0 !important
   }
@@ -2149,7 +2149,7 @@ section[data-section-id="62f5380c4bfb83573bcedd97"]{
 */
 
 // Spacing - let's not use the grid for this as non-devs will struggle to keep it the same everywhere.
-.portfolio-subpage section.page-section   {
+.portfolio-main-or-child-page section.page-section   {
   .content-wrapper {
   padding: 60px 0 !important;
 }
@@ -2178,7 +2178,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 }
 
 // Add more whitespace to the first slide of the service subpage
-.portfolio-subpage section.page-section:first-of-type .content{
+.portfolio-child-page section.page-section:first-of-type .content{
   //opacity:0.2 !important;
   //margin-top:90px; // not needed after adding the top/bottom padding to all sections
 }
@@ -2186,7 +2186,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 // Let's use CSS for paragraph widths, vertical spacing, etc.
 // only sections (article.sections), not e.g. footer newsletter headings which should be centered
-.portfolio-subpage article.sections {
+.portfolio-child-page article.sections {
   h4 + p, h3 + p{
     margin-top:0 !important;
   }
@@ -2203,7 +2203,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 }
 
 //space between lead and <p> after it
-.portfolio-subpage .sqsrte-large + p {
+.portfolio-child-page .sqsrte-large + p {
   margin-top: 44px !important;
 }
 
@@ -2246,7 +2246,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 // SUB-SERVICE PAGES -MOBILE 
 @media (max-width: 767px) {
-  .portfolio-subpage{ // todo move this to be parent for ALL sub page CSS
+  .portfolio-child-page{ // todo move this to be parent for ALL sub page CSS
   // left edge instead of center
 
   // mobile team images left - looks weird if only text is left, image center
@@ -2273,7 +2273,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
    // no need for extra white space on start, on mobile
-  .portfolio-subpage section.page-section:first-of-type .content{
+  .portfolio-child-page section.page-section:first-of-type .content{
     margin-top:0px;
   }
 
@@ -2306,7 +2306,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 // Ankeets pagination idea - links on same row as last "Next steps" section
 //@media min-width: 960px {
   @media screen and (min-width: 960px) { // on mobile it's too wide
-  .portfolio-subpage .item-pagination-link{
+  .portfolio-child-page .item-pagination-link{
     z-index: 9999; // make it appear on top of the next steps section
     
     // position vertically approximately where the last "Next steps" section is

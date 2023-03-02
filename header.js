@@ -525,7 +525,7 @@ $(document).ready(function() {
   if (document.querySelector("#gridThumbs.portfolio-grid-basic")) {
       console.log("we are on a portfolio page");
       //add class to the body: .main-service-portfolio-milestones-page
-      $("body").addClass("main-service-portfolio-milestones-page");
+      $('body').addClass('portfolio-main-or-child-page portfolio-parent-page');
   }
 });
 
@@ -933,15 +933,10 @@ $(document).ready(function () {
     //if($('#itemPagination').length && !$('.blog-item-wrapper').length){
       // if page has #itemPagination and does not have .blog-item-wrapper and does not have .blog-list-pagination
       if($('#itemPagination').length && !$('.blog-item-wrapper').length && !$('.blog-list-pagination').length){
-      $('body').addClass('portfolio-subpage');
+      $('body').addClass('portfolio-main-or-child-page portfolio-child-page');
       portfolioSubPageFetch();
   }
 });
-
-
-
-
-
 
 
 
