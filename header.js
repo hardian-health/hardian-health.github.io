@@ -393,9 +393,8 @@ try {
 
 
 /**
-* 🌸🌸🌸 SECTION - PORTFOLIO GRID PAGE
+* 🌸🌸🌸 SECTION - PORTFOLIO GRID MAIN PARENT PAGE
 */
-
 
 
 /**
@@ -790,43 +789,43 @@ fetch(fetchUrl, {
           $("h1").first().before('<div class="sub-service-meta"></div>');
 
 
-       
-        
-        
-        // add this to .service-subpage-breadcrumbs: <p style="text-align: left;white-space:pre-wrap;" class="sqsrte-small"><a href="/clinical">Clinical</a>  &gt; <a href="">Intended use</a></p>
-        // check if we are on clinical, regulatory, strategy, health economics, or intellectual property by checking the url path.
         var path = window.location.pathname;
+        var vertical = "";
 
-        /*var pathArray = path.split('/');
-        var vertical = pathArray[1]; */
-        // we don't know if the path is /clinical or /example/clinical/ or example/clinical/blah/blah/blah. so for switch below, check if the path contains /clinical
-        
+       // BREADCRUMBS TITLE AND URL FOR VERTICAL
         //var verticalTitle = "";
         if (path.includes("clinical")) {
           verticalTitle = "Clinical";
-          vertical = "/services/clinical";
+          //vertical = "/clinical";// get this automatically from the path
+          //vertical = path.split('/')[1];
+          vertical = path.split('/')[1];
         } else if (path.includes("regulatory")) {
           verticalTitle = "Regulatory";
-          vertical = "/services/regulatory";
+          //vertical = "/services/regulatory";
+          vertical = path.split('/')[1];
         } else if (path.includes("strategy")) {
           verticalTitle = "Strategy";
-          vertical = "/services/strategy";
+          //vertical = "/services/strategy";
+          vertical = path.split('/')[1];
         } else if (path.includes("health-economics")) {
           verticalTitle = "Health Economics";
-          vertical = "/services/health-economics";
+          //vertical = "/services/health-economics";
+          vertical = path.split('/')[1];
         } else if (path.includes("intellectual-property")) {
           verticalTitle = "Intellectual Property";
-          vertical = "/services/intellectual-property";
+          //vertical = "/services/intellectual-property";
+          vertical = path.split('/')[1];
         } else {
           verticalTitle = "Clinical";
-          vertical = "/services/clinical";
+          //vertical = "/services/clinical";
+          vertical = path.split('/')[1];
         }
 
 
         // add the vertical title to the breadcrumbs
         //$(".service-subpage-breadcrumbs").append('Services &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a>');
         //
-        $(".sub-service-meta").prepend('<div class="service-subpage-breadcrumbs"><a href="/#services">Services</a> &gt; <a href="' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a></div>');
+        $(".sub-service-meta").prepend('<div class="service-subpage-breadcrumbs"><a href="/#services">Services</a> &gt; <a href="/' + vertical + '">' + verticalTitle + '</a>  &gt; <a href="">' /*+ numberOfThisPortfolioItem + ". " */ + item.title + '</a></div>');
 
 
          // set the meta (Step 1/12) above title
@@ -937,6 +936,21 @@ $(document).ready(function () {
       portfolioSubPageFetch();
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
