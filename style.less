@@ -1064,7 +1064,7 @@ https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac
   }
 
   //Clinical
-  section[data-section-id="63fe67382ca07217b03f6cb4"] & {
+  section[data-section-id="63fe67382ca07217b03f6cb4"] & , .clinical.portfolio-child-page section:first-of-type &  {
     background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png),
     url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
   }
@@ -1086,7 +1086,6 @@ https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac
     background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png),
     url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff42f7e9f52e0b60b703bf/1677673207327/Circle+health-economics-brightpink+%23FF9FF2.png);
   }
-
 
 
 }
@@ -2141,9 +2140,6 @@ section[data-section-id="62f5380c4bfb83573bcedd97"]{
 
 
 
-
-
-
 /*
 * SERVICES - SUBPAGES 
 */
@@ -2316,39 +2312,162 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   
 }
 
+ 
+
+
+
+
+
+
+
+
+
+/*
+* INFORGRAPHICS
+*/
+
+
+
+//boxes with outlines, for flowcharts
+.fe-block-f9e1dff646acf9c4af73,
+.fe-block-a3ee845a15ec1d968b6d,
+.fe-block-70567ea7cb126eebad5d,
+.fe-block-a230150d8b24e9e15530,
+.fe-block-dc21c2250a162a6e2e96,
+.fe-block-727f3d4ec1382dc833ac,
+
+//regulatory infographic boxes
+#block-d692121b106fabb16cee,
+#block-f34d6ceab7bf536e2169,
+#block-6b4c4b9eaeaaf3fa1468,
+#block-20e09700f8c868526153,
+#block-e6e6a2c281381d8af7ec,
+#block-96499bd8f90668ed34d0
+{
+  border: 1px solid var(--current-service-color) !important;
+  padding:4px; //TODO CHECK other boxes
+}
+
+
+
+  //  Grey outlined TABLE  -style infograph block with hover effects (mainly risk classifcation)
+  .fe-block-yui_3_17_2_1_1674825182091_9353,
+  .fe-block-7f494c7d7b0c3bec5f1d,
+  .fe-block-e3d9e808ea70e42b3295,
+  .fe-block-fde60c7a7bc7e1765192,
+  .fe-block-9c8006e2cb038e9b667d,
+  .fe-block-476107b978f5680de416,
+  .fe-block-82f6c56288e017cc0b7d,
+  .fe-block-c3c0fd53a1d8adf71442,
+  .fe-block-3369f8c3bfc229873fed,
+  .fe-block-e56b2bcc16f0f0abe47e,
+  .fe-block-f84520f3c66d224c9ad6,
+  .fe-block-5566db8db162ac064756,
+  .fe-block-0220c9853d0843df67dc,
+  .fe-block-05b8d0a57689e67de280,
+  .fe-block-cbb6e8af5d9ad0fa7b81,
+  .fe-block-f-3b94caa0f1713b38d2,
+  .fe-block-f81f643749bbd8167670,
+  .fe-block-e36884fe060700b67418,
+  .fe-block-12d8f049834f03a487dde,
+  .fe-block-abf84ca7bcfbc235eecb,
+  .fe-block-f07b94caa0f1713b38d2,
+  .fe-block-88072067f3690415748a,
+  .fe-block-71e83213d745acffce8f,
+  .fe-block-e36894fe060700b67418,
+  .fe-block-fda217c1094ec997087f,
+  .fe-block-2d8f049834f03a487dde,
+  .fe-block-61e83213d745acffce8f,
+  .fe-block-70e407110940e92b41b9,
+  //regulatory -risk classification table blocks
+  .fe-block-6f3c14955a67f2e78f3d,
+  .fe-block-a0317479b7d1a2057d8b,
+  .fe-block-4db8873f1f939b15d0da,
+  .fe-block-f702a5928c2e491202a7,
+  .fe-block-6f3c14955a67f2e78f3d,
+  .fe-block-9a2a74726e671dc117f9,
+  .fe-block-6585b40cb0f0db3ffb91,
+  .fe-block-6f3c14955a67f2e78f3d,
+  .fe-block-f821aab4f3efc1414a99,
+  .fe-block-a0317479b7d1a2057d8b,
+  .fe-block-08ed482bc16160c3a73d,
+  .fe-block-4db8873f1f939b15d0da,
+  .fe-block-e38a810da2bd45c7d7b7,
+  .fe-block-f702a5928c2e491202a7,
+  .fe-block-9a2a74726e671dc117f9,
+  .fe-block-bc3f2e462238b9449328,
+  .fe-block-c1e2788eebec8e6dbe3c,
+  .fe-block-d6434ba57d726538307d,
+  .fe-block-d3e555c74ec772e4ee3b, 
+  .fe-block-af0b30ca7574dd7d0705,
+  .fe-block-ad9635fa4d1b796afb3c, 
+  .fe-block-6585b40cb0f0db3ffb91,
+  .fe-block-e3807be8c4f0428e4fa4,
+  .fe-block-8ba676ace17bcc4a6c99,
+  .fe-block-a6fa39392b8843b578fd,
+  .fe-block-b839b46403e0b7ec49f1,
+  .fe-block-6385ea74587ac3b29ae3,
+  .fe-block-0d9ee209f499ccd09c15
+  
+  {
+    .html-block{
+      justify-content: center !important;
+     // text-align: center !important;
+    }
+    
+outline: 1px solid var(--neutral-lightgrey);
+padding:4px !important;
+text-align: center !important; // TODO: use pargraph 3 style everywhere instead of this
+margin: 0 1px 1px 0; // avoid double borders from https://stackoverflow.com/questions/47882924/preventing-double-borders-in-css-grid
+// add a hover state for background color
+
+/**/
+p{
+  font-size: 12px !important;
+  //line-height: 1;
+}
+    &:hover{
+      background: var(--current-service-color);
+      p{color: var(--neutral-white) !important;}
+      
+    }
+  }
+
+
+
+
+//Hiding any mobile-only blocks on desktop, e.g. risk classification TABLE with EU classes, split to multiple tables on mobile and those blocks are hidden on desktop
+@media screen and (min-width: 768px) {
+  .fe-block-e36894fe060700b67418,
+  .fe-block-f81f643749bbd8167670,
+  .fe-block-61e83213d745acffce8f,
+  .fe-block-88072067f3690415748a,
+  .fe-block-fda217c1094ec997087f,
+  .fe-block-abf84ca7bcfbc235eecb,
+  .fe-block-f07b94caa0f1713b38d2,
+  .fe-block-2d8f049834f03a487dde,
+
+  //regulatory risk classification table blocks hidden on desktop
+  .fe-block-0d9ee209f499ccd09c15,
+  .fe-block-8ba676ace17bcc4a6c99,
+  .fe-block-ad9635fa4d1b796afb3c,
+  .fe-block-d3e555c74ec772e4ee3b,
+  .fe-block-c1e2788eebec8e6dbe3c,
+  .fe-block-b839b46403e0b7ec49f1
+  {
+    display: none !important;
+  }
+  
+  }
+
+
 
 
 
 // Risk Classification - infograph 1 test from: https://docs.google.com/presentation/d/1W51X1gIbnmAD4x1pYbMK8-FGYDwqr46QQ98jAyaYiZA/edit#slide=id.g200f116371b_1_1
-.fe-63d3d1df55d0b241361a0b22{ 
+// on Clinical AND Regulatory
+.fe-63d3d1df55d0b241361a0b22 { 
 
-  
-
-//media query min-width 677px
-@media screen and (min-width: 768px) {
-
- 
-
-
-  
-  .fe-block-e36894fe060700b67418,
-.fe-block-f81f643749bbd8167670,
-.fe-block-61e83213d745acffce8f,
-.fe-block-88072067f3690415748a,
-.fe-block-fda217c1094ec997087f,
-.fe-block-abf84ca7bcfbc235eecb,
-.fe-block-f07b94caa0f1713b38d2,
-.fe-block-2d8f049834f03a487dde{
-  display: none !important;
-}
-
-
-}
-
-
-
-
-  
   html & { // replace with .sqs-is-page-editing ? 
     // A CSS :Before -label, for admin editing the page.
     &:before{
@@ -2371,65 +2490,12 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   
    }
 
-  .fe-block{
- 
-
-    // styles only for grid infograph block
-    &.fe-block-yui_3_17_2_1_1674825182091_9353,
-    &.fe-block-7f494c7d7b0c3bec5f1d,
-    &.fe-block-e3d9e808ea70e42b3295,
-    &.fe-block-fde60c7a7bc7e1765192,
-    &.fe-block-9c8006e2cb038e9b667d,
-    &.fe-block-476107b978f5680de416,
-    &.fe-block-82f6c56288e017cc0b7d,
-    &.fe-block-c3c0fd53a1d8adf71442,
-    &.fe-block-3369f8c3bfc229873fed,
-    &.fe-block-e56b2bcc16f0f0abe47e,
-    &.fe-block-f84520f3c66d224c9ad6,
-    &.fe-block-5566db8db162ac064756,
-    &.fe-block-0220c9853d0843df67dc,
-    &.fe-block-05b8d0a57689e67de280,
-    &.fe-block-cbb6e8af5d9ad0fa7b81,
-    &.fe-block-f-3b94caa0f1713b38d2,
-    &.fe-block-f81f643749bbd8167670,
-    &.fe-block-e36884fe060700b67418,
-    &.fe-block-12d8f049834f03a487dde,
-    &.fe-block-abf84ca7bcfbc235eecb,
-    &.fe-block-f07b94caa0f1713b38d2,
-    &.fe-block-88072067f3690415748a,
-    &.fe-block-71e83213d745acffce8f,
-    &.fe-block-e36894fe060700b67418,
-    &.fe-block-fda217c1094ec997087f,
-    &.fe-block-2d8f049834f03a487dde,
-    &.fe-block-61e83213d745acffce8f,
-    &.fe-block-70e407110940e92b41b9 {
-      .html-block{
-        justify-content: center !important;
-       // text-align: center !important;
-      }
-      
-      outline: 1px solid var(--neutral-lightgrey);
-  padding:4px !important;
-  text-align: center !important; // TODO: use pargraph 3 style everywhere instead of this
-  margin: 0 1px 1px 0; // avoid double borders from https://stackoverflow.com/questions/47882924/preventing-double-borders-in-css-grid
-  // add a hover state for background color
   
-  /**/
-  p{
-    font-size: 12px !important;
-    //line-height: 1;
-  }
-      &:hover{
-        background: var(--current-service-color);
-        p{color: var(--neutral-white) !important;}
-        
-      }
-    }
+} // end of  section (?).fe-63d3d1df55d0b241361a0b22
 
 
-  
-}
-} // end of .fe-63d3d1df55d0b241361a0b22
+
+
 
 
 .fe-block-61e83213d745acffce8f{
@@ -2442,20 +2508,6 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 
 
-/*
-INFOGRAPHICS
-*/
-
-.fe-block-f9e1dff646acf9c4af73,
-.fe-block-a3ee845a15ec1d968b6d,
-.fe-block-70567ea7cb126eebad5d,
-.fe-block-a230150d8b24e9e15530,
-.fe-block-dc21c2250a162a6e2e96,
-.fe-block-727f3d4ec1382dc833ac
-{
-  border: 1px solid var(--current-service-color) !important;
-  padding:4px; //TODO CHECK other boxes
-}
 
 //has line TODO make JS polyfill
 .sqs-block-content.has-charts-100-height, .sqs-block-content:has(.chart-line) {
