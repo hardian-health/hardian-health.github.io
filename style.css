@@ -843,6 +843,16 @@ pre code {
   letter-spacing: 0.11em !important;
   opacity: 1 !important;
 }
+.service-subpage-breadcrumbs {
+  padding-right: 5px;
+}
+.automatic-sub-page-meta {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.ProductItem-next-prev-codeandtonic {
+  padding-left: 5px;
+}
 section[data-section-id="630906727a98a14798f4b3f4"] h4 {
   font-size: calc((1 - 1) * 1.2vw + 1rem) !important;
 }
@@ -1664,6 +1674,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 @media screen and (min-width: 960px) {
   .portfolio-child-page .item-pagination-link {
     z-index: 9999;
+    max-width: calc((100vw - 501px  - ( 100vw / 12)  ) /  2);
     position: relative;
     top: calc(-78.1px - 4vw) !important;
   }

@@ -371,7 +371,7 @@ p {
 .item-pagination-link {
   //align-items: flex-start; // blog post pagination to same horizontal level (if one is 1 line, second 2 lines they'd look funky)
   align-items: center;
-  max-width: 380px; // fixed the problem above with this
+  max-width: 380px; // fixed the problem above with thi
 }
 //😎😎😎 BLOG POST WIDTHS */
 
@@ -1334,6 +1334,24 @@ h1, h2, h3, h4{
   letter-spacing: 0.11em !important;
   opacity:1 !important; //summary blocks wants to be greyed out. nice but not on brand color palette atm
  }
+
+
+ //add space to service-subpage-meta elements so they don't "touch" each other on on any screen sizes
+ .service-subpage-breadcrumbs{
+  padding-right: 5px;
+ }
+
+ .automatic-sub-page-meta{
+  padding-left: 5px;
+  padding-right: 5px;
+ }
+
+ .ProductItem-next-prev-codeandtonic{
+  padding-left: 5px;
+  //padding-right: 5px;
+ }
+
+
 
 
 //HOME SERVICES TITLES
@@ -2304,6 +2322,9 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   @media screen and (min-width: 960px) { // on mobile it's too wide
   .portfolio-child-page .item-pagination-link{
     z-index: 9999; // make it appear on top of the next steps section
+  // prevent pagination links overlapping with "next steps" lead: 100vw, minus 501px (max width of the lead), minus 100vw / 12 (outer padding is 2 columns on a 24 column grid so 1/12) divided by 2 because there are 2 pagination links
+  max-width: ~"calc((100vw - 501px  - ( 100vw / 12)  ) /  2)";
+  //outline: 1px solid;
     
     // position vertically approximately where the last "Next steps" section is
     position: relative;
