@@ -970,3 +970,108 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+/**
+ * animation canvas test
+ */
+
+/*
+// get the Squarespace section ID for the section you want to add the canvas to
+var sectionIDforCanvas = '63ff4493e22cef12e961eace';
+
+$('<canvas id="canv" style=""></canvas>').prependTo('section[data-section-id="' + sectionIDforCanvas +'"] .section-background');
+
+//need a z-index to show content in front of canvas
+$('section[data-section-id="' + sectionIDforCanvas +'"] .content-wrapper ').css("z-index", "2");
+
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+const aspectRatio = 16 / 9;
+
+function setCanvasDimensions() {
+  const windowAspectRatio = window.innerWidth / window.innerHeight;
+  if (windowAspectRatio > aspectRatio) {
+    canvas.width = window.innerHeight * aspectRatio;
+    canvas.height = window.innerHeight;
+  } else {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerWidth / aspectRatio;
+  }
+}
+
+setCanvasDimensions();
+
+class Circle {
+  constructor(x, y, radius, dx, dy) {
+    this.x = x;
+    this.y = y;
+    this.radius = radius;
+    this.dx = dx;
+    this.dy = dy;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "#a37af5";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  update() {
+    this.x += this.dx;
+    this.y += this.dy;
+    this.draw();
+  }
+}
+
+const circles = [];
+
+function createCircles() {
+  circles.length = 0;
+  for (let i = 0; i < 6; i++) {
+    const radius = Math.random() * 100 + 50;
+    let x = Math.random() * (canvas.width - radius) + radius / 2;
+    let y = Math.random() * (canvas.height - radius * 2) + radius / 2;
+    const dx = (Math.random() - 0.5) * 0.1;
+    const dy = (Math.random() - 0.5) * 0.1;
+
+    // Avoid middle horizontal and vertical space
+    while ((x > canvas.width * 0.3 && x < canvas.width * 0.7) || (y > canvas.height * 0.3 && y < canvas.height * 0.7)) {
+      x = Math.random() * (canvas.width - radius) + radius / 2;
+      y = Math.random() * (canvas.height - radius * 2) + radius / 2;
+    }
+
+    circles.push(new Circle(x, y, radius, dx, dy));
+  }
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (const circle of circles) {
+    circle.update();
+  }
+}
+
+function resizeCanvas() {
+  setCanvasDimensions();
+  createCircles();
+}
+
+window.addEventListener("resize", resizeCanvas);
+
+createCircles();
+animate();
+
+*/
+
+
+
+
+

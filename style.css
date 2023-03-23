@@ -694,8 +694,7 @@ https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac
 section[data-section-id="63fe6a99421d3c16149c8d55"] .section-background {
   background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63ff43132774ac0a27f83474/1677673236016/Circle+strategy+light+blue+5BCFFF.png);
 }
-section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background,
-.clinical.portfolio-child-page section:first-of-type .section-background {
+section[data-section-id="63fe67382ca07217b03f6cb4"] .section-background {
   background-image: url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png), url(//static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536d1274cdc25373b/1677254789510/single-color+circle+clinical-purple.png);
 }
 section[data-section-id="63ff4493e22cef12e961eace"] .section-background {
@@ -2049,4 +2048,16 @@ html .fe-63d3d1df55d0b241361a0b22:before {
 .chart-line.horizontal-line {
   height: 1px;
   width: 100%;
+}
+canvas {
+  display: block;
+  max-width: 100vw;
+  max-height: 56.25vw;
+  /* 100vw * 9 / 16 */
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
