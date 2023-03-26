@@ -611,9 +611,22 @@ function updateTimelineVerticalLine() {
       // edit height of .tube-item-vertical-line so when distance is 50, the height is 0. when distance is 40, the height is 10. when distance is 30, the height is 20. when distance is 20, the height is 30. when distance is 10, the height is 40. when distance is 0, the height is 50. but it'll keep growing as you scroll down
 
       document.querySelector('.tube-item-vertical-line').style.height = (verticalLineAnimationOffset - distance) + 'px';
-  } else{
-    console.log("Stop animation. We are over or under the animation offsets. Let's not animate if we're too high on page or if we're past the last grid item bottom");
   }
+  // make else if statements for when we are over the animation offset and when we are under the animation offset
+  else if (lastGridItemBottom < verticalLineAnimationOffset) {
+    console.log("Stop animation. We are over the animation offsets. let's not animate as we've scrolled past the last grid item bottom and dont want to make the line too long. however let's make sure the line reaches the bottom of the last grid item even if we scroll too quickly ");
+    //a bug. if scrolling too quickly the line may not reach  the bottom of the last grid item. it may stay a few px short. let's fix that
+    document.querySelector('.tube-item-vertical-line').style.height = (lastGridItemBottom - distance) + 'px'; // so the height is until the bottom of the last grid item? yes
+  }
+  else {
+    console.log("Stop animation. We are under the animation offsets. Let's not animate if we're not yet at the timeline");
+    // same problem here, when scrolling up fast, we may leave a few px of the line visible. when it should be 0px if we're above timeline. let's fix that
+    document.querySelector('.tube-item-vertical-line').style.height = 0 + 'px'; // so the height is 0px? yes
+  }
+  
+  /*else {
+    console.log("Stop animation. We are over or under the animation offsets. Let's not animate if we're too high on page or if we're past the last grid item bottom");
+  }*/
 
 
       /*
