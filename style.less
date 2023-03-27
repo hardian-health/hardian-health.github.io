@@ -2166,11 +2166,14 @@ section[data-section-id="62f5380c4bfb83573bcedd97"]{
 .portfolio-main-or-child-page section.page-section   {
   .content-wrapper {
   padding: 60px 0 !important;
+  @media (max-width: 767px) {
+    padding: 32px 0 !important;
+}
 }
 // last section
   &:last-child {
     .content-wrapper {
-      padding-bottom: 0 !important;
+     // padding-bottom: 0 !important;
     }
   }
 }
@@ -2219,6 +2222,10 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 //space between lead and <p> after it
 .portfolio-child-page .sqsrte-large + p {
   margin-top: 44px !important;
+  //add media for mobile with 20px
+  @media (max-width: 767px) {
+    margin-top: 20px !important;
+}
 }
 
 
