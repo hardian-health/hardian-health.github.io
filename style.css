@@ -1602,9 +1602,12 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .portfolio-child-page article.sections h2,
 .portfolio-child-page article.sections h3,
 .portfolio-child-page article.sections h4 {
-  max-width: 501px;
+  max-width: 533px;
   margin-left: auto;
   margin-right: auto;
+}
+.portfolio-child-page article.sections h1 {
+  max-width: 800px !important;
 }
 .portfolio-child-page .sqsrte-large + p {
   margin-top: 44px !important;
