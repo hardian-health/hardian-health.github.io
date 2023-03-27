@@ -730,6 +730,27 @@ $( document ).ready(function() {
  * todo get seo description for lead
  */
 
+
+/* make a jquery $ thing from following html
+<div>
+
+
+
+
+
+
+
+*/ 
+
+//add the html before the pagination element here with jQuery
+
+
+
+
+
+
+
+
 function portfolioSubPageFetch() {
 
 var pageTitle = document.title;

@@ -1675,7 +1675,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
     z-index: 9999;
     max-width: calc((100vw - 501px  - ( 100vw / 12)  ) /  2);
     position: relative;
-    top: calc(-78.1px - 4vw) !important;
+    top: calc(-30px - 4vw) !important;
   }
 }
 /*
@@ -1695,6 +1695,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 #block-96499bd8f90668ed34d0 {
   border: 1px solid var(--current-service-color) !important;
   padding: 4px;
+  box-sizing: border-box;
 }
 .fe-block-yui_3_17_2_1_1674825182091_9353,
 .fe-block-7f494c7d7b0c3bec5f1d,
