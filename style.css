@@ -842,6 +842,9 @@ pre code {
   letter-spacing: 0.11em !important;
   opacity: 1 !important;
 }
+.service-subpage-breadcrumbs a {
+  display: inline-block;
+}
 .service-subpage-breadcrumbs {
   padding-right: 5px;
 }
