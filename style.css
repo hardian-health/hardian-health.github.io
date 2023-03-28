@@ -1695,6 +1695,11 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
     top: calc(-92px - 4vw) !important;
   }
 }
+@media screen and (max-width: 959px) {
+  #itemPagination {
+    padding-bottom: 40px;
+  }
+}
 /*
 * INFORGRAPHICS
 */

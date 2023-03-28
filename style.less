@@ -2341,7 +2341,10 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
 
 // Ankeets pagination idea - links on same row as last "Next steps" section
 //@media min-width: 960px {
+
   @media screen and (min-width: 960px) { // on mobile it's too wide
+
+    
   .portfolio-child-page .item-pagination-link{
     z-index: 9999; // make it appear on top of the next steps section
   // prevent pagination links overlapping with "next steps" lead: 100vw, minus 501px (max width of the lead), minus 100vw / 12 (outer padding is 2 columns on a 24 column grid so 1/12) divided by 2 because there are 2 pagination links
@@ -2353,6 +2356,13 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
     top: ~"calc(-92px - 4vw)" !important;
   }
   
+}
+
+// mobile pagination has too little white space after if so pagination links hit the footer and don't look classy and stylish.media, max-width 959px
+@media screen and (max-width: 959px) {
+  #itemPagination{
+    padding-bottom:40px;
+  }
 }
 
 
