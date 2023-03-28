@@ -1685,7 +1685,7 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
     z-index: 9999;
     max-width: calc((100vw - 501px  - ( 100vw / 12)  ) /  2);
     position: relative;
-    top: calc(-88px - 4vw) !important;
+    top: calc(-92px - 4vw) !important;
   }
 }
 /*
