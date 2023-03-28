@@ -2222,13 +2222,17 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
   }
 }
 
-//space between lead and <p> after it
-.portfolio-child-page .sqsrte-large + p {
-  margin-top: 44px !important;
-  //add media for mobile with 20px
-  @media (max-width: 767px) {
-    margin-top: 20px !important;
-}
+//space between lead and the element after it
+// TODO - this should probably be "universal" not just on subpages?
+.portfolio-child-page {
+  .sqsrte-large + p,  .sqsrte-large + ul, .sqsrte-large + ol {
+    margin-top: 44px !important;
+    
+    //add media for mobile with 20px
+    @media (max-width: 767px) {
+      margin-top: 20px !important;
+    }
+  }
 }
 
 
