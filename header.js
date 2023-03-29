@@ -824,35 +824,37 @@ fetch(fetchUrl, {
 
 
         var path = window.location.pathname;
+      
         var vertical = "";
 
        // BREADCRUMBS TITLE AND URL FOR VERTICAL
         //var verticalTitle = "";
-        if (path.includes("clinical")) {
+        if (path.startsWith("/clinical")) {
           verticalTitle = "Clinical";
+          console.log("!!!!!!!!");
           //vertical = "/clinical";// get this automatically from the path
           //vertical = path.split('/')[1];
           vertical = path.split('/')[1];
-        } else if (path.includes("regulatory")) {
+        } else if (path.startsWith("/regulatory")) {
           verticalTitle = "Regulatory";
           //vertical = "/services/regulatory";
           vertical = path.split('/')[1];
-        } else if (path.includes("strategy")) {
+        } else if (path.startsWith("/strategy")) {
           verticalTitle = "Strategy";
           //vertical = "/services/strategy";
           vertical = path.split('/')[1];
-        } else if (path.includes("health-economics")) {
+        } else if (path.startsWith("/health-economics")) {
           verticalTitle = "Health Economics";
           //vertical = "/services/health-economics";
           vertical = path.split('/')[1];
-        } else if (path.includes("intellectual-property")) {
+        } else if (path.startsWith("/intellectual-property")) {
           verticalTitle = "Intellectual Property";
           //vertical = "/services/intellectual-property";
           vertical = path.split('/')[1];
         } else {
-          verticalTitle = "Clinical";
+         // verticalTitle = "Clinical";
           //vertical = "/services/clinical";
-          vertical = path.split('/')[1];
+          //vertical = path.split('/')[1];
         }
 
 
@@ -1001,6 +1003,22 @@ $(document).ready(function () {
     }, 1000);
   }
 });
+
+
+
+
+
+
+//function that loops each link, cheks if its internal or external. if it's external, it adds a target="_blank" attribute to it.
+function addTargetBlankToExternalLinks() {
+  // check if the link is internal or external. 
+}
+
+//run the function on document ready
+$(document).ready(function () {
+  addTargetBlankToExternalLinks();
+});
+
 
 
 
