@@ -807,7 +807,7 @@ url(https://static1.squarespace.com/static/62f5262a0b58c94a255a69ba/t/63f8e08536
 *******/
 @media screen and (max-width: 767px) and (orientation: portrait) {
   h1 {
-    font-size: calc((4 - 1) * calc(0.012 * min(100vh, 900px)) + 0.9rem);
+    font-size: calc((4 - 1) * calc(0.012 * min(100vh, 900px)) + 0.8rem) !important;
   }
 }
 h1 strong,
