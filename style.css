@@ -2077,7 +2077,7 @@ html .fe-63d3d1df55d0b241361a0b22:before {
   height: 1px;
   width: 100%;
 }
-a.automatic-external-link:not([class*="icon")::after {
+a.automatic-external-link:not([class*="icon"])::after {
   content: "";
   width: 11px;
   height: 11px;

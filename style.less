@@ -2595,12 +2595,14 @@ p{
 
 
 
-
 //style external links - addTargetBlankToExternalLinks() -function
 
 //a.automatic-external-link {
   // a but class does not contain the word "icon"
-  a.automatic-external-link:not([class*="icon"){
+  a{
+    //background: #000 !important;
+  }
+  a.automatic-external-link:not([class*="icon"]){
   &::after {
    // content: " \2197";
    //content: " " url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAVklEQVR4Xn3PgQkAMQhDUXfqTu7kTtkpd5RA8AInfArtQ2iRXFWT2QedAfttj2FsPIOE1eCOlEuoWWjgzYaB/IkeGOrxXhqB+uA9Bfcm0lAZuh+YIeAD+cAqSz4kCMUAAAAASUVORK5CYII=);
@@ -2620,7 +2622,6 @@ p{
     display: inline-block;
   }
 }
-
 
 
 
