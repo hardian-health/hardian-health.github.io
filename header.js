@@ -1009,9 +1009,30 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+//EXTERNAL LINKS IN NEW TABS
 //function that loops each link, cheks if its internal or external. if it's external, it adds a target="_blank" attribute to it.
 function addTargetBlankToExternalLinks() {
-  // check if the link is internal or external. 
+  /*
+  loop through all links on the page
+  check if link starts with http or https
+  if it does start with http, then check if it contains hardianhealth.com or hardian-health-71.squarespace.com
+  those are the only 2 domains we use. if it starts with http AND doesn't contain either of those, then it's an external link and we add target="_blank" to it. 
+  also add a class "automatic-external-link" to it so we can style it
+  */
+    $('a').each(function () {
+      if ($(this).attr('href').startsWith('http')) {
+        if (!$(this).attr('href').includes('hardianhealth.com') && !$(this).attr('href').includes('hardian-health-71.squarespace.com')) {
+          $(this).attr('target', '_blank');
+          $(this).addClass('automatic-external-link');
+        }
+      }
+    });
 }
 
 //run the function on document ready
