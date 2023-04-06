@@ -1804,7 +1804,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-6de12b327fb2cfbab3e2,
 .fe-block-cbb7b909a674703ed97b,
 .fe-block-27fffa639278e7503e7f,
-.fe-block-8196192dae8ab267049c {
+.fe-block-8196192dae8ab267049c,
+.fe-block-506e96b7d56d357e2522 {
   outline: 1px solid var(--neutral-lightgrey);
   padding: 4px !important;
   text-align: center !important;
@@ -1888,7 +1889,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-6de12b327fb2cfbab3e2 .html-block,
 .fe-block-cbb7b909a674703ed97b .html-block,
 .fe-block-27fffa639278e7503e7f .html-block,
-.fe-block-8196192dae8ab267049c .html-block {
+.fe-block-8196192dae8ab267049c .html-block,
+.fe-block-506e96b7d56d357e2522 .html-block {
   justify-content: center !important;
 }
 .fe-block-yui_3_17_2_1_1674825182091_9353 p,
@@ -1968,7 +1970,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-6de12b327fb2cfbab3e2 p,
 .fe-block-cbb7b909a674703ed97b p,
 .fe-block-27fffa639278e7503e7f p,
-.fe-block-8196192dae8ab267049c p {
+.fe-block-8196192dae8ab267049c p,
+.fe-block-506e96b7d56d357e2522 p {
   font-size: 12px !important;
 }
 .fe-block-yui_3_17_2_1_1674825182091_9353:hover,
@@ -2048,7 +2051,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-6de12b327fb2cfbab3e2:hover,
 .fe-block-cbb7b909a674703ed97b:hover,
 .fe-block-27fffa639278e7503e7f:hover,
-.fe-block-8196192dae8ab267049c:hover {
+.fe-block-8196192dae8ab267049c:hover,
+.fe-block-506e96b7d56d357e2522:hover {
   background: var(--current-service-color);
 }
 .fe-block-yui_3_17_2_1_1674825182091_9353:hover p,
@@ -2128,7 +2132,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn {
 .fe-block-6de12b327fb2cfbab3e2:hover p,
 .fe-block-cbb7b909a674703ed97b:hover p,
 .fe-block-27fffa639278e7503e7f:hover p,
-.fe-block-8196192dae8ab267049c:hover p {
+.fe-block-8196192dae8ab267049c:hover p,
+.fe-block-506e96b7d56d357e2522:hover p {
   color: var(--neutral-white) !important;
 }
 @media screen and (min-width: 768px) {
