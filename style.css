@@ -1007,36 +1007,36 @@ section[data-section-id="63936a7c3d674d7079783a93"] a:before,
   height: 6px;
   border-radius: 50%;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/blog"]:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/blog"]:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href="/blog"]:before,
-.blog-item-category-wrapper a[href="/blog"]:before,
-.blog-categories-list a[href="/blog"]:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:before,
+.blog-item-category-wrapper a[href="/insights"]:before,
+.blog-categories-list a[href="/insights"]:before {
   background: #1C1D1E;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/blog"].active-filter,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/blog"].active-filter,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href="/blog"].active-filter,
-.blog-item-category-wrapper a[href="/blog"].active-filter,
-.blog-categories-list a[href="/blog"].active-filter,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/blog"]:hover,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/blog"]:hover,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href="/blog"]:hover,
-.blog-item-category-wrapper a[href="/blog"]:hover,
-.blog-categories-list a[href="/blog"]:hover {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"].active-filter,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"].active-filter,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"].active-filter,
+.blog-item-category-wrapper a[href="/insights"].active-filter,
+.blog-categories-list a[href="/insights"].active-filter,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:hover,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:hover,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:hover,
+.blog-item-category-wrapper a[href="/insights"]:hover,
+.blog-categories-list a[href="/insights"]:hover {
   background: #1C1D1E;
   color: #FFFFFF !important;
 }
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/blog"].active-filter:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/blog"].active-filter:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href="/blog"].active-filter:before,
-.blog-item-category-wrapper a[href="/blog"].active-filter:before,
-.blog-categories-list a[href="/blog"].active-filter:before,
-section[data-section-id="63345cfd93596d2af59dedad"] a[href="/blog"]:hover:before,
-section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/blog"]:hover:before,
-section[data-section-id="63936a7c3d674d7079783a93"] a[href="/blog"]:hover:before,
-.blog-item-category-wrapper a[href="/blog"]:hover:before,
-.blog-categories-list a[href="/blog"]:hover:before {
+section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"].active-filter:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"].active-filter:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"].active-filter:before,
+.blog-item-category-wrapper a[href="/insights"].active-filter:before,
+.blog-categories-list a[href="/insights"].active-filter:before,
+section[data-section-id="63345cfd93596d2af59dedad"] a[href="/insights"]:hover:before,
+section[data-section-id="6389f6432a12130f5a0778ab"] a[href="/insights"]:hover:before,
+section[data-section-id="63936a7c3d674d7079783a93"] a[href="/insights"]:hover:before,
+.blog-item-category-wrapper a[href="/insights"]:hover:before,
+.blog-categories-list a[href="/insights"]:hover:before {
   background: #FFFFFF;
 }
 section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Clinical"],

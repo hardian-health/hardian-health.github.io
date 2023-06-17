@@ -45,7 +45,7 @@ if(document.location.host.includes(".squarespace.com")){
 
 // SINGLE BLOG POST: reposition tags and categories to be under author bio inside .custom-metabox
 $( document ).ready(function() {    
-  if( (window.location.pathname.includes("/blog/")) && $('article').length   ){
+  if( (window.location.pathname.includes("/insights")) && $('article').length   ){
       console.log("blog page and article found. LEt's fix meta categories and tags");
   
       
@@ -68,7 +68,7 @@ $( document ).ready(function() {
 
 // if Blog category page (filtering of blog post) is on, let's make this category tag in each blog post (inside grid) have a class so we can show that yeah, this blog post is indeed filtered correctly
 $( document ).ready(function() {    
-  if(window.location.pathname.includes("/blog/category/")){
+  if(window.location.pathname.includes("/insights/category/")){
 console.log("category page - filtering enabled");
 $("body").addClass("blog-category-filtered");
 
@@ -99,7 +99,7 @@ function styleBlogTagNavigation() {
   // ADD BLOG TAG NAVIGATION SECTION ID HERE)
   var blogCategoryNavigationBlockLink = 'section[data-section-id="63936a7c3d674d7079783a93"] a';
 
-  if (window.location.pathname.includes("/blog")) {
+  if (window.location.pathname.includes("/insights")) {
       $(document).ready(function() {
 
         var currentPagePath = window.location.pathname;
@@ -200,7 +200,7 @@ if(document.querySelector("meta[itemprop=datePublished]")){
 
     //console.log("BLOG SINGLE POST WITH DATE FOR IT");
     
-    //blog post single - <meta itemprop="datePublished" content="2022-09-14T16:31:36+0300">
+    //insights post single - <meta itemprop="datePublished" content="2022-09-14T16:31:36+0300">
     console.log("yes");
      var blogSinglePublishDate = $('meta[itemprop="datePublished"]').attr("content")
     console.log(blogSinglePublishDate);
