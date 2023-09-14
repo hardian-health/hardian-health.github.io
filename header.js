@@ -1043,6 +1043,32 @@ $(document).ready(function () {
 
 
 
+//CUBE from https://github.com/marklundin/cube
+// CSS added to our less – library dependencies loaded in page specific code injection.
+//❗ page editing breaks. must remove the script tags from the code injection, edit page and put them back. otherwise the page editing breaks :(
+
+/*
+
+<script src='https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js'></script>
+		<script src='https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js'></script>
+*/
+if (window.location.href.includes('cube')) {
+  console.log("Cube");
+  $( document ).ready(function() {    
+  
+
+    var container 	= document.querySelector( '#cube-container' ),
+    cube 		= new ERNO.Cube();
+    light 		= new Photon.Light( 10, 0, 100 );
+
+  container.appendChild( cube.domElement );   
+  }); 
+  
+  
+}
+
+
+
 
 
 
@@ -1143,6 +1169,10 @@ createCircles();
 animate();
 
 */
+
+
+//if page path contains /cube, then run function on domready
+
 
 
 
