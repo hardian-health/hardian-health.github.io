@@ -2545,9 +2545,8 @@ CUBE
   text-align: center;
 }
 .cube .stickerLogo {
-  background-image: url("https://hardian-health-71.squarespace.com/s/Hardian-black2x.png") !important;
-  background-image: url(https://hardian-health-71.squarespace.com/s/Hardian-black2x.png) !important;
-  background-size: contain !important;
+  background-image: url("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/HH-(black).png") !important;
+  background-size: 85% 85% !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
 }
