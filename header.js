@@ -1069,6 +1069,13 @@ $(document).ready(function () {
     console.log("Not launching Cube as we're on a Squarespace logged-in page AND on /cube");
     // #cube-container add a h2 saying "Cube is not available on Squarespace logged-in pages. Please visit via hardianhealth.com instead of hardian-health-71.squarespace.com."
   }
+
+//if click this button <a href="#refresh" class="sqs-block-button-element--medium sqs-button-element--primary sqs-block-button-element" data-initialized="true">Refresh</a> refresh the page
+  $('a[href="#refresh"]').click(function(){
+    location.reload();
+  });  
+
+
 });
 
 
