@@ -1045,28 +1045,48 @@ $(document).ready(function () {
 
 //CUBE from https://github.com/marklundin/cube
 // CSS added to our less – library dependencies loaded in page specific code injection.
-//❗ page editing breaks. must remove the script tags from the code injection, edit page and put them back. otherwise the page editing breaks :(
+
+
+$(document).ready(function () {
+  // If the window location href includes /cube BUT does not include .squarespace.com
+  if(window.location.href.includes('/cube') && !window.location.href.includes('.squarespace.com')){
+    console.log("Launching Cube as we're not on a Squarespace logged-in page BUT are on /cube");
+
+    // Load the scripts
+    $.when(
+      $.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js"),
+      $.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js")
+    ).done(function(){
+      // Cube code which will run once the scripts are loaded and generate the cube
+      var container = document.querySelector('#cube-container'),
+          cube      = new ERNO.Cube(),
+          light     = new Photon.Light(10, 0, 100);
+
+      container.appendChild(cube.domElement);
+    });
+  } //else if /cube AND .squarespace.com, do nothing
+  else if(window.location.href.includes('/cube') && window.location.href.includes('.squarespace.com')){
+    console.log("Not launching Cube as we're on a Squarespace logged-in page AND on /cube");
+    // #cube-container add a h2 saying "Cube is not available on Squarespace logged-in pages. Please visit via hardianhealth.com instead of hardian-health-71.squarespace.com."
+  }
+});
+
 
 /*
-
-<script src='https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js'></script>
-		<script src='https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js'></script>
-*/
 if (window.location.href.includes('cube')) {
   console.log("Cube");
   $( document ).ready(function() {    
   
 
-    var container 	= document.querySelector( '#cube-container' ),
-    cube 		= new ERNO.Cube();
-    light 		= new Photon.Light( 10, 0, 100 );
+      var container 	= document.querySelector( '#cube-container' ),
+      cube 		= new ERNO.Cube();
+      light 		= new Photon.Light( 10, 0, 100 );
 
-  container.appendChild( cube.domElement );   
+    container.appendChild( cube.domElement );   
   }); 
   
-  
 }
-
+*/
 
 
 
