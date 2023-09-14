@@ -1071,7 +1071,9 @@ $(document).ready(function () {
   }
 
   //refresh icon
-  $(".refresh-icon").click(function() {
+  //link with #cube-refresh as href for click
+  $("a.refresh").click(function(){
+    console.log("refresh click");
     location.reload();
 });
 
