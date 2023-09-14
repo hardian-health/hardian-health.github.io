@@ -1063,6 +1063,62 @@ $(document).ready(function () {
           light     = new Photon.Light(10, 0, 100);
 
       container.appendChild(cube.domElement);
+     
+     
+     
+        /**
+ * Generates a random scramble string for a Rubik's cube.
+ * The scramble ensures:
+ * 1. No same move is repeated consecutively.
+ * 2. No move is immediately followed by its inverse.
+ * 
+ * @param {number} length - Number of moves in the scramble string.
+ * @return {string} - The scramble string.
+ */
+function generateRandomString(length) {
+  // Possible moves on a Rubik's cube
+  const moves = ['U', 'u', 'D', 'd', 'R', 'r', 'L', 'l'];
+
+  // Mapping of a move to its inverse.
+  // This helps in quickly finding the inverse of a move, e.g., 'U' -> 'u'.
+  const inverseMoves = {'U': 'u', 'u': 'U', 'D': 'd', 'd': 'D', 'R': 'r', 'r': 'R', 'L': 'l', 'l': 'L'};
+
+  let scramble = ''; // To build the resulting scramble string
+  let lastMove = null; // To track the last move that was added to the scramble
+
+  // Generate the scramble string move-by-move
+  for (let i = 0; i < length; i++) {
+      let nextMove;
+      do {
+          // Randomly select a move from the list
+          nextMove = moves[Math.floor(Math.random() * moves.length)];
+      } 
+      // Check if the selected move is either the same as the last move
+      // or is the inverse of the last move.
+      // If either condition is true, we loop again to pick a different move.
+      while (nextMove === lastMove || nextMove === inverseMoves[lastMove]);
+
+      // Append the selected move to the scramble string
+      scramble += nextMove;
+      // Update lastMove to the move we just added
+      lastMove = nextMove;
+  }
+
+  return scramble;
+}
+
+// Usage:
+const randomstring = generateRandomString(8);
+//console.log("Rubic: " + randomstring);
+cube.twist(randomstring.multiply(1));
+
+    
+
+
+
+
+
+
     });
   } //else if /cube AND .squarespace.com, do nothing
   else if(window.location.href.includes('/cube') && window.location.href.includes('.squarespace.com')){
