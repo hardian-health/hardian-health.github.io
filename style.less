@@ -2764,8 +2764,8 @@ Full-Width Blocks 5.0 by codeandtonic.com
 
 
 // ⬇️🔥🔥🔥⬇️ FULL-WIDTH BLOCK ID'S
-#block-yui_3_17_2_1_1680779512574_9556
-//#block-yui_3_17_2_1_1694678311330_2188
+#block-yui_3_17_2_1_1680779512574_9556,
+#block-yui_3_17_2_1_1694678311330_2188
 // ⬆️🔥🔥🔥⬆️ FULL-WIDTH BLOCK ID'S
 {
   
@@ -3162,5 +3162,11 @@ CUBE
 
 //
 #cube-container{
-  min-height:600px;
+  min-height:500px;
+}
+//media screen min width 600px, min height is 600px
+@media screen and (min-width: 600px) {
+  #cube-container{
+    min-height: 700px;
+  }
 }
