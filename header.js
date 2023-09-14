@@ -1054,8 +1054,11 @@ $(document).ready(function () {
 
     // Load the scripts
     $.when(
-      $.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js"),
-      $.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js")
+      //$.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js"), 
+      //use https://hardian-health-71.squarespace.com/s/cubermin.js instead of https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/cube/cuber.min.js
+      $.getScript("https://hardian-health-71.squarespace.com/s/cubermin.js"),
+      //$.getScript("https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js") use https://hardian-health-71.squarespace.com/s/photon.js instead of https://codetonics3bucket.s3-eu-north-1.amazonaws.com/cube/js/photon.js
+      $.getScript("https://hardian-health-71.squarespace.com/s/photon.js")
     ).done(function(){
       // Cube code which will run once the scripts are loaded and generate the cube
       var container = document.querySelector('#cube-container'),
@@ -1113,9 +1116,6 @@ const randomstring = generateRandomString(8);
 cube.twist(randomstring.multiply(1));
 
     
-
-
-
 
 
 
