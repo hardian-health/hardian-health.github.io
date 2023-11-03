@@ -2301,76 +2301,90 @@ Full-Width Blocks 5.0 by codeandtonic.com
  🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊🧊
   
 \*------------------------------------*/
+/*
+// 🎛 Tweak Full-width settings
+@fullWidthMaxWidth: 199200px; //set to 99999 if you don't want max-width
+@fullWidthPadding: 0px; // 0px if no padding
+
+
+
+
+// ⬇️🔥🔥🔥⬇️ FULL-WIDTH BLOCK ID'S
 #block-yui_3_17_2_1_1680779512574_9556,
-#block-yui_3_17_2_1_1694678311330_2188 {
+#block-yui_3_17_2_1_1694678311330_2188,
+#block-yui_3_17_2_1_1699003760782_3152
+// ⬆️🔥🔥🔥⬆️ FULL-WIDTH BLOCK ID'S
+{
+  
+
+
+
+.full-width-base; // "extend" full-width styles to these IDs
+
+ body.sqs-layout-editing & //editing the page content
+                          {
+  &:before{
+    content: "Full-width CSS | MAX: @{fullWidthMaxWidth} | Padding: @{fullWidthPadding}";
+    opacity: 0.0;
+	transition: .5s all ease;
+    background: #ffc3c3;
+    color: black;
+    padding: 2px 6px;
+    font-size: 9px;
+    top: 17px !important;
+    margin: 0;
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 400;
+    height: 20px;
+    z-index: 99999999;
+  }
+                           
+ }
+    &:hover{
+    &:before{
+      opacity:1 !important;
+
+    }
+}
+}
+
+
+
+// DONT TOUNCH ANYTHING BELOW! 
+//for 7.1 to prevent layout from breaking
+.page-section:not(.full-bleed-section)>.content-wrapper{
   box-sizing: border-box !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
+}
+
+
+//magic below
+.full-width-base{
+  box-sizing: border-box !important;
+  padding-left: @fullWidthPadding !important;
+  padding-right: @fullWidthPadding !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
   overflow: hidden;
   width: 100vw;
-  left: calc(-50vw + 50%);
-}
-#block-yui_3_17_2_1_1680779512574_9556 .intrinsic,
-#block-yui_3_17_2_1_1694678311330_2188 .intrinsic {
-  max-width: unset !important;
-}
-@media only screen and (min-width: 199200px) {
-  #block-yui_3_17_2_1_1680779512574_9556,
-  #block-yui_3_17_2_1_1694678311330_2188 {
-    width: min(calc(100vw), 199200px);
-    left: calc(-50vw + 50% + ((100vw - 199200px ) /2 ) );
+
+  left: ~"calc(-50vw + 50%)"; // the magic formula 🪄
+  .intrinsic{
+    max-width: unset !important;
   }
-}
-body.sqs-layout-editing #block-yui_3_17_2_1_1680779512574_9556:before,
-body.sqs-layout-editing #block-yui_3_17_2_1_1694678311330_2188:before {
-  content: "Full-width CSS | MAX: 199200px | Padding: 0px";
-  opacity: 0;
-  transition: 0.5s all ease;
-  background: #ffc3c3;
-  color: black;
-  padding: 2px 6px;
-  font-size: 9px;
-  top: 17px !important;
-  margin: 0;
-  position: absolute;
-  text-transform: uppercase;
-  font-weight: 400;
-  height: 20px;
-  z-index: 99999999;
-}
-#block-yui_3_17_2_1_1680779512574_9556:hover:before,
-#block-yui_3_17_2_1_1694678311330_2188:hover:before {
-  opacity: 1 !important;
-}
-/* DONT TOUNCH ANYTHING BELOW! */
-.page-section:not(.full-bleed-section) > .content-wrapper {
-  box-sizing: border-box !important;
-}
-.full-width-base {
-  box-sizing: border-box !important;
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  overflow: hidden;
-  width: 100vw;
-  left: calc(-50vw + 50%);
-}
-.full-width-base .intrinsic {
-  max-width: unset !important;
-}
-@media only screen and (min-width: 199200px) {
-  .full-width-base {
-    width: min(calc(100vw), 199200px);
-    left: calc(-50vw + 50% + ((100vw - 199200px ) /2 ) );
+  
+  @media only screen and (min-width: @fullWidthMaxWidth){
+     width: min( ~"calc(100vw), @{fullWidthMaxWidth}");
+    left: ~"calc(-50vw + 50% + ((100vw - @{fullWidthMaxWidth} ) /2 ) )";
   }
+  
 }
-html,
-body {
+
+//remove scrollbars pure CSS windows etc https://streamofcoding.com/css-horizontal-scroll-with-100vw/
+html, body{
   overflow-x: hidden !important;
 }
+
 /*------------------------------------*\
 
  SQSP Full-Width Blocks 5.0 by codeandtonic.com
