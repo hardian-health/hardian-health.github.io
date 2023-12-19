@@ -649,21 +649,27 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="intellectual"]:b
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="health-economics"]:before {
   background: var(--health-economics-brightpink) !important;
 }
+/*
 span.word:nth-of-type(1) {
-  color: var(--clinical-purple) !important;
+    color: var(--clinical-purple) !important;
 }
+
 span.word:nth-of-type(2) {
-  color: var(--strategy-lightblue) !important;
+    color: var(--strategy-lightblue)  !important;
 }
+
 span.word:nth-of-type(3) {
-  color: var(--regulatory-mintgreen) !important;
+    color: var(--regulatory-mintgreen) !important;
 }
+
 span.word:nth-of-type(4) {
-  color: var(--ip-darkblue) !important;
+    color: var(--ip-darkblue) !important;
 }
+
 span.word:nth-of-type(5) {
-  color: var(--health-economics-brightpink) !important;
+    color: var(--health-economics-brightpink) !important;
 }
+*/
 article p a,
 .sqs-block-summary-v2 .summary-read-more-link,
 .blog-more-link {
@@ -2556,7 +2562,7 @@ CUBE
 	Instead we use specially crafted box-shadows.
 
 */
-.cube.face > .wireframe {
+.cube .face > .wireframe {
   /*box-sizing: border-box;*/
   display: none;
   position: absolute;
@@ -2647,7 +2653,7 @@ CUBE
 	and it will exclude our #FFF text nodes!
 
 */
-.cube.face.faceIntroverted > .id {
+.cube .face.faceIntroverted > .id {
   color: #FEFEFE;
 }
 .cube .face.faceIntroverted > .id > .underline {

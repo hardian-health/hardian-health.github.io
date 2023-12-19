@@ -980,7 +980,7 @@ section[data-section-id="630906727a98a14798f4b3f4"]{
     }
   }
 }
-
+/*
 span.word:nth-of-type(1) {
     color: var(--clinical-purple) !important;
 }
@@ -1000,6 +1000,7 @@ span.word:nth-of-type(4) {
 span.word:nth-of-type(5) {
     color: var(--health-economics-brightpink) !important;
 }
+*/
 
 
 //BLOG LINKS  / summary read more links
@@ -2311,11 +2312,8 @@ h1.automatic-sub-page-title.jsonContentLoadedFadeIn{
         text-align:left !important;
       }
      }
-
   } 
   
-
-
    // no need for extra white space on start, on mobile
   .portfolio-child-page section.page-section:first-of-type .content{
     margin-top:0px;
@@ -2959,7 +2957,7 @@ CUBE
 	that act as containers for content.
 
 */
-.cube /*.cubelet >*/ .face {
+.cube .face {
 
 	position: absolute;
 	width:  1em;
@@ -2993,7 +2991,7 @@ CUBE
 	are momentarily visible as the cube twists.
 
 */
-.cube /*.cubelet >*/ .face.faceIntroverted { background-color: #000; }
+.cube  .face.faceIntroverted { background-color: #000; }
 
 
 
@@ -3005,7 +3003,7 @@ CUBE
 	Group.hidePlastics().
 
 */
-.cube /*.cubelet >*/ .face.faceTransparent { background-color: transparent; }
+.cube  .face.faceTransparent { background-color: transparent; }
 
 
 
@@ -3050,7 +3048,7 @@ CUBE
 	Instead we use specially crafted box-shadows.
 
 */
-.cube /*.cubelet > */.face > .wireframe {
+.cube .face > .wireframe {
 
 	/*box-sizing: border-box;*/
 	display: none;
@@ -3126,7 +3124,7 @@ CUBE
 	find this superfluous info confusing.
 
 */
-.cube /*.cubelet >*/ .face > .id {
+.cube  .face > .id {
 
 	display: none;
 	position: absolute;
@@ -3139,7 +3137,7 @@ CUBE
 	color: #000;
 
 }
-.cube /*.cubelet >*/ .face > .id > .underline {
+.cube  .face > .id > .underline {
 
 	border-bottom: 1px solid #000;
 }
@@ -3151,11 +3149,11 @@ CUBE
 	and it will exclude our #FFF text nodes!
 
 */
-.cube /*.cubelet > */.face.faceIntroverted > .id {
+.cube .face.faceIntroverted > .id {
 
 	color: #FEFEFE;
 }
-.cube /*.cubelet >*/ .face.faceIntroverted > .id > .underline {
+.cube  .face.faceIntroverted > .id > .underline {
 
 	border-bottom: 1px solid #FEFEFE;
 }
@@ -3170,7 +3168,7 @@ CUBE
 	display for a Cubelet face.
 
 */
-.cube /*.cubelet >*/ .face > .text {
+.cube  .face > .text {
 
 
 	display: none;
