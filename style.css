@@ -581,25 +581,25 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4{
 
 //regulatory 
 #block-yui_3_17_2_1_1660233301342_179110 h4:before{
-  background:var(--clinical-purple);
+  background:var(--regulatory-mintgreen);
 }
 
 //clinical
 #block-yui_3_17_2_1_1660233301342_153163 h4:before{
-  background:var(--strategy-lightblue);
+  background:var(--clinical-purple);
 }
 
 //IP
 #block-yui_3_17_2_1_1660233301342_220277 h4:before{
-  background:var(--regulatory-mintgreen);
+  background:var(--health-economics-brightpink);
 }
 
 #block-a78ba45834402982aeb1 h4:before{
-  background:var(--ip-darkblue);
+  background:var(--strategy-lightblue);
 }
 
 #block-yui_3_17_2_1_1660233301342_249459  h4:before{
-  background:var(--health-economics-brightpink);
+  background:var(--ip-darkblue);
 }*/
 .sqs-is-page-editing section[data-section-id="630906727a98a14798f4b3f4"]:before {
   content: "ADMIN! THIS SECTION has custom CSS styling applied. ";
