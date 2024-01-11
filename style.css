@@ -65,21 +65,22 @@ p + pre {
   left: -20px;
   top: 7px;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > div:before {
-  background: var(--clinical-purple);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > div:before {
-  background: var(--strategy-lightblue);
-}
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
   background: var(--regulatory-mintgreen);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
-  background: var(--ip-darkblue);
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > div:before {
+  background: var(--clinical-purple);
 }
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="health"] > div:before {
   background: var(--health-economics-brightpink);
 }
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > div:before {
+  background: var(--strategy-lightblue);
+}
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
+  background: var(--ip-darkblue);
+}
+
 .header-nav-folder-item:before {
   border-radius: 50%;
   transition: 0.3s all ease;
@@ -95,19 +96,19 @@ p + pre {
   height: 10px;
 }
 .header-nav-folder-item:nth-child(1):before {
-  background: var(--clinical-purple) !important;
-}
-.header-nav-folder-item:nth-child(2):before {
-  background: var(--strategy-lightblue) !important;
-}
-.header-nav-folder-item:nth-child(3):before {
   background: var(--regulatory-mintgreen) !important;
 }
+.header-nav-folder-item:nth-child(2):before {
+  background: var(--clinical-purple) !important;
+}
+.header-nav-folder-item:nth-child(3):before {
+  background: var(--health-economics-brightpink) !important;
+}
 .header-nav-folder-item:nth-child(4):before {
-  background: var(--ip-darkblue) !important;
+  background: var(--strategy-lightblue) !important;
 }
 .header-nav-folder-item:nth-child(5):before {
-  background: var(--health-economics-brightpink) !important;
+  background: var(--ip-darkblue) !important;
 }
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
   background-size: 0px !important;
@@ -580,25 +581,25 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4{
 
 //regulatory 
 #block-yui_3_17_2_1_1660233301342_179110 h4:before{
-  background:var(--clinical-purple);
+  background:var(--regulatory-mintgreen);
 }
 
 //clinical
 #block-yui_3_17_2_1_1660233301342_153163 h4:before{
-  background:var(--strategy-lightblue);
+  background:var(--clinical-purple);
 }
 
 //IP
 #block-yui_3_17_2_1_1660233301342_220277 h4:before{
-  background:var(--regulatory-mintgreen);
+  background:var(--health-economics-brightpink);
 }
 
 #block-a78ba45834402982aeb1 h4:before{
-  background:var(--ip-darkblue);
+  background:var(--strategy-lightblue);
 }
 
 #block-yui_3_17_2_1_1660233301342_249459  h4:before{
-  background:var(--health-economics-brightpink);
+  background:var(--ip-darkblue);
 }*/
 .sqs-is-page-editing section[data-section-id="630906727a98a14798f4b3f4"]:before {
   content: "ADMIN! THIS SECTION has custom CSS styling applied. ";
