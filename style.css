@@ -110,6 +110,37 @@ p + pre {
 .header-nav-folder-item:nth-child(5):before {
   background: var(--ip-darkblue) !important;
 }
+
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
+  font-size: 24px;
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
+  position: relative;
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:before {
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -20px;
+  top: 7px;
+}
+
+/* If you have specific dropdown options in the Tools tab, similar to the Services tab,
+   you can add them here with appropriate background colors. For example: */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
+  background: var(--regulatory-mintgreen); /* Replace var(--some-color) with the color you want */
+}
+/* Add more dropdown options as needed */
+
+/* Assuming you want the same hover effect on the Tools tab */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
+  /* Your hover styles here, similar to what you have for Services tab */
+}
+
+
+
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
   background-size: 0px !important;
 }
