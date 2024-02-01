@@ -94,17 +94,10 @@ p + pre {
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
   background: var(--clinical-purple); 
 }
-
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:before {
   background: var(--ip-darkblue); 
 }
 
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
-  font-size: 24px;
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
-  position: relative;
-}
 /* Base style for :before pseudo-elements */
 .header-menu-nav-folder[data-folder] .header-menu-nav-item a .header-menu-nav-item-content:before {
   border-radius: 50%;
