@@ -40,44 +40,15 @@ p + pre {
 .header-nav-folder-item {
   position: relative;
 }
-
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a {
-  font-size: 24px;
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content {
-  position: relative;
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:before {
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -20px;
-  top: 7px;
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
-  background: var(--regulatory-mintgreen);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > div:before {
-  background: var(--clinical-purple);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="health"] > div:before {
-  background: var(--health-economics-brightpink);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > div:before {
-  background: var(--strategy-lightblue);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
-  background: var(--ip-darkblue);
-}
-
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a,
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
   font-size: 24px;
 }
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content,
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
   position: relative;
 }
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:before,
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:before {
   border-radius: 50%;
   content: "";
@@ -85,63 +56,40 @@ p + pre {
   width: 10px;
   height: 10px;
   left: -20px;
-  top: 7px;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
-  background: var(--regulatory-mintgreen); 
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before,
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
+  width: 12px;
+  height: 12px;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
-  background: var(--clinical-purple); 
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:before {
-  background: var(--ip-darkblue); 
-}
-
-/* Base style for :before pseudo-elements */
-.header-menu-nav-folder[data-folder] .header-menu-nav-item a .header-menu-nav-item-content:before {
-  border-radius: 50%;
-  transition: 0.3s all ease;
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: -20px; /* Adjusted for consistency */
-  top: 7px;
-}
-
-/* Hover effect for :before pseudo-elements */
-.header-menu-nav-folder[data-folder] .header-menu-nav-item a:hover:before {
-  width: 10px;
-  height: 10px;
-  transition: 0.3s all ease; /* Ensures smooth transition */
-}
-/* Specific background colors for Services */
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > .header-menu-nav-item-content:before {
   background: var(--regulatory-mintgreen);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > div:before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > .header-menu-nav-item-content:before {
   background: var(--clinical-purple);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="health"] > div:before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="economics"] > .header-menu-nav-item-content:before {
   background: var(--health-economics-brightpink);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > div:before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > .header-menu-nav-item-content:before {
   background: var(--strategy-lightblue);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > .header-menu-nav-item-content:before {
   background: var(--ip-darkblue);
 }
-/* Specific background colors for Tools */
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
-  background: var(--regulatory-mintgreen); /* Example adjustment */
+
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > .header-menu-nav-item-content:before {
+  background: var(--regulatory-mintgreen);
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
-  background: var(--clinical-purple); /* Example adjustment */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > .header-menu-nav-item-content:before {
+  background: var(--clinical-purple);
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:before {
-  background: var(--ip-darkblue); /* Example adjustment */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > .header-menu-nav-item-content:before {
+  background: var(--ip-darkblue);
 }
+
 
 
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
