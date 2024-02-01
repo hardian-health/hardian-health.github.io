@@ -40,31 +40,39 @@ p + pre {
 .header-nav-folder-item {
   position: relative;
 }
-/*.header-nav-folder-item:before {
-  transition: .3s all ease;
-   content: "";
-    position: absolute;
-    width: 5px;
-    height: 38.5px;
-    left: 0px;
-    top: 1px;
-}
-*/
+
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a {
   font-size: 24px;
 }
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content {
   position: relative;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:before {
+
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
+  font-size: 24px;
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
+  position: relative;
+}
+/* Base style for :before pseudo-elements */
+.header-menu-nav-folder[data-folder] .header-menu-nav-item a .header-menu-nav-item-content:before {
   border-radius: 50%;
+  transition: 0.3s all ease;
   content: "";
   position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -20px;
+  width: 8px;
+  height: 8px;
+  left: -20px; /* Adjusted for consistency */
   top: 7px;
 }
+
+/* Hover effect for :before pseudo-elements */
+.header-menu-nav-folder[data-folder] .header-menu-nav-item a:hover:before {
+  width: 10px;
+  height: 10px;
+  transition: 0.3s all ease; /* Ensures smooth transition */
+}
+/* Specific background colors for Services */
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
   background: var(--regulatory-mintgreen);
 }
@@ -80,72 +88,15 @@ p + pre {
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
   background: var(--ip-darkblue);
 }
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
-  font-size: 24px;
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
-  position: relative;
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:before {
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -20px;
-  top: 7px;
-}
-
-/* If you have specific dropdown options in the Tools tab, similar to the Services tab,
-   you can add them here with appropriate background colors. For example: */
+/* Specific background colors for Tools */
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
-  background: var(--regulatory-mintgreen); 
+  background: var(--regulatory-mintgreen); /* Example adjustment */
 }
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
-  background: var(--clinical-purple); 
+  background: var(--regulatory-mintgreen); /* Example adjustment */
 }
-
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:before {
-  background: var(--ip-darkblue); 
-}
-
-/* Add more dropdown options as needed */
-
-/* Assuming you want the same hover effect on the Tools tab */
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
-  /* Your hover styles here, similar to what you have for Services tab */
-}
-
-
-.header-nav-folder-item:before {
-  border-radius: 50%;
-  transition: 0.3s all ease;
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 7px;
-  top: 17px;
-}
-.header-nav-folder-item:hover:before {
-  width: 10px;
-  height: 10px;
-}
-.header-nav-folder-item:nth-child(1):before {
-  background: var(--regulatory-mintgreen) !important;
-}
-.header-nav-folder-item:nth-child(2):before {
-  background: var(--clinical-purple) !important;
-}
-.header-nav-folder-item:nth-child(3):before {
-  background: var(--health-economics-brightpink) !important;
-}
-.header-nav-folder-item:nth-child(4):before {
-  background: var(--strategy-lightblue) !important;
-}
-.header-nav-folder-item:nth-child(5):before {
-  background: var(--ip-darkblue) !important;
+  background: var(--ip-darkblue); /* Example adjustment */
 }
 
 
