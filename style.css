@@ -126,28 +126,28 @@ p + pre {
   width: 10px;
   height: 10px;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item a[href*="regulatory"] .header-nav-folder-item-content:nth-child(1):before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--regulatory-mintgreen);
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item a[href*="clinical"] .header-nav-folder-item-content:nth-child(2):before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item a[href*="economics"] .header-nav-folder-item-content:nth-child(3):before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--health-economics-brightpink) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item a[href*="strategy"] .header-nav-folder-item-content:nth-child(4):before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--strategy-lightblue) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item a[href*="intellectual"] .header-nav-folder-item-content:nth-child(5):before {
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--ip-darkblue) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item a[href*="82304"] .header-nav-folder-item-content:nth-child(1):before {
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(1):before {
   background: var(--regulatory-mintgreen);
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item a[href*="samd"] .header-nav-folder-item-content:nth-child(2):before {
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(2):before {
   background: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item a[href*="news"] .header-nav-folder-item-content:nth-child(3):before {
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:nth-child(3):before {
   background: var(--ip-darkblue) !important;
 }
 
