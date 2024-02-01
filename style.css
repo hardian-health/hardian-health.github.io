@@ -112,10 +112,13 @@ p + pre {
 
 /* Add more dropdown options as needed */
 
+/* Assuming you want the same hover effect on the Tools tab */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
+  /* Your hover styles here, similar to what you have for Services tab */
+}
 
 
-/* Base style for :before pseudo-elements in Services folder items */
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:before {
+.header-nav-folder-item:before {
   border-radius: 50%;
   transition: 0.3s all ease;
   content: "";
@@ -125,59 +128,25 @@ p + pre {
   left: 7px;
   top: 17px;
 }
-
-/* Hover effect specific to Services folder items */
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:hover:before {
+.header-nav-folder-item:hover:before {
   width: 10px;
   height: 10px;
 }
-
-/* Specific background colors for each child within the Services folder */
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:nth-child(1):before {
+.header-nav-folder-item:nth-child(1):before {
   background: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:nth-child(2):before {
+.header-nav-folder-item:nth-child(2):before {
   background: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:nth-child(3):before {
+.header-nav-folder-item:nth-child(3):before {
   background: var(--health-economics-brightpink) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:nth-child(4):before {
+.header-nav-folder-item:nth-child(4):before {
   background: var(--strategy-lightblue) !important;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-nav-folder-item:nth-child(5):before {
+.header-nav-folder-item:nth-child(5):before {
   background: var(--ip-darkblue) !important;
 }
-
-/* Base style for :before pseudo-elements in Tools folder items */
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item:before {
-  border-radius: 50%;
-  transition: 0.3s all ease;
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 7px;
-  top: 17px;
-}
-
-/* Hover effect specific to Tools folder items */
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item:hover:before {
-  width: 10px;
-  height: 10px;
-}
-
-/* Specific background colors for each child within the Tools folder */
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item:nth-child(1):before {
-  background: var(--regulatory-mintgreen) !important; /* Replace with actual color variable */
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item:nth-child(2):before {
-  background: var(--clinical-purple) !important; /* Replace with actual color variable */
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-nav-folder-item:nth-child(3):before {
-  background: var(--ip-darkblue) !important; /* Replace with actual color variable */
-}
-
 
 
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
