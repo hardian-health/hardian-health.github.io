@@ -139,6 +139,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   left: 33px;
   width: 20px;
   height: 20px;
+  border-radius: 50%;
   background-size: contain;
 }
 /* Adjusted CSS for colored circles */
