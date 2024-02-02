@@ -132,6 +132,9 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
+.header-menu-nav-item-content {
+  position: relative;
+}
 .header-nav-folder-content:before {
   content: '';
   position: absolute;
