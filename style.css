@@ -132,18 +132,10 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
-.header-nav-folder-content:before {
-  content: '';
-  position: absolute;
-  top: -7px;
-  left: 33px;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-}
 /* Set position relative on the content container to establish positioning context */
 .header-menu-nav-item-content {
   position: relative;
+  padding-left: 30px; /* Add padding to make room for the circle */
 }
 
 /* Adjust the :before pseudo-element to target .header-menu-nav-item-content directly */
@@ -153,11 +145,14 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: -20px; /* Positions the circle -20px from the left edge of the content */
+  left: 0; /* Adjust this value as needed, 0 will align with the content's left edge */
   top: 50%;
-  transform: translateY(-50%); /* Vertically centers the circle */
-  /* Ensure the background is set to the specific color for each item, as previously defined */
+  transform: translate(-100%, -50%); /* This will move the circle to the left of the content */
+  background: var(--default-color); /* Placeholder for your color variables, set the default or use individual rules as needed */
 }
+
+/* Your color-specific rules here... */
+
 
 /* Apply specific colors based on the href attribute, assuming the same structure as before */
 .header-menu-nav-item-content a[href*="/regulatory"]:before {
