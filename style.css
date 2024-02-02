@@ -60,7 +60,12 @@ p + pre {
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
   background: var(--neutral-lightgrey); /* Default color */
-  /* Removed transition effect for mobile compatibility */
+}
+
+.header-nav-folder-item a:hover .header-nav-folder-item-content:before {
+  width: 12px;
+  height: 12px;
+  transition: 0.3s all ease;
 }
 
 /* Specific colors for each service and tool based on the href attribute */
