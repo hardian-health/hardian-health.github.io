@@ -143,15 +143,15 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 }
 /* Adjusted CSS for colored circles */
 .container.header-menu-nav-item a .header-menu-nav-item-content:before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -7px;
-  left: 33px;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: -20px; /* Adjust as needed for mobile */
+  top: 50%;
   transform: translateY(-50%);
-  background: var(--white); /* Default color */
+  background: var(--neutral-lightgrey); /* Default color */
   transition: background-color 0.3s ease;
 }
 
