@@ -132,6 +132,15 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
+.header-nav-folder-content:before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 33px;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
 /* Set position relative on the content container to establish positioning context */
 .header-menu-nav-item-content {
   position: relative;
