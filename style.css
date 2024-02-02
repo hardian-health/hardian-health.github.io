@@ -41,13 +41,12 @@ p + pre {
   position: relative;
 }
 
-/* Combined styles for all navigation items within folders */
 .header-nav-folder-item a {
-  font-size: 24px; /* Applies font size to all folder item links */
+  font-size: 24px;
 }
 
 .header-nav-folder-item a .header-nav-folder-item-content {
-  position: relative; /* Ensures positioning context for :before pseudo-element */
+  position: relative;
 }
 
 /* Base styles for the circle before the content */
@@ -60,18 +59,11 @@ p + pre {
   left: -20px; /* Adjust as needed */
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
-  background: var(--neutral-lightgrey); /* Default color, change as needed */
-  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease;
+  background: var(--neutral-lightgrey); /* Default color */
+  /* Removed transition effect for mobile compatibility */
 }
 
-/* Hover effect for the circle */
-.header-nav-folder-item a:hover .header-nav-folder-item-content:before {
-  width: 12px;
-  height: 12px;
-  left: -22px; /* Adjust as needed */
-}
-
-/* Specific colors for each service */
+/* Specific colors for each service and tool based on the href attribute */
 .header-nav-folder-item a[href*="/regulatory"] .header-nav-folder-item-content:before {
   background: var(--regulatory-mintgreen);
 }
@@ -96,7 +88,6 @@ p + pre {
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue);
 }
-
 
 
 
