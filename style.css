@@ -132,9 +132,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
-.container.header-menu-nav-item a {
-  padding-left: 30px; /* Adjust this value to ensure space for the circle */
-}
 
 .header-nav-folder-content:before {
   content: '';
@@ -146,14 +143,17 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   border-radius: 50%;
   background-size: contain;
 }
-
+.container.header-menu-nav-item a {
+  padding-left: 30px; /* Adjust this value to ensure space for the circle */
+}
 .container.header-menu-nav-item a .header-menu-nav-item-content:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: 10px; /* Adjust this to align within the padded area */
+  left: 0px; /* Adjust this to align within the padded area */
+  margin-left: -20px;
   top: 50%;
   transform: translateY(-50%);
   background: var(--white); /* Default color */
