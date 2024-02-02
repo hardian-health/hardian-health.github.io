@@ -136,7 +136,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative;
 }
 /* Base styles for the circle before the content on mobile */
-header-menu-nav-item-content a:before {
+.header-menu-nav-item-content a:before {
   content: "";
   position: absolute;
   width: 10px;
@@ -148,28 +148,28 @@ header-menu-nav-item-content a:before {
 }
 
 /* Apply specific colors based on the href attribute, assuming the same structure as before */
-header-menu-nav-item-content a[href*="/regulatory"]:before {
+.header-menu-nav-item-content a[href*="/regulatory"]:before {
   background: var(--regulatory-mintgreen) !important;
 }
-header-menu-nav-item-content a[href*="/clinical"]:before {
+.header-menu-nav-item-content a[href*="/clinical"]:before {
   background: var(--clinical-purple) !important;
 }
-header-menu-nav-item-content a[href*="/health-economics"]:before {
+.header-menu-nav-item-content a[href*="/health-economics"]:before {
   background: var(--health-economics-brightpink) !important;
 }
-header-menu-nav-item-contentm a[href*="/strategy"]:before {
+.header-menu-nav-item-contentm a[href*="/strategy"]:before {
   background: var(--strategy-lightblue) !important;
 }
-header-menu-nav-item-content a[href*="/intellectual-property"]:before {
+.header-menu-nav-item-content a[href*="/intellectual-property"]:before {
   background: var(--ip-darkblue) !important;
 }
-header-menu-nav-item-content a[href*="/82304"]:before {
+.header-menu-nav-item-content a[href*="/82304"]:before {
   background: var(--regulatory-mintgreen) !important;
 }
-header-menu-nav-item-content a[href*="/samd"]:before {
+.header-menu-nav-item-content a[href*="/samd"]:before {
   background: var(--clinical-purple) !important;
 }
-header-menu-nav-item-content a[href*="/news"]:before {
+.header-menu-nav-item-content a[href*="/news"]:before {
   background: var(--ip-darkblue) !important;
 }
 
