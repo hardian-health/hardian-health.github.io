@@ -37,10 +37,6 @@ p + pre {
 /* *****
  SERVICES DROPDOWN COLOR BOXES
 ****** */
-.header-nav-folder-item {
-  position: relative;
-}
-
 .header-nav-folder-item a {
   font-size: 24px;
 }
@@ -96,7 +92,6 @@ p + pre {
 
 
 
-
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
   background-size: 0px !important;
 }
@@ -132,49 +127,51 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
-.header-menu-nav-item-content {
-  position: relative;
-}
-/* Base styles for the circle before the content on mobile */
-.header-menu-nav-item-content a:before {
-  content: "";
+.header-nav-folder-content:before {
+  content: '';
   position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  left: -20px; /* Adjust as needed */
-  top: 50%;
-  transform: translateY(-50%);
+  top: -7px;
+  left: 33px;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+}
+/*
+.header-nav-item a{
+  padding: 15px 2px !important;
 }
 
-/* Apply specific colors based on the href attribute, assuming the same structure as before */
-.header-menu-nav-item-content a[href*="/regulatory"]:before {
-  background: var(--regulatory-mintgreen) !important;
+// ACTIVE NAV ITEM TEST
+.header-nav-item--active a {
+    background: #A37AF5;
+    color: white !important;
+    text-decoration: none !important;
+   
+    background-image: none !important;
+   
+    border-radius: 6px;
 }
-.header-menu-nav-item-content a[href*="/clinical"]:before {
-  background: var(--clinical-purple) !important;
+*/
+/*h1, h2, h3, h4{
+  strong{
+    font-weight: inherit !important;
+    font-style:normal !important;
+    display:inline-block;
+    background: #A37AF5;
+    padding:20px;
+    color: #FFF; 
+    border-radius:20px;
+    text-transform:none;
+  }
 }
-.header-menu-nav-item-content a[href*="/health-economics"]:before {
-  background: var(--health-economics-brightpink) !important;
+*/
+/*
+.sqs-block-button-element--medium{
+  background: rgb(163,122,245);
+background: linear-gradient(22deg, rgba(163,122,245,1) 0%, rgba(91,207,255,1) 100%);  
 }
-.header-menu-nav-item-contentm a[href*="/strategy"]:before {
-  background: var(--strategy-lightblue) !important;
-}
-.header-menu-nav-item-content a[href*="/intellectual-property"]:before {
-  background: var(--ip-darkblue) !important;
-}
-.header-menu-nav-item-content a[href*="/82304"]:before {
-  background: var(--regulatory-mintgreen) !important;
-}
-.header-menu-nav-item-content a[href*="/samd"]:before {
-  background: var(--clinical-purple) !important;
-}
-.header-menu-nav-item-content a[href*="/news"]:before {
-  background: var(--ip-darkblue) !important;
-}
-
-
-
+*/
+/*
 
 
 //😎😎😎 BLOG POST WIDTHS */
