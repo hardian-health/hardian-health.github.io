@@ -40,7 +40,16 @@ p + pre {
 .header-nav-folder-item {
   position: relative;
 }
-
+/*.header-nav-folder-item:before {
+  transition: .3s all ease;
+   content: "";
+    position: absolute;
+    width: 5px;
+    height: 38.5px;
+    left: 0px;
+    top: 1px;
+}
+*/
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a {
   font-size: 24px;
 }
@@ -87,33 +96,49 @@ p + pre {
   left: -20px;
   top: 7px;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:hover:before {
+
+/* If you have specific dropdown options in the Tools tab, similar to the Services tab,
+   you can add them here with appropriate background colors. For example: */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
+  background: var(--regulatory-mintgreen); /* Replace var(--some-color) with the color you want */
+}
+/* Add more dropdown options as needed */
+
+/* Assuming you want the same hover effect on the Tools tab */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
+  /* Your hover styles here, similar to what you have for Services tab */
+}
+
+
+.header-nav-folder-item:before {
+  border-radius: 50%;
+  transition: 0.3s all ease;
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  left: 7px;
+  top: 17px;
+}
+.header-nav-folder-item:hover:before {
   width: 10px;
   height: 10px;
 }
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
-  background: var(--regulatory-mintgreen); 
+.header-nav-folder-item:nth-child(1):before {
+  background: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
-  background: var(--clinical-purple); 
+.header-nav-folder-item:nth-child(2):before {
+  background: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:before {
-  background: var(--ip-darkblue); 
+.header-nav-folder-item:nth-child(3):before {
+  background: var(--health-economics-brightpink) !important;
 }
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:hover:before {
-  background: var(--regulatory-mintgreen); 
+.header-nav-folder-item:nth-child(4):before {
+  background: var(--strategy-lightblue) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:hover:before {
-  background: var(--clinical-purple); 
+.header-nav-folder-item:nth-child(5):before {
+  background: var(--ip-darkblue) !important;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:hover:before {
-  background: var(--ip-darkblue); 
-}
-
-
-
 
 
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
