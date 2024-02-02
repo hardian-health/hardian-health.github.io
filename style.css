@@ -146,28 +146,28 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 
 /* Specific colors based on the href attribute */
 .container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
-  background-color: var(--regulatory-mintgreen);
+  background-color: var(--regulatory-mintgreen) !important;
 }
 .container.header-menu-nav-item a[href*="/clinical"] .header-menu-nav-item-content:before {
-  background-color: var(--clinical-purple);
+  background-color: var(--clinical-purple) !important;
 }
 .container.header-menu-nav-item a[href*="/health-economics"] .header-menu-nav-item-content:before {
-  background-color: var(--health-economics-brightpink);
+  background-color: var(--health-economics-brightpink) !important;
 }
 .container.header-menu-nav-item a[href*="/strategy"] .header-menu-nav-item-content:before {
-  background-color: var(--strategy-lightblue);
+  background-color: var(--strategy-lightblue) !important;
 }
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
-  background-color: var(--ip-darkblue);
+  background-color: var(--ip-darkblue) !important;
 }
 .container.header-menu-nav-item a[href*="/82304"] .header-menu-nav-item-content:before {
-  background-color: var(--regulatory-mintgreen);
+  background-color: var(--regulatory-mintgreen) !important;
 }
 .container.header-menu-nav-item a[href*="/samd"] .header-menu-nav-item-content:before {
-  background-color: var(--clinical-purple);
+  background-color: var(--clinical-purple) !important;
 }
 .container.header-menu-nav-item a[href*="/news"] .header-menu-nav-item-content:before {
-  background-color: var(--ip-darkblue);
+  background-color: var(--ip-darkblue) !important;
 }
 
 
