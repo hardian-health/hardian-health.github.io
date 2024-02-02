@@ -40,16 +40,7 @@ p + pre {
 .header-nav-folder-item {
   position: relative;
 }
-/*.header-nav-folder-item:before {
-  transition: .3s all ease;
-   content: "";
-    position: absolute;
-    width: 5px;
-    height: 38.5px;
-    left: 0px;
-    top: 1px;
-}
-*/
+
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a {
   font-size: 24px;
 }
