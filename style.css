@@ -56,6 +56,15 @@ p + pre {
   left: -20px;
   top: 7px;
 }
+.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
+  /* Example hover effect: increase size and adjust position */
+  width: 12px;
+  height: 12px;
+  left: -22px;
+  top: 6px;
+  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease;
+}
+
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
   background: var(--regulatory-mintgreen);
 }
@@ -101,6 +110,13 @@ p + pre {
 
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
   /* Your hover styles here, similar to what you have for Services tab */
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
+  width: 12px;
+  height: 12px;
+  left: -22px;
+  top: 6px;
+  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
 
 
