@@ -47,74 +47,60 @@ p + pre {
 .header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content {
   position: relative;
 }
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a .header-menu-nav-item-content:before {
-  border-radius: 50%;
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  left: -20px;
-  top: 7px;
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
-  /* Example hover effect: increase size and adjust position */
-  width: 12px;
-  height: 12px;
-  left: -22px;
-  top: 6px;
-  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease;
-}
-
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="regulatory"] > div:before {
-  background: var(--regulatory-mintgreen);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="clinical"] > div:before {
-  background: var(--clinical-purple);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="health"] > div:before {
-  background: var(--health-economics-brightpink);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="strategy"] > div:before {
-  background: var(--strategy-lightblue);
-}
-.header-menu-nav-folder[data-folder="/services"] .header-menu-nav-item a[href*="intellectual"] > div:before {
-  background: var(--ip-darkblue);
-}
-
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a {
   font-size: 24px;
 }
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content {
   position: relative;
 }
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:before {
-  border-radius: 50%;
+/* Base styles for the circle before the content */
+.header-nav-folder-item a .header-nav-folder-item-content:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
-  left: -20px;
-  top: 7px;
+  border-radius: 50%;
+  left: -20px; /* Adjust as needed */
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  background: var(--neutral-lightgrey); /* Default color, change as needed */
+  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease;
 }
 
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
-  background: var(--regulatory-mintgreen); 
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:before {
-  background: var(--clinical-purple); 
-}
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="new"] > div:before {
-  background: var(--ip-darkblue); 
-}
-
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
+/* Hover effect for the circle */
+.header-nav-folder-item a:hover .header-nav-folder-item-content:before {
   width: 12px;
   height: 12px;
-  left: -22px;
-  top: 6px;
-  transition: width 0.3s ease, height 0.3s ease, left 0.3s ease, top 0.3s ease;
+  left: -22px; /* Adjust as needed */
 }
+
+/* Specific colors for each service */
+.header-nav-folder-item a[href*="/regulatory"] .header-nav-folder-item-content:before {
+  background: var(--regulatory-mintgreen);
+}
+.header-nav-folder-item a[href*="/clinical"] .header-nav-folder-item-content:before {
+  background: var(--clinical-purple);
+}
+.header-nav-folder-item a[href*="/health-economics"] .header-nav-folder-item-content:before {
+  background: var(--health-economics-brightpink);
+}
+.header-nav-folder-item a[href*="/strategy"] .header-nav-folder-item-content:before {
+  background: var(--strategy-lightblue);
+}
+.header-nav-folder-item a[href*="/intellectual-property"] .header-nav-folder-item-content:before {
+  background: var(--ip-darkblue);
+}
+.header-nav-folder-item a[href*="/82304"] .header-nav-folder-item-content:before {
+  background: var(--regulatory-mintgreen);
+}
+.header-nav-folder-item a[href*="/samd"] .header-nav-folder-item-content:before {
+  background: var(--clinical-purple);
+}
+.header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
+  background: var(--ip-darkblue);
+}
+
+
 
 
 
