@@ -135,15 +135,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 .header-menu-nav-item-content {
   position: relative;
 }
-.header-nav-folder-content:before {
-  content: '';
-  position: absolute;
-  top: -7px;
-  left: 33px;
-  width: 20px;
-  height: 20px;
-  background-size: contain;
-}
 /* Base styles for the circle before the content on mobile */
 header-menu-nav-item-content a:before {
   content: "";
@@ -182,21 +173,6 @@ header-menu-nav-item-content a[href*="/news"]:before {
   background: var(--ip-darkblue) !important;
 }
 
-@media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
-  .container.header-menu-nav-item a .header-nav-folder-item-content:before {
-    /* Mobile-specific styles here */
-    /* This assumes you are using the same :before pseudo-element for the circle */
-    content: "";
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    left: -20px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--default-color); /* Ensure this matches your mobile design intentions */
-  }
-}
 
 
 
