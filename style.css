@@ -141,51 +141,41 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 20px;
   background-size: contain;
 }
-/* Set position relative on the content container to establish positioning context */
-.header-menu-nav-item-content {
-  position: relative;
-  padding-left: 30px; /* Add padding to make room for the circle */
-}
-
-/* Adjust the :before pseudo-element to target .header-menu-nav-item-content directly */
-.header-menu-nav-item-content:before {
+/* Base styles for the circle before the content on mobile */
+.container.header-menu-nav-item a:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: 0; /* Adjust this value as needed, 0 will align with the content's left edge */
+  left: -20px; /* Adjust as needed */
   top: 50%;
-  transform: translate(-100%, -50%); /* This will move the circle to the left of the content */
-  background: var(--default-color); /* Placeholder for your color variables, set the default or use individual rules as needed */
+  transform: translateY(-50%);
 }
-
-/* Your color-specific rules here... */
-
 
 /* Apply specific colors based on the href attribute, assuming the same structure as before */
-.header-menu-nav-item-content a[href*="/regulatory"]:before {
+.container.header-menu-nav-item a[href*="/regulatory"]:before {
   background: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-item-content a[href*="/clinical"]:before {
+.container.header-menu-nav-item a[href*="/clinical"]:before {
   background: var(--clinical-purple) !important;
 }
-.header-menu-nav-item-content a[href*="/health-economics"]:before {
+.container.header-menu-nav-item a[href*="/health-economics"]:before {
   background: var(--health-economics-brightpink) !important;
 }
-.header-menu-nav-item-content a[href*="/strategy"]:before {
+.container.header-menu-nav-item a[href*="/strategy"]:before {
   background: var(--strategy-lightblue) !important;
 }
-.header-menu-nav-item-content a[href*="/intellectual-property"]:before {
+.container.header-menu-nav-item a[href*="/intellectual-property"]:before {
   background: var(--ip-darkblue) !important;
 }
-.header-menu-nav-item-content a[href*="/82304"]:before {
+.container.header-menu-nav-item a[href*="/82304"]:before {
   background: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-item-content a[href*="/samd"]:before {
+.container.header-menu-nav-item a[href*="/samd"]:before {
   background: var(--clinical-purple) !important;
 }
-.header-menu-nav-item-content a[href*="/news"]:before {
+.container.header-menu-nav-item a[href*="/news"]:before {
   background: var(--ip-darkblue) !important;
 }
 
