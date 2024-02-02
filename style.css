@@ -127,12 +127,12 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
-.header-nav-folder-content {
-  position: relative;
+.header-menu-nav-item {
+  position: relative; /* This ensures that the positioning context is set for the pseudo-element */
   padding-left: 30px; /* Add padding to make room for the circle */
 }
 
-.header-nav-folder-content:before {
+.header-menu-nav-item a:before {
   content: '';
   position: absolute;
   width: 20px;
@@ -141,32 +141,32 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   left: 0;
   top: 50%;
   transform: translate(-100%, -50%); /* Center the circle vertically and move it to the left */
-  /* No background-color here, it will be set by the following specific rules */
+  background: var(--default-color); /* Set a default color */
 }
 
 /* Specific colors for each item based on the href attribute */
-.header-nav-folder-content a[href*="/regulatory"]:before {
+.header-menu-nav-item a[href*="/regulatory"]:before {
+  background-color: var(--regulatory-mintgreen);
+}
+.header-menu-nav-item a[href*="/clinical"]:before {
+  background-color: var(--clinical-purple);
+}
+.header-menu-nav-item a[href*="/health-economics"]:before {
+  background-color: var(--health-economics-brightpink);
+}
+.header-menu-nav-item a[href*="/strategy"]:before {
+  background-color: var(--strategy-lightblue);
+}
+.header-menu-nav-item a[href*="/intellectual-property"]:before {
+  background-color: var(--ip-darkblue);
+}
+.header-menu-nav-item a[href*="/82304-2"]:before {
   background-color: var(--regulatory-mintgreen) !important;
 }
-.header-nav-folder-content a[href*="/clinical"]:before {
+.header-menu-nav-item a[href*="/samd-training"]:before {
   background-color: var(--clinical-purple) !important;
 }
-.header-nav-folder-content a[href*="/health-economics"]:before {
-  background-color: var(--health-economics-brightpink) !important;
-}
-.header-nav-folder-content a[href*="/strategy"]:before {
-  background-color: var(--strategy-lightblue) !important;
-}
-.header-nav-folder-content a[href*="/intellectual-property"]:before {
-  background-color: var(--ip-darkblue) !important;
-}
-.header-nav-folder-content a[href*="/82304-2"]:before {
-  background-color: var(--regulatory-mintgreen) !important;
-}
-.header-nav-folder-content a[href*="/samd-training"]:before {
-  background-color: var(--clinical-purple) !important;
-}
-.header-nav-folder-content a[href*="/newsletter"]:before {
+.header-menu-nav-item a[href*="/newsletter"]:before {
   background-color: var(--ip-darkblue) !important;
 }
 
