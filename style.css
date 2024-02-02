@@ -141,42 +141,44 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 20px;
   background-size: contain;
 }
-/*
-.header-nav-item a{
-  padding: 15px 2px !important;
+.header-nav-folder-item a span:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 0; /* Adjust this value if needed to position the circle appropriately */
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
 }
 
-// ACTIVE NAV ITEM TEST
-.header-nav-item--active a {
-    background: #A37AF5;
-    color: white !important;
-    text-decoration: none !important;
-   
-    background-image: none !important;
-   
-    border-radius: 6px;
+/* Define colors for each service and tool based on the href attribute of the parent <a> tag */
+.header-nav-folder-item a[href*="/regulatory"] span:before {
+  background-color: var(--regulatory-mintgreen);
 }
-*/
-/*h1, h2, h3, h4{
-  strong{
-    font-weight: inherit !important;
-    font-style:normal !important;
-    display:inline-block;
-    background: #A37AF5;
-    padding:20px;
-    color: #FFF; 
-    border-radius:20px;
-    text-transform:none;
-  }
+.header-nav-folder-item a[href*="/clinical"] span:before {
+  background-color: var(--clinical-purple);
 }
-*/
-/*
-.sqs-block-button-element--medium{
-  background: rgb(163,122,245);
-background: linear-gradient(22deg, rgba(163,122,245,1) 0%, rgba(91,207,255,1) 100%);  
+.header-nav-folder-item a[href*="/health-economics"] span:before {
+  background-color: var(--health-economics-brightpink);
 }
-*/
-/*
+.header-nav-folder-item a[href*="/strategy"] span:before {
+  background-color: var(--strategy-lightblue);
+}
+.header-nav-folder-item a[href*="/intellectual-property"] span:before {
+  background-color: var(--ip-darkblue);
+}
+.header-nav-folder-item a[href*="/82304"] span:before {
+  background-color: var(--regulatory-mintgreen);
+}
+.header-nav-folder-item a[href*="/samd"] span:before {
+  background-color: var(--clinical-purple);
+}
+.header-nav-folder-item a[href*="/news"] span:before {
+  background-color: var(--ip-darkblue);
+}
+
 
 
 //😎😎😎 BLOG POST WIDTHS */
