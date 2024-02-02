@@ -141,43 +141,46 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 20px;
   background-size: contain;
 }
-.header-nav-folder-item a span:before {
+/* Adjusted CSS for colored circles */
+.container.header-menu-nav-item a .header-menu-nav-item-content:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: 0; /* Adjust this value if needed to position the circle appropriately */
+  left: -20px; /* Adjust as needed for mobile */
   top: 50%;
   transform: translateY(-50%);
+  background: var(--neutral-lightgrey); /* Default color */
   transition: background-color 0.3s ease;
 }
 
-/* Define colors for each service and tool based on the href attribute of the parent <a> tag */
-.header-nav-folder-item a[href*="/regulatory"] span:before {
+/* Specific colors based on the href attribute */
+.container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen);
 }
-.header-nav-folder-item a[href*="/clinical"] span:before {
+.container.header-menu-nav-item a[href*="/clinical"] .header-menu-nav-item-content:before {
   background-color: var(--clinical-purple);
 }
-.header-nav-folder-item a[href*="/health-economics"] span:before {
+.container.header-menu-nav-item a[href*="/health-economics"] .header-menu-nav-item-content:before {
   background-color: var(--health-economics-brightpink);
 }
-.header-nav-folder-item a[href*="/strategy"] span:before {
+.container.header-menu-nav-item a[href*="/strategy"] .header-menu-nav-item-content:before {
   background-color: var(--strategy-lightblue);
 }
-.header-nav-folder-item a[href*="/intellectual-property"] span:before {
+.container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue);
 }
-.header-nav-folder-item a[href*="/82304"] span:before {
+.container.header-menu-nav-item a[href*="/82304"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen);
 }
-.header-nav-folder-item a[href*="/samd"] span:before {
+.container.header-menu-nav-item a[href*="/samd"] .header-menu-nav-item-content:before {
   background-color: var(--clinical-purple);
 }
-.header-nav-folder-item a[href*="/news"] span:before {
+.container.header-menu-nav-item a[href*="/news"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue);
 }
+
 
 
 
