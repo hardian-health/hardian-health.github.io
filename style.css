@@ -143,25 +143,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   border-radius: 50%;
   background-size: contain;
 }
-.container.header-menu-nav-item a .header-menu-nav-item-content {
-  position: relative;
-  padding-left: 30px; /* Ensure space for the circle, adjust based on actual need */
-}
-
-.container.header-menu-nav-item a .header-menu-nav-item-content:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  left: 10px; /* Adjust based on padding to align within the padded area */
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--white); /* Adjust if needed */
-  transition: background-color 0.3s ease;
-}
-
-
 
 /* Specific colors based on the href attribute */
 .container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
