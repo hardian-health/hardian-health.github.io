@@ -129,7 +129,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 }
 .container.header-menu-nav-item .header-menu-nav-item-content {
   position: relative; /* Establishes the positioning context for the pseudo-element */
-  padding-left: 30px; /* Adds space for the circle; adjust as necessary */
 }
 
 .container.header-menu-nav-item .header-menu-nav-item-content:before {
@@ -138,22 +137,22 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   width: 20px; /* Diameter of the circle */
   height: 20px; /* Diameter of the circle */
   border-radius: 50%; /* Makes the element a circle */
-  left: 0; /* Aligns the circle with the left edge of the parent element */
+  left: -20px; /* Positions the circle 20px to the left of the text */
   top: 50%; /* Aligns the top edge of the circle with the vertical center of the parent */
-  transform: translate(-30px, -50%); /* Shifts the circle to the left by 30px and up by half its height to vertically center it */
+  transform: translateY(-50%); /* Shifts the circle up by half its height to vertically center it */
   background-color: var(--default-color); /* Sets a default background color for the circle */
   z-index: 1; /* Ensures the circle appears above any other positioned elements */
 }
 
 /* Specific colors for each item based on the href attribute */
 .container.header-menu-nav-item a[href*="/82304-2"] .header-menu-nav-item-content:before {
-  background-color: var(--regulatory-mintgreen) !important;
+  background-color: var(--regulatory-mintgreen);
 }
 .container.header-menu-nav-item a[href*="/samd-training"] .header-menu-nav-item-content:before {
-  background-color: var(--clinical-purple) !important;
+  background-color: var(--clinical-purple);
 }
 .container.header-menu-nav-item a[href*="/newsletter"] .header-menu-nav-item-content:before {
-  background-color: var(--strategy-lightblue) !important;
+  background-color: var(--strategy-lightblue);
 }
 .container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen) !important;
