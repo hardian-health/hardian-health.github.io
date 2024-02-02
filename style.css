@@ -152,7 +152,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   background-color: var(--clinical-purple);
 }
 .container.header-menu-nav-item a[href*="/newsletter"] .header-menu-nav-item-content:before {
-  background-color: var(--strategy-lightblue);
+  background-color: var(--ip-darkblue);
 }
 .container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen) !important;
