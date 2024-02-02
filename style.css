@@ -59,7 +59,7 @@ p + pre {
   left: -20px; /* Adjust as needed */
   top: 50%;
   transform: translateY(-50%); /* Center vertically */
-  background: var(--neutral-lightgrey); /* Default color */
+  background: var(--white); /* Default color */
 }
 
 .header-nav-folder-item a:hover .header-nav-folder-item-content:before {
