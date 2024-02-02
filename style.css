@@ -151,7 +151,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   left: -20px; /* Adjust as needed for mobile */
   top: 50%;
   transform: translateY(-50%);
-  background: var(--neutral-lightgrey); /* Default color */
+  background: var(--white); /* Default color */
   transition: background-color 0.3s ease;
 }
 
