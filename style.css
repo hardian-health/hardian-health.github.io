@@ -127,49 +127,50 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
-.header-menu-nav-folder-content {
-  position: relative; /* Establishes the positioning context for the circle */
-  padding-left: 30px; /* Ensures there's space for the circle; adjust as necessary */
+.container.header-menu-nav-item .header-menu-nav-item-content {
+  position: relative; /* Establishes the positioning context for the pseudo-element */
+  padding-left: 30px; /* Adds space for the circle; adjust as necessary */
 }
 
-.header-menu-nav-folder-content:before {
+.container.header-menu-nav-item .header-menu-nav-item-content:before {
   content: ''; /* Necessary for the pseudo-element to be generated */
   position: absolute; /* Positions the pseudo-element absolutely within its parent */
   width: 20px; /* Diameter of the circle */
   height: 20px; /* Diameter of the circle */
   border-radius: 50%; /* Makes the element a circle */
-  left: -20px; /* Positions the circle 20px to the left of the content's left edge */
+  left: 0; /* Aligns the circle with the left edge of the parent element */
   top: 50%; /* Aligns the top edge of the circle with the vertical center of the parent */
-  transform: translateY(-50%); /* Shifts the circle up by half its height to vertically center it */
+  transform: translate(-30px, -50%); /* Shifts the circle to the left by 30px and up by half its height to vertically center it */
   background-color: var(--default-color); /* Sets a default background color for the circle */
   z-index: 1; /* Ensures the circle appears above any other positioned elements */
 }
 
 /* Specific colors for each item based on the href attribute */
-.header-menu-nav-folder-content a[href*="/regulatory"]:before {
+.container.header-menu-nav-item a[href*="/82304-2"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-folder-content a[href*="/clinical"]:before {
+.container.header-menu-nav-item a[href*="/samd-training"] .header-menu-nav-item-content:before {
   background-color: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder-content a[href*="/health-economics"]:before {
-  background-color: var(--health-economics-brightpink) !important;
-}
-.header-menu-nav-folder-content a[href*="/strategy"]:before {
+.container.header-menu-nav-item a[href*="/newsletter"] .header-menu-nav-item-content:before {
   background-color: var(--strategy-lightblue) !important;
 }
-.header-menu-nav-folder-content a[href*="/intellectual-property"]:before {
-  background-color: var(--ip-darkblue) !important;
-}
-.header-menu-nav-folder-content a[href*="/82304-2"]:before {
+.container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
   background-color: var(--regulatory-mintgreen) !important;
 }
-.header-menu-nav-folder-content a[href*="/samd-training"]:before {
+.container.header-menu-nav-item a[href*="/clinical"] .header-menu-nav-item-content:before {
   background-color: var(--clinical-purple) !important;
 }
-.header-menu-nav-folder-content a[href*="/newsletter"]:before {
+.container.header-menu-nav-item a[href*="/health-economics"] .header-menu-nav-item-content:before {
+  background-color: var(--health-economics-brightpink) !important;
+}
+.container.header-menu-nav-item a[href*="/strategy"] .header-menu-nav-item-content:before {
+  background-color: var(--strategy-lightblue) !important;
+}
+.container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
 }
+
 
 /*
 .header-nav-item a{
