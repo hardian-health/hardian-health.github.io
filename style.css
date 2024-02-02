@@ -147,19 +147,19 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 
 /* Specific colors for each item based on the href attribute */
 .header-menu-nav-folder-content a[href*="/regulatory"]:before {
-  background-color: var(--regulatory-mintgreen);
+  background-color: var(--regulatory-mintgreen) !important;
 }
 .header-menu-nav-folder-content a[href*="/clinical"]:before {
-  background-color: var(--clinical-purple);
+  background-color: var(--clinical-purple) !important;
 }
 .header-menu-nav-folder-content a[href*="/health-economics"]:before {
-  background-color: var(--health-economics-brightpink);
+  background-color: var(--health-economics-brightpink) !important;
 }
 .header-menu-nav-folder-content a[href*="/strategy"]:before {
-  background-color: var(--strategy-lightblue);
+  background-color: var(--strategy-lightblue) !important;
 }
 .header-menu-nav-folder-content a[href*="/intellectual-property"]:before {
-  background-color: var(--ip-darkblue);
+  background-color: var(--ip-darkblue) !important;
 }
 .header-menu-nav-folder-content a[href*="/82304-2"]:before {
   background-color: var(--regulatory-mintgreen) !important;
