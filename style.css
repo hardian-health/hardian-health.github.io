@@ -132,6 +132,10 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   height: 15px;
   background-size: contain;
 }
+.container.header-menu-nav-item a {
+  padding-left: 30px; /* Adjust this value to ensure space for the circle */
+}
+
 .header-nav-folder-content:before {
   content: '';
   position: absolute;
@@ -142,20 +146,20 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   border-radius: 50%;
   background-size: contain;
 }
-/* Adjusted CSS for colored circles */
+
 .container.header-menu-nav-item a .header-menu-nav-item-content:before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: 0; 
-  margin-left: -20px; 
+  left: 10px; /* Adjust this to align within the padded area */
   top: 50%;
   transform: translateY(-50%);
   background: var(--white); /* Default color */
   transition: background-color 0.3s ease;
 }
+
 
 /* Specific colors based on the href attribute */
 .container.header-menu-nav-item a[href*="/regulatory"] .header-menu-nav-item-content:before {
