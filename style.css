@@ -108,9 +108,6 @@ p + pre {
   background: var(--ip-darkblue); 
 }
 
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
-  /* Your hover styles here, similar to what you have for Services tab */
-}
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover .header-menu-nav-item-content:before {
   width: 12px;
   height: 12px;
