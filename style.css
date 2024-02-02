@@ -137,7 +137,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   width: 20px; /* Diameter of the circle */
   height: 20px; /* Diameter of the circle */
   border-radius: 50%; /* Makes the element a circle */
-  left: -20px; /* Positions the circle 20px to the left of the text */
+  left: -40px; /* Positions the circle 20px to the left of the text */
   top: 50%; /* Aligns the top edge of the circle with the vertical center of the parent */
   transform: translateY(-50%); /* Shifts the circle up by half its height to vertically center it */
   background-color: var(--default-color); /* Sets a default background color for the circle */
