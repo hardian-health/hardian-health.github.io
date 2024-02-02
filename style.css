@@ -70,28 +70,28 @@ p + pre {
 
 /* Specific colors for each service and tool based on the href attribute */
 .header-nav-folder-item a[href*="/regulatory"] .header-nav-folder-item-content:before {
-  background: var(--regulatory-mintgreen);
+  background: var(--regulatory-mintgreen) !important;
 }
 .header-nav-folder-item a[href*="/clinical"] .header-nav-folder-item-content:before {
-  background: var(--clinical-purple);
+  background: var(--clinical-purple) !important;
 }
 .header-nav-folder-item a[href*="/health-economics"] .header-nav-folder-item-content:before {
-  background: var(--health-economics-brightpink);
+  background: var(--health-economics-brightpink) !important;
 }
 .header-nav-folder-item a[href*="/strategy"] .header-nav-folder-item-content:before {
-  background: var(--strategy-lightblue);
+  background: var(--strategy-lightblue) !important;
 }
 .header-nav-folder-item a[href*="/intellectual-property"] .header-nav-folder-item-content:before {
-  background: var(--ip-darkblue);
+  background: var(--ip-darkblue) !important;
 }
 .header-nav-folder-item a[href*="/82304"] .header-nav-folder-item-content:before {
-  background: var(--regulatory-mintgreen);
+  background: var(--regulatory-mintgreen) !important;
 }
 .header-nav-folder-item a[href*="/samd"] .header-nav-folder-item-content:before {
-  background: var(--clinical-purple);
+  background: var(--clinical-purple) !important;
 }
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
-  background: var(--ip-darkblue);
+  background: var(--ip-darkblue) !important;
 }
 
 
