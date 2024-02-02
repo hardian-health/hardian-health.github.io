@@ -149,7 +149,8 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: -20px; /* Adjust as needed for mobile */
+  left: 0; 
+  margin-left: -20px; 
   top: 50%;
   transform: translateY(-50%);
   background: var(--white); /* Default color */
