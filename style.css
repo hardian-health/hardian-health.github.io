@@ -87,6 +87,10 @@ p + pre {
   left: -20px;
   top: 7px;
 }
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a .header-menu-nav-item-content:hover:before {
+  width: 10px;
+  height: 10px;
+}
 
 .header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:before {
   background: var(--regulatory-mintgreen); 
@@ -98,25 +102,17 @@ p + pre {
   background: var(--ip-darkblue); 
 }
 
-.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a:hover:before {
-  /* Your hover styles here, similar to what you have for Services tab */
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="82304-2"] > div:hover:before {
+  background: var(--regulatory-mintgreen); 
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="samd"] > div:hover:before {
+  background: var(--clinical-purple); 
+}
+.header-menu-nav-folder[data-folder="/tools"] .header-menu-nav-item a[href*="news"] > div:hover:before {
+  background: var(--ip-darkblue); 
 }
 
 
-.header-nav-folder-item:before {
-  border-radius: 50%;
-  transition: 0.3s all ease;
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 7px;
-  top: 17px;
-}
-.header-nav-folder-item:hover:before {
-  width: 10px;
-  height: 10px;
-}
 
 
 
