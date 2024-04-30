@@ -176,7 +176,7 @@ $( document ).ready(function() {
        }
           var year = dateArray[2];
           
-          $(this).html("20" + year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
+          $(this).html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
           
       });
   }); 
