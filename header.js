@@ -150,36 +150,29 @@ $( document ).ready(function() {
 * 🌸🌸🌸 SECTION - FORMATTING DATES
 */
 
-//// BLOG PAGE GRID DATES – OROGINALLY MONTH/DAY/YEAR WITH HTML <time class="blog-date" pubdate="" data-animation-role="date">9/14/22</time>
-$( document ).ready(function() {    
-  
-   $('time.blog-date').each(function(i, obj) {
-  
-       console.log(dateArray);
-          var dateArray = $(this).text().split("/");
-     
-          console.log(dateArray);
-          var month = dateArray[0];
-       if( month.length <= 1){
-           console.log("blog grid month is single digit. Let's add a 0");
-           month = "0" + month;
-       } else{
-          console.log("blog grid month is double digit. So it's cool as is");    
-       }
-          var day = dateArray[1];
-  
-        if( day.length <= 1){
-           console.log("blog grid day is single digit. Let's add a 0");
-           day = "0" + day;
-       } else{
-          console.log("blog grid day is double digit. So it's cool as is");    
-       }
-          var year = dateArray[2];
-          
-          $(this).html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
-          
-      });
-  }); 
+//// BLOG PAGE GRID DATES – ORIGINALLY MONTH/DAY/YEAR WITH HTML <time class="blog-date" pubdate="" data-animation-role="date">9/14/22</time>
+$(document).ready(function() {    
+
+    $('time.blog-date').each(function(i, obj) {
+        var dateArray = $(this).text().split("/");
+
+        var month = dateArray[0];
+        if(month.length <= 1) {
+            month = "0" + month;
+        }
+
+        var day = dateArray[1];
+        if(day.length <= 1) {
+            day = "0" + day;
+        }
+
+        var year = dateArray[2];
+        // Assuming year is already in YY format, if not, you might need additional logic
+
+        $(this).html(year + "-" + month + "-" + day).addClass("dateFormatted-and-ready-to-show");
+    });
+
+});
 
 
 
