@@ -156,14 +156,14 @@ $(document).ready(function() {
     $('time.blog-date').each(function(i, obj) {
         var dateArray = $(this).text().split("/");
 
-        var month = dateArray[0];
-        if(month.length <= 1) {
-            month = "0" + month;
-        }
-
-        var day = dateArray[1];
+        var day = dateArray[0];
         if(day.length <= 1) {
             day = "0" + day;
+        }
+
+        var month = dateArray[1];
+        if(month.length <= 1) {
+            month = "0" + month;
         }
 
         var year = dateArray[2];
