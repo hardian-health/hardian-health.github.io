@@ -89,16 +89,8 @@ p + pre {
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
 }
-.header-nav-folder-item a[href*="hari.hardianhealth.com"] .header-nav-folder-item-content:before {
-  background: var(--health-economics-brightpink) !important;
-}
-
-/* External link - ensure it has the same base styles as other items */
-.header-nav-folder-item a[href*="hari.hardianhealth.com"] {
-  position: relative;
-}
-
-.header-nav-folder-item a[href*="hari.hardianhealth.com"] .header-nav-folder-item-content {
+/* External link styles - different HTML structure */
+.header-nav-folder-item--external a {
   position: relative;
   transition: 0.3s all ease;
   margin-left: 12px;
@@ -106,15 +98,27 @@ p + pre {
   display: block;
 }
 
-/* Hover effects for external link */
-.header-nav-folder-item a[href*="hari.hardianhealth.com"]:hover .header-nav-folder-item-content:before {
-  width: 12px !important;
-  height: 12px !important;
-  transition: 0.3s all ease;
+.header-nav-folder-item--external a:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--health-economics-brightpink) !important;
 }
 
-.header-nav-folder-item a[href*="hari.hardianhealth.com"]:hover .header-nav-folder-item-content {
-  margin-left: 18px !important;
+/* Hover effects for external link */
+.header-nav-folder-item--external:hover a {
+  margin-left: 18px;
+}
+
+.header-nav-folder-item--external a:hover:before {
+  width: 12px;
+  height: 12px;
+  transition: 0.3s all ease;
 }
 
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
