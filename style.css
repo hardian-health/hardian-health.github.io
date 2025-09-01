@@ -89,17 +89,23 @@ p + pre {
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
 }
+.header-nav-folder-item a[href*="hari.hardianhealth.com"] {
+  position: relative;
+  padding-left: 20px; /* ensures space for the dot */
+}
+
 .header-nav-folder-item a[href*="hari.hardianhealth.com"]::before {
   content: "";
   position: absolute;
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  left: -20px;
+  left: 0; /* start at padding */
   top: 50%;
   transform: translateY(-50%);
   background: var(--health-economics-brightpink) !important;
 }
+
 
 
 
