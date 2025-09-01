@@ -93,7 +93,7 @@ p + pre {
 .header-nav-folder-item.header-nav-folder-item--external a {
   position: relative !important;
   font-size: 16 !important;
-  font-family: inherit !important;
+  font-family: Open Sans !important;
   font-weight: normal !important;
   transition: 0.3s all ease !important;
   margin-left: 12px !important;
