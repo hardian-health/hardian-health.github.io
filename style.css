@@ -89,9 +89,14 @@ p + pre {
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
 }
-.header-nav-folder-item a[href*="hari.hardianhealth.com"] .header-nav-folder-item-content:before {
+.header-nav-folder-item a[href*="hari.hardianhealth.com"]::before {
   background: var(--health-economics-brightpink) !important;
+  content: ""; /* Required for ::before to appear */
+  display: block; /* or inline-block depending on layout */
+  width: 100%; /* adjust as needed */
+  height: 4px; /* example height */
 }
+
 
 
 body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-item-content {
