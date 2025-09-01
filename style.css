@@ -89,9 +89,10 @@ p + pre {
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
 }
-/* External link styles - different HTML structure */
+/* External link styles - different HTML structure (no span wrapper) */
 .header-nav-folder-item--external a {
   position: relative;
+  font-size: 24px;
   transition: 0.3s all ease;
   margin-left: 12px;
   padding: 10px 10px;
