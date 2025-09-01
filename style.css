@@ -187,6 +187,23 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
 }
+.header-nav-folder-item a[href*="hari.hardianhealth.com"] .header-nav-folder-item-content:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: -20px; /* Match the other items */
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--health-economics-brightpink) !important;
+}
+
+.header-nav-folder-item a[href*="hari.hardianhealth.com"]:hover .header-nav-folder-item-content:before {
+  width: 12px;
+  height: 12px;
+  transition: 0.3s all ease;
+}
 
 
 /*
