@@ -98,6 +98,8 @@ p + pre {
   padding: 10px 10px !important;
   display: block !important;
   text-decoration: none !important;
+  line-height: 1.2 !important;
+  vertical-align: baseline !important;
 }
 
 .header-nav-folder-item.header-nav-folder-item--external a:before {
