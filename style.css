@@ -166,20 +166,20 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   background-size: contain;
 }
 .container.header-menu-nav-item .header-menu-nav-item-content {
-  position: relative !important; /* Establishes the positioning context for the pseudo-element */
+  position: relative ; /* Establishes the positioning context for the pseudo-element */
 }
 
 .container.header-menu-nav-item .header-menu-nav-item-content:before {
-  content: '' !important;
-  position: absolute !important;
-  width: 12px !important;
-  height: 12px !important;
-  border-radius: 50% !important;
-  left: -20px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background-color: var(--neutral-darkgrey) !important; /* Use an actual defined color */
-  z-index: 1 !important;
+  content: '' ;
+  position: absolute ;
+  width: 12px ;
+  height: 12px ;
+  border-radius: 50% ;
+  left: -20px ;
+  top: 50% ;
+  transform: translateY(-50%) ;
+  background-color: var(--neutral-darkgrey) ; /* Use an actual defined color */
+  z-index: 1 ;
 }
 
 /* Specific colors for each item based on the href attribute */
