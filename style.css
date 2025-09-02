@@ -208,9 +208,26 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
 }
-.container.header-menu-nav-item a[href*="hari.hardianhealth.com"] .header-menu-nav-item-content:before {
-  background-color: var(--health-economics-brightpink) !important;
+
+/* For external menu items that don't have .header-menu-nav-item-content wrapper */
+.container.header-menu-nav-item.header-menu-nav-item--external {
+  position: relative !important;
 }
+
+.container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before {
+  content: '' !important;
+  position: absolute !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  left: -20px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background-color: var(--health-economics-brightpink) !important;
+  z-index: 1 !important;
+  display: block !important;
+}
+
 /*
 .header-nav-item a{
   padding: 15px 2px !important;
