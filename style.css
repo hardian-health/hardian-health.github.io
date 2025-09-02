@@ -215,7 +215,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 
 /* For external menu items that don't have .header-menu-nav-item-content wrapper */
 .container.header-menu-nav-item.header-menu-nav-item--external {
-  position: relative !important;
+  position: relative ;
 }
 
 .container.header-menu-nav-item.header-menu-nav-item--external a[href*="hari.hardianhealth.com"]:before {
