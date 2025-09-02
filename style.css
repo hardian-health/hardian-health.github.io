@@ -169,18 +169,17 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative; /* Establishes the positioning context for the pseudo-element */
 }
 
-.container.header-menu-nav-item a[href*="hari.hardianhealth.com"] .header-menu-nav-item-content:before {
-  content: '' !important; /* Essential - creates the pseudo-element */
-  position: absolute !important;
-  width: 12px !important;
-  height: 12px !important;
-  border-radius: 50% !important;
-  left: -20px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  background-color: var(--health-economics-brightpink) !important;
-  z-index: 1 !important;
-  display: block !important; /* Ensures it's visible */
+.container.header-menu-nav-item .header-menu-nav-item-content:before {
+  content: ''; /* Necessary for the pseudo-element to be generated */
+  position: absolute; /* Positions the pseudo-element absolutely within its parent */
+  width: 12px; /* Diameter of the circle */
+  height: 12px; /* Diameter of the circle */
+  border-radius: 50%; /* Makes the element a circle */
+  left: -20px; /* Positions the circle 20px to the left of the text */
+  top: 50%; /* Aligns the top edge of the circle with the vertical center of the parent */
+  transform: translateY(-50%); /* Shifts the circle up by half its height to vertically center it */
+  background-color: var(--default-color); /* Sets a default background color for the circle */
+  z-index: 1; /* Ensures the circle appears above any other positioned elements */
 }
 
 /* Specific colors for each item based on the href attribute */
