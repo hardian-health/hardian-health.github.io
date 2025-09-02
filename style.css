@@ -169,10 +169,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   position: relative ; /* Establishes the positioning context for the pseudo-element */
 }
 
-/* Hide dots for main menu items that don't match specific patterns */
-.container.header-menu-nav-item:not([class*="header-menu-nav-item--external"]) a:not([href*="/82304-2"]):not([href*="/samd-training"]):not([href*="/newsletter"]):not([href*="/regulatory"]):not([href*="/clinical"]):not([href*="/health-economics"]):not([href*="/strategy"]):not([href*="/intellectual-property"]) + * .header-menu-nav-item-content:before {
-  display: none !important;
-}
 
 .container.header-menu-nav-item .header-menu-nav-item-content:before {
   content: '' ;
@@ -183,7 +179,7 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
   left: -20px ;
   top: 50% ;
   transform: translateY(-50%) ;
-  background-color: var(--neutral-darkgrey) ; /* Use an actual defined color */
+  background-color: var(--neutral-white) ; 
   z-index: 1 ;
 }
 
