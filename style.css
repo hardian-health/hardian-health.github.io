@@ -2776,4 +2776,33 @@ CUBE
   #cube-container {
     min-height: 700px;
   }
+	/* Normal state: blue border + blue dot */
+.blog-item-category[href*="Market+Access"],
+.blog-item-category-wrapper a[href*="Market+Access"],
+section[data-section-id="63345cfd93596d2af59dedad"] a[href*="Market+Access"],
+.blog-categories-list a[href*="Market+Access"] {
+  border-color: var(--marketaccess-lightblue) !important;
+}
+
+.blog-item-category[href*="Market+Access"]::before,
+.blog-item-category-wrapper a[href*="Market+Access"]::before,
+.blog-categories-list a[href*="Market+Access"]::before {
+  background: var(--marketaccess-lightblue) !important;
+}
+
+/* Hover + active state: blue background, white text, white dot */
+.blog-item-category[href*="Market+Access"]:hover,
+.blog-item-category[href*="Market+Access"].active-filter,
+.blog-item-category-wrapper a[href*="Market+Access"]:hover,
+.blog-item-category-wrapper a[href*="Market+Access"].active-filter {
+  background: var(--marketaccess-lightblue) !important;
+  color: white !important;
+}
+
+.blog-item-category[href*="Market+Access"]::before:hover,
+.blog-item-category[href*="Market+Access"].active-filter::before,
+.blog-item-category-wrapper a[href*="Market+Access"]:hover::before,
+.blog-item-category-wrapper a[href*="Market+Access"].active-filter::before {
+  background: white !important;
+}
 }
