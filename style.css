@@ -302,6 +302,16 @@ p {
 .blog-item-content-wrapper .blog-meta-item.blog-meta-item--tags {
   order: 4;
 }
+/* Hide date and author shown above the blog title */
+time[data-content-field="published-on"],
+div.blog-meta-item--author {
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .item-pagination-link {
   align-items: center;
   max-width: 380px;
