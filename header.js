@@ -58,7 +58,10 @@ $( document ).ready(function() {
           //create labeels for categories and tags
           $("<span class='custom-meta-label category-label'>Categories:</span>").prependTo("div.blog-meta-item.blog-meta-item--categories");
           $("<span class=' custom-meta-label custom-tag-label'>Tags:</span>").prependTo("div.blog-meta-item.blog-meta-item--tags");    
-  
+
+            // Hide date and author shown above the title
+      $('time[data-content-field="published-on"]').hide();
+      $('div[data-content-field="author"]').hide();
   }
 }); 
 
