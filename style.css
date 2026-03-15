@@ -1407,6 +1407,9 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
   &[href*="trategy"]:before{
     background:var(--strategy-lightblue);
   }
+ &[href*="marketaccess"]:before{
+    background:var(--marketaccess-lightblue);
+  }
   &[href*="egulat"]:before{
     background:var(--regulatory-mintgreen);
   }
