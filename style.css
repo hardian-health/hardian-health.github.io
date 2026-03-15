@@ -305,9 +305,10 @@ p {
 .blog-item-content-wrapper .custom-metabox {
   display: none;
 }
-.blog-meta-item--date,
-.blog-meta-item--author {
+time[data-content-field="published-on"],
+div[data-content-field="author"] {
   display: none !important;
+  opacity: 0 !important;
 }
 .item-pagination-link {
   align-items: center;
