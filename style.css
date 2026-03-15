@@ -734,7 +734,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a:before {
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="clinical"]:before {
   background: var(--clinical-purple) !important;
 }
-section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="market+access"]:before {
+section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="marketaccess"]:before {
   background: var(--marketaccess-lightblue) !important;
 }
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="regulatory"]:before {
@@ -1406,9 +1406,6 @@ section[data-section-id="63345cfd93596d2af59dedad"] a,
   
   &[href*="trategy"]:before{
     background:var(--strategy-lightblue);
-  }
- &[href*="market+access"]:before{
-    background:var(--marketaccess-lightblue);
   }
   &[href*="egulat"]:before{
     background:var(--regulatory-mintgreen);
