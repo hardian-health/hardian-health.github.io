@@ -8,7 +8,6 @@
   --neutral-darkgrey: #A6A6A6;
   --clinical-purple: #A37AF5;
   --strategy-lightblue: #5BCFFF;
-  --marketaccess-lightblue: #5BCFFF;
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
@@ -16,9 +15,6 @@
 }
 .strategy {
   --current-service-color: var(--strategy-lightblue);
-}
-.marketaccess {
-  --current-service-color: var(--marketaccess-lightblue);
 }
 .clinical {
   --current-service-color: var(--clinical-purple);
@@ -92,9 +88,6 @@ p + pre {
 }
 .header-nav-folder-item a[href*="/news"] .header-nav-folder-item-content:before {
   background: var(--ip-darkblue) !important;
-}
-.header-nav-folder-item a[href*="/marketaccess"] .header-nav-folder-item-content:before {
-  background: var(--marketaccess-lightblue) !important;
 }
 /* External link styles - Squarespace-specific with higher specificity */
 .header-nav-folder-item.header-nav-folder-item--external a {
@@ -214,9 +207,6 @@ body:not(.header--menu-open) .header-nav-folder-item--active .header-nav-folder-
 }
 .container.header-menu-nav-item a[href*="/intellectual-property"] .header-menu-nav-item-content:before {
   background-color: var(--ip-darkblue) !important;
-}
-.container.header-menu-nav-item a[href*="/marketaccess"] .header-menu-nav-item-content:before {
-  background-color: var(--marketaccess-lightblue) !important;
 }
 
 /* For external menu items that don't have .header-menu-nav-item-content wrapper */
@@ -595,7 +585,6 @@ section[data-section-id="630906727a98a14798f4b3f4"] .sqs-block-image .design-lay
 //Brand Colors
 var(--clinical-purple):#A37AF5; 
 var(--strategy-lightblue): #5BCFFF;
-var(--marketaccess-lightblue): #5BCFFF;
 var(--regulatory-mintgreen):#49DAB0;
 var(--ip-darkblue):#3A6DF5;
 var(--health-economics-brightpink): #FF9FF2;
@@ -680,7 +669,7 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4{
 }
 
 #block-a78ba45834402982aeb1 h4:before{
-  background:var(--marketaccess-lightblue);
+  background:var(--strategy-lightblue);
 }
 
 #block-yui_3_17_2_1_1660233301342_249459  h4:before{
@@ -723,8 +712,8 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 a:before {
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="clinical"]:before {
   background: var(--clinical-purple) !important;
 }
-section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="marketaccess"]:before {
-  background: var(--marketaccess-lightblue) !important;
+section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="strategy"]:before {
+  background: var(--strategy-lightblue) !important;
 }
 section[data-section-id="630906727a98a14798f4b3f4"] h4 a[href*="regulatory"]:before {
   background: var(--regulatory-mintgreen) !important;
@@ -741,7 +730,7 @@ span.word:nth-of-type(1) {
 }
 
 span.word:nth-of-type(2) {
-    color: var(--marketaccess-lightblue)  !important;
+    color: var(--strategy-lightblue)  !important;
 }
 
 span.word:nth-of-type(3) {
@@ -2776,42 +2765,4 @@ CUBE
   #cube-container {
     min-height: 700px;
   }
-/* Target via the unique class Squarespace adds for this category */
-a.blog-item-category--Market\ Access,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access,
-.blog-categories-list a.blog-item-category--Market\ Access {
-  border-color: var(--marketaccess-lightblue) !important;
-  position: relative !important; /* ensure context for pseudo */
-}
-
-a.blog-item-category--Market\ Access::before,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access::before,
-.blog-categories-list a.blog-item-category--Market\ Access::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 11px !important;
-  top: 8px !important;
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: 50% !important;
-  background: var(--marketaccess-lightblue) !important;
-  display: block !important;
-  z-index: 1 !important;
-}
-
-/* Active/hover: blue fill, white text, white dot */
-a.blog-item-category--Market\ Access:hover,
-a.blog-item-category--Market\ Access.active-filter,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access:hover,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access.active-filter {
-  background: var(--marketaccess-lightblue) !important;
-  color: #FFFFFF !important;
-}
-
-a.blog-item-category--Market\ Access:hover::before,
-a.blog-item-category--Market\ Access.active-filter::before,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access:hover::before,
-.blog-item-category-wrapper a.blog-item-category--Market\ Access.active-filter::before {
-  background: #FFFFFF !important;
-}
 }
