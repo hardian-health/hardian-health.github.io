@@ -837,6 +837,10 @@ fetch(fetchUrl, {
           verticalTitle = "Strategy";
           //vertical = "/services/strategy";
           vertical = path.split('/')[1];
+             } else if (path.startsWith("/marketaccess")) {
+          verticalTitle = "Market Access";
+          //vertical = "/services/marketaccess";
+          vertical = path.split('/')[1];
         } else if (path.startsWith("/health-economics")) {
           verticalTitle = "Health Economics";
           //vertical = "/services/health-economics";
@@ -951,6 +955,8 @@ function checkIfPathContainsSubstringAndAddClassToBody(substring, className, css
 
 checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
 checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/marketaccess', 'marketaccess', '--marketaccess-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('/market-access', 'market-access', '--market-access-lightblue');
 checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
 checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
 checkIfPathContainsSubstringAndAddClassToBody('/clinical', 'clinical', '--clinical-purple');
