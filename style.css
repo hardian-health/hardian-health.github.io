@@ -17,8 +17,7 @@
 .strategy {
   --current-service-color: var(--strategy-lightblue);
 }
-.marketaccess,
-.market-access {
+.marketaccess {
   --current-service-color: var(--marketaccess-lightblue);
 }
 .clinical {
@@ -303,16 +302,6 @@ p {
 .blog-item-content-wrapper .blog-meta-item.blog-meta-item--tags {
   order: 4;
 }
-/* Hide date and author shown above the blog title */
-time[data-content-field="published-on"],
-div.blog-meta-item--author {
-  visibility: hidden !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
 .item-pagination-link {
   align-items: center;
   max-width: 380px;
@@ -1029,20 +1018,12 @@ section[data-section-id="630906727a98a14798f4b3f4"] h4 {
 }
 @media (min-width: 767px) {
 }
-.header-nav-list a, 
-.header-nav-list button,
-.header-nav-list,
-.header-nav-item button.header-nav-folder-title,
-.header-nav-item .header-nav-folder-title-text {
-    font-family: 'Open Sans', sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 14px !important;
+.header-nav-list a,
+.header-nav-list {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
 }
-```
-
-Then purge jsDelivr again at:
-```
-https://purge.jsdelivr.net/gh/hardian-health/hardian-health.github.io@master/style.css
 @media (min-width: 767px) {
 }
 .read-more {
@@ -1555,7 +1536,7 @@ body.portfolio-parent-page section:first-of-type .content-wrapper {
   width: calc(2 * var(--sizeandleft));
   aspect-ratio: 1;
   border-radius: 100%;
-  background: var(--current-service-color);
+  background: var(--clinical-purple);
 }
 #gridThumbs .grid-item .portfolio-title {
   font-size: 20px !important;
