@@ -305,6 +305,10 @@ p {
 .blog-item-content-wrapper .custom-metabox {
   display: none;
 }
+.blog-meta-item--date,
+.blog-meta-item--author {
+  display: none !important;
+}
 .item-pagination-link {
   align-items: center;
   max-width: 380px;
