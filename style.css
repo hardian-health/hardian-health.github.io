@@ -1554,7 +1554,7 @@ body.portfolio-parent-page section:first-of-type .content-wrapper {
   width: calc(2 * var(--sizeandleft));
   aspect-ratio: 1;
   border-radius: 100%;
-  background: var(--clinical-purple);
+  background: var(--current-service-color);
 }
 #gridThumbs .grid-item .portfolio-title {
   font-size: 20px !important;
