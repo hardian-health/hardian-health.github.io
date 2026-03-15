@@ -14,6 +14,7 @@
   --regulatory-mintgreen: #49DAB0;
   --ip-darkblue: #3A6DF5;
   --health-economics-brightpink: #FF9FF2;
+  --case-study-orange: #FF8C42	
   --timelinetitleleft: -28px;
 }
 
@@ -111,6 +112,7 @@ p + pre {
   &[href*="health"] > div:before{
     background:var(--health-economics-brightpink);
   }
+	
 }
 
 //Header - MENU - FOLDER - COLOR LABEL CIRCLEES
@@ -1629,6 +1631,29 @@ section[data-section-id="63936a7c3d674d7079783a93"] a,
        background:@white;
      }
      }
+  }
+	&[href*="Market"]{
+    border: 1px solid var(--marketaccess-lightblue) !important;
+    &:before{
+      background: var(--marketaccess-lightblue);
+    }
+    &.active-filter, &:hover {
+      background: var(--marketaccess-lightblue);
+      color: @white !important;
+      &:before{ background: @white; }
+    }
+  }
+
+  &[href*="Case"]{
+    border: 1px solid var(--ip-darkblue) !important;
+    &:before{
+      background: var(--ip-darkblue);
+    }
+    &.active-filter, &:hover {
+      background: var(--ip-darkblue);
+      color: @white !important;
+      &:before{ background: @white; }
+    }
   }
   }
 
