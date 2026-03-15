@@ -955,7 +955,7 @@ function checkIfPathContainsSubstringAndAddClassToBody(substring, className, css
 
 checkIfPathContainsSubstringAndAddClassToBody('health-economics', 'health-economics', '--health-economics-brightpink');
 checkIfPathContainsSubstringAndAddClassToBody('/strategy', 'strategy', '--strategy-lightblue');
-checkIfPathContainsSubstringAndAddClassToBody('/marketaccess', 'marketaccess', '--marketaccess-lightblue');
+checkIfPathContainsSubstringAndAddClassToBody('marketaccess', 'marketaccess', '--marketaccess-lightblue');
 checkIfPathContainsSubstringAndAddClassToBody('/market-access', 'market-access', '--market-access-lightblue');
 checkIfPathContainsSubstringAndAddClassToBody('/intellectual-property', 'intellectual-property', '--ip-darkblue');
 checkIfPathContainsSubstringAndAddClassToBody('/regulatory', 'regulatory', '--regulatory-mintgreen');
