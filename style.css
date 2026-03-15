@@ -302,6 +302,9 @@ p {
 .blog-item-content-wrapper .blog-meta-item.blog-meta-item--tags {
   order: 4;
 }
+.blog-item-content-wrapper .custom-metabox {
+  display: none;
+}
 .item-pagination-link {
   align-items: center;
   max-width: 380px;
