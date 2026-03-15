@@ -302,14 +302,6 @@ p {
 .blog-item-content-wrapper .blog-meta-item.blog-meta-item--tags {
   order: 4;
 }
-.blog-item-content-wrapper .custom-metabox {
-  display: none;
-}
-time[data-content-field="published-on"],
-div[data-content-field="author"] {
-  display: none !important;
-  opacity: 0 !important;
-}
 .item-pagination-link {
   align-items: center;
   max-width: 380px;
